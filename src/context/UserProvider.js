@@ -19,9 +19,6 @@ export const UserProvider = (props) => {
         return await new Promise(resolve => resolve(response.data));
     }
      
-
-
-    
     async function loginUser(email, password) {
         let user = { email, password };
 
