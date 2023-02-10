@@ -28,7 +28,7 @@ function Home() {
                     <Nav className="justify-content-end" activeKey="/Home">
                     <Link to="/" className="nav-link">Home</Link>
                         <Link to="/SignIn" className="nav-link">Sign In</Link>
-                        <Link to="/SignUp" className="nav-link">Sign Up</Link>
+                        <Link to="/Register" className="nav-link">Register</Link>
                         <Link to="/AboutUs" className="nav-link">About Us</Link>
                     </Nav>
                     <Form className="d-flex">
@@ -38,7 +38,7 @@ function Home() {
                             className="me-2"
                             aria-label="Search"
                             onChange={handleChange}/>
-                        <Button variant="outline-success">Search</Button>
+                        <Button variant="danger">Search</Button>
                     </Form>
                 </Container>
             </Navbar>
