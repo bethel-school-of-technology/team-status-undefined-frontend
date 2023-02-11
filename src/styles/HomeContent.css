@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+/* Top Section */
+.bgCover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ), */
+    margin-top: -16px;
+    background:
+        url("/public/images/barber-home-header.png");
+    background-size: cover;
+}
+
+.h1 {
+    font-family: 'Abel', sans-serif;
+    font-size: 60px;
+    color: #cdebef;
+    font-weight: bolder;
+    padding-top: 2em;
+}
+
+.explore {
+    font-family: 'Abel', sans-serif;
+    font-size: 15px;
+    color: #cdebef;
+    font-weight: bolder;
+    padding-top: 2em;
+    padding-bottom: -10px;
+}
+
+.v {
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+    color: #cdebef;
+    font-weight:bolder;
+    padding-top: -5em;
+    padding-bottom: -10px;
+}
+
+#signUpButton {
+    font-family: 'Abel', sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+    border-radius: 0em;
+    border-width: 2.5px;
+    border-color: #dc5726;
+    background-color: #dc5726;
+    padding: 4px 21px;
+}
+
+#signUpButton:hover {
+    font-family: 'Abel', sans-serif;
+    font-size: 30px;
+    color: #dc5726;
+    font-weight: bolder;
+    border-radius: 0em;
+    border-width: 2.5px;
+    border-color: #cdebef;
+    background-color: #cdebef;
+    padding: 3px 20px;
+}
+
+#signInButton {
+    margin-top: -30px;
+    font-family: 'Abel', sans-serif;
+    font-size: 30px;
+    color: white;
+    font-weight: bolder;
+    border-radius: 0em;
+    border-width: 6px;
+    border-color: #cdebef;
+    padding: 5px 25px;
+    background-color: transparent;
+    margin-bottom: -50px;
+}
+
+#signInButton:hover {
+    margin-top: -30px;
+    font-family: 'Abel', sans-serif;
+    font-size: 30px;
+    color: #cdebef;
+    font-weight: bolder;
+    border-radius: 0em;
+    border-width: 6px;
+    border-color: #dc5726;
+    padding: 4px 24px;
+    background-color: transparent;
+    margin-bottom: -50px;
+}
+
+#findBarberButton {
+    margin-top: -30px;
+    font-family: 'Abel', sans-serif;
+    font-size: 30px;
+    color: white;
+    font-weight: bolder;
+    border-radius: 0em;
+    border-width: 6px;
+    border-color: #cdebef;
+    padding: 5px 30px;
+    background-color: transparent;
+}
+
+#findBarberButton:hover {
+    margin-top: -30px;
+    font-family: 'Abel', sans-serif;
+    font-size: 30px;
+    color: #cdebef;
+    font-weight: bolder;
+    border-radius: 0em;
+    border-width: 6px;
+    border-color: #dc5726;
+    padding: 4px 29px;
+    background-color: transparent;
+}
+
+/* Barbers info section ---------------------------------- */
+
+.barberTitle {
+    text-align: center;
+    font-family: 'Abel', sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    color: #1b3d49;
+    margin-top: 5rem;
+    margin-bottom: 0px;
+}
+
+.cardBarbers{
+    padding: 20px;
+    margin: 3rem 3rem;
+    border-color: #cdebef;
+}
+
+.div2 {
+    font-family: 'Abel', sans-serif;
+    margin-top: 4rem;
+    padding: 3rem;
+    float: right;
+    font-size: 20px;
+    color: #1b3d49;
+    align-items: center;
+    text-align: center;
+}
+
+/* Info for barber's clients section ---------------------------------- */
+
+.div3 {
+    font-family: 'Abel', sans-serif;
+    margin-top: 4rem;
+    padding: 3rem;
+    font-size: 20px;
+    color: #1b3d49;
+    align-items: center;
+    text-align: center;
+    margin-right: 3rem;
+}
+
+.div4 {
+    float: right;
+    padding: 3rem;
+}
+
+#membership {
+    font-size: 40px;
+    color: #1b3d49;
+}
+
+/* Gallery info section ---------------------------------- */
+
+.bgGalleryCover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ), */
+    margin-top: -16px;
+    background:
+        url("/public/images/home-gallery-info.png");
+    background-size: cover;
+}
+
+.verse {
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+    color: #cdebef;
+    font-weight: bolder;
+    padding-top: 2em;
+    padding-bottom: -10px;
+}
