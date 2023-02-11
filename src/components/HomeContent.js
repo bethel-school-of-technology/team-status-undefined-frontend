@@ -77,7 +77,7 @@ function HomeContent() {
                     <div className="cardBarbers">
                         <Row>
                             <Col className='div3'>
-                                <p>Our certified and skilled barbers are ready to provide you with an amazing uplifting experience; using the latest technology, high quality products, and creating the finest styles,our professionals are ready to serve you! </p>
+                                <p>Our certified and skilled barbers are ready to provide you with an amazing uplifting experience; using the latest technology, high quality products, and creating the finest styles, our professionals are ready to serve you! </p>
 
                                 <br></br>
                                 <h3 id='membership'>Start looking awesome</h3>
