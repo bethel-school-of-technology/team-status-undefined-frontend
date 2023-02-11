@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+.everything {
+    color: #1b3d49;
+    font-family: 'Abel', sans-serif;
+    font-size: medium;
+}
+
+#footer {
+    background-color: #1b3d49;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+}
+
+.p {
+    color: #9cd9e1;
+    font-family: 'Abel', sans-serif;
+}
+
+.p2 {
+    color: #9cd9e1;
+    font-size: small;
+    margin-top: -15px;
+    font-family: 'Abel', sans-serif;
+}
+
+.logoBottom {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
