@@ -1,47 +1,43 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { Link, Outlet } from 'react-router-dom'
+import React  from 'react';
 import  UserContext from '../context/UserContext';
-import {Card, Row, Col, Stack, CardGroup} from "react-bootstrap"
+import { Row, Col, Stack, Container} from "react-bootstrap"
+import '../styles/BarberList.css'
 
-const BarberList = () => {
+
+function BarberList () {
    
 
   return (
     <UserContext.Consumer>
-        
         {
-            
             ({ user }) => {
-                
-                return <div>
-                    <h1>BARBERS</h1>
+                return <>
                     <div>
-                    
-                    <Stack direction="horizontal" gap={3}>
-                    
-                        {user.map((u) => {
+                <Stack  gap={3}>
+                   <Container>
+                    <h1>BARBERS</h1>
+                     <Row>
+                       {user.map((u) => {
                             return (
-                                
-                                    <Card bg="info" text="light" style={{ width: '18rem' }}>
-                                                <Card.Img variant="top" src={u.ProfilePic} alt=""/>
-                                            <Card.Body>
-                                            <Card.Title>{u.FirstName} {u.LastName}</Card.Title>
-                                            <Card.Subtitle className="mb-2 ">{u.Description}</Card.Subtitle>
-                                            <Link to={`/Profile/${u.BarberId}`}className="btn btn-warning mx-3">View</Link>
-                                            </Card.Body>
-                                    </Card>
-                                
+                                    <Col xs={6} md={4} lg={3}>
+                                            <a href={`/Profile/${u.BarberId}`}>
+                                            <img id="pic" src={u.ProfilePic} height="200" alt=""  / >
+                                            <p>Name: {u.FirstName} {u.LastName} </p>
+                                            <p>City: {u.City}</p>
+                                            <p>State: {u.State}</p>
+                                            </a>
+                                    </Col>
                                     )
                         })}
-                        
-                        </Stack>
+                     </Row>
+                   </Container>
+                </Stack>
                         
                     </div>
-                </div>
+                </>
             }
         }
-        
-        </UserContext.Consumer>
+    </UserContext.Consumer>
   )
 }
 

@@ -28,7 +28,7 @@ function HomeContent() {
                                 <Button id='signUpButton' onClick={<Register />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
                             </Link>
 
-                            <Link to="/Search" className="nav-link m-0">
+                            <Link to="/BarberList" className="nav-link m-0">
                                 <Button id='findBarberButton' className="mt-4 mb-4 ly-0" >FIND A BARBER</Button>
                             </Link>
 

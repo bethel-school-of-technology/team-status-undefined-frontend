@@ -1,5 +1,5 @@
-import { useContext, useState, useEffect } from 'react'
-import { Container, Stack, Button, } from 'react-bootstrap'
+import { useContext, useState, useEffect, useNavigate } from 'react'
+import { Container, Stack, Button, Form } from 'react-bootstrap'
 import { Link, Outlet } from "react-router-dom"
 import React from 'react';
 import HomeContent from './HomeContent';
@@ -11,6 +11,7 @@ import Login from './Login';
 // import BarberList from './BarberList';
 
 function Home() {
+    
 
     const [showAnimated, setShowAnimated] = useState(false);
 
@@ -26,6 +27,7 @@ function Home() {
                     </div>
                     
                 </Container>
+                
             </div>
             {/*Hamburger menu*/}
             <section id='dropdown' className='mb-3'>

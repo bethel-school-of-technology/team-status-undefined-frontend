@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 
 export const UserProvider = (props) => {
     const [ user, setUser ] = useState([]);
-    const baseUrl = "http://localhost:3000/api/users/";
+    //"http://localhost:3000/api/users/" the real baseUrl
+    const baseUrl = "http://localhost:3001/users/";
 
 useEffect(() => {
     async function getAllUser() {
@@ -14,7 +15,7 @@ useEffect(() => {
   }, []);
 
   function refreshUser() {
-    return axios.get("http://localhost:3001/users")
+    return axios.get(baseUrl)
       .then(response => {
         setUser(response.data)
         console.log(response.data)
@@ -22,7 +23,7 @@ useEffect(() => {
   }
 
     async function getAllUser() {
-        const response = await axios.get(`http://localhost:3001/users/`);
+        const response = await axios.get(baseUrl);
         console.log(response.data)
         return setUser(response.data);
     }
