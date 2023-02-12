@@ -12,7 +12,7 @@
       ), */
     margin-top: -16px;
     background:
-        url("/public/images/barber-home-header.png");
+        url("/public/Images/barber-home-header.png");
     background-size: cover;
 }
 
@@ -184,7 +184,7 @@
       ), */
     margin-top: -16px;
     background:
-        url("/public/images/home-gallery-info.png");
+        url("/public/Images/home-gallery-info.png");
     background-size: cover;
 }
 

@@ -1,19 +1,35 @@
 import axios from "axios";
 import UserContext from "./UserContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const UserProvider = (props) => {
     const [ user, setUser ] = useState([]);
-    const baseUrl = "http://localhost:3000/api/users/";
+    //"http://localhost:3000/api/users/" the real baseUrl
+    const baseUrl = "http://localhost:3001/users/";
 
+useEffect(() => {
+    async function getAllUser() {
+      await  refreshUser()
+    }
+    getAllUser()
+  }, []);
+
+  function refreshUser() {
+    return axios.get(baseUrl)
+      .then(response => {
+        setUser(response.data)
+        console.log(response.data)
+      })
+  }
 
     async function getAllUser() {
         const response = await axios.get(baseUrl);
+        console.log(response.data)
         return setUser(response.data);
     }
 
-    async function createUser(barberShopName, password, email, firstName, lastName, licenseNumber, barberShopAddress) {       
-        let user = { barberShopName, password, email, firstName, lastName, licenseNumber, barberShopAddress };
+    async function createUser( Address, City, Description, FirstName, LastName, LicenseNumber, PhoneNumber, ProfilePic, State ) {       
+        let user = {Address, City, Description, FirstName, LastName, LicenseNumber, PhoneNumber, ProfilePic, State };
         
         const response = await axios.post(baseUrl, user);
         return await new Promise(resolve => resolve(response.data));
@@ -44,6 +60,17 @@ export const UserProvider = (props) => {
         return await new Promise(resolve => resolve(response.data));
     }
 
+    function searchUser(search) {
+
+        return axios.get(`http://localhost:3001/users/?q=${search}`)
+          .then(response =>
+            new Promise((resolve) => resolve(response.data))
+          )
+          .catch((error) =>
+            new Promise((_, reject) => reject(error.response.statusText))
+          )
+      }
+
     async function deleteUser(id) {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
@@ -60,7 +87,8 @@ export const UserProvider = (props) => {
             createUser,
             loginUser,
             updateUser,
-            deleteUser
+            deleteUser,
+            searchUser
         }}>
             { props.children }
         </UserContext.Provider>
