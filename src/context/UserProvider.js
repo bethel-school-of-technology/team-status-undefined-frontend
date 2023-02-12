@@ -1,14 +1,29 @@
 import axios from "axios";
 import UserContext from "./UserContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const UserProvider = (props) => {
     const [ user, setUser ] = useState([]);
     const baseUrl = "http://localhost:3000/api/users/";
 
+useEffect(() => {
+    async function getAllUser() {
+      await  refreshUser()
+    }
+    getAllUser()
+  }, []);
+
+  function refreshUser() {
+    return axios.get("http://localhost:3001/users")
+      .then(response => {
+        setUser(response.data)
+        console.log(response.data)
+      })
+  }
 
     async function getAllUser() {
-        const response = await axios.get(baseUrl);
+        const response = await axios.get(`http://localhost:3001/users/`);
+        console.log(response.data)
         return setUser(response.data);
     }
 

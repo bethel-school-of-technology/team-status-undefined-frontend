@@ -1,13 +1,13 @@
-// import { useContext, useState, useEffect } from 'react'
-import { Container, Stack, Button } from 'react-bootstrap'
+import { useContext, useState, useEffect } from 'react'
+import { Container, Stack, Button, } from 'react-bootstrap'
 import { Link, Outlet } from "react-router-dom"
-import React, { useState } from 'react';
+import React from 'react';
 import HomeContent from './HomeContent';
 import '../styles/Home.css'
 import Footer from './Footer';
 import Register from './Register';
 import { MDBContainer, MDBCollapse, MDBNavbar, MDBNavbarToggler } from 'mdb-react-ui-kit';
-// import SignIn from './SignIn';
+import Login from './Login';
 // import BarberList from './BarberList';
 
 function Home() {
@@ -24,9 +24,9 @@ function Home() {
                             <img src={process.env.PUBLIC_URL + '/images/upperlip11.png'} height="100" alt="Upper Lip Holstery" /></a>
                         </Link>
                     </div>
+                    
                 </Container>
             </div>
-
             {/*Hamburger menu*/}
             <section id='dropdown' className='mb-3'>
                 <MDBNavbar>
@@ -51,25 +51,21 @@ function Home() {
 
                 <MDBCollapse show={showAnimated}>
                     <div className='dropdownbg'>
-                        <img className="dropLogo" src={process.env.PUBLIC_URL + '/images/upperlip10.png'} height="120" alt="Upper Lip Holstery" />
-
+                        <img className="dropLogo" src={process.env.PUBLIC_URL + '/Images/upperlip10.png'} height="120" alt="Upper Lip Holstery" />
                         <Link to="/" id="home" className="nav-link m-4">HOME</Link>
-                        <Link to="/" id="barbers" className="nav-link m-4">BARBERS</Link>
+                        <Link to="/BarberList" id="barbers" className="nav-link m-4">BARBERS</Link>
                         <Link to="/" id="gallery" className="nav-link m-4">GALLERY</Link>
 
-                        <Link to="/" className="nav-link m-2">
-                            <Button id='signInButton' className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
+                        <Link to="/Login" className="nav-link m-2">
+                            <Button id='signInButton' onClick={<Login />} className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
                         </Link>
 
-                        <Link to="/" className="nav-link m-0">
+                        <Link to="/Register" className="nav-link m-0">
                             <Button id='signUpButton' onClick={<Register />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
                         </Link>
                     </div>
                 </MDBCollapse>
             </section>
-
-            {/*HomeContent Page Display*/}
-            <HomeContent />
 
             <Stack gap={5} className="col-md-10 mx-auto mt-4">
                 <Outlet />

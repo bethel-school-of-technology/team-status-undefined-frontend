@@ -4,6 +4,7 @@ import { Outlet, Link } from 'react-router-dom'
 import '../styles/HomeContent.css'
 import { Stack, Button, Row, Col } from 'react-bootstrap';
 import Register from './Register';
+import Login from './Login'
 
 function HomeContent() {
 
@@ -19,15 +20,15 @@ function HomeContent() {
                             </div>
                             <br />
 
-                            <Link to="/" className="nav-link m-2">
-                                <Button id='signInButton' className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
+                            <Link to="/Login" className="nav-link m-2">
+                                <Button id='signInButton' onClick={<Login />} className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
                             </Link>
 
-                            <Link to="/" className="nav-link m-0">
+                            <Link to="/Register" className="nav-link m-0">
                                 <Button id='signUpButton' onClick={<Register />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
                             </Link>
 
-                            <Link to="/" className="nav-link m-0">
+                            <Link to="/Search" className="nav-link m-0">
                                 <Button id='findBarberButton' className="mt-4 mb-4 ly-0" >FIND A BARBER</Button>
                             </Link>
 
@@ -49,7 +50,7 @@ function HomeContent() {
                     <div className="cardBarbers">
                         <Row>
                             <Col className='div1'>
-                                <img src={process.env.PUBLIC_URL + '/images/home-barber-info.png'} height="600" alt="" />
+                                <img src={process.env.PUBLIC_URL + '/Images/home-barber-info.png'} height="600" alt="" />
                             </Col>
                             <Col className='div2'>
                                 <p>If you are eather a barber startup or an experienced professional, we can help you connect with potential customers that are looking for you! Join our membership to get started... </p>
@@ -61,7 +62,7 @@ function HomeContent() {
                                 <p>* Let new client find you</p>
                                 <p>* We promote you in external platforms</p>
 
-                                <Link to="/" className="nav-link m-0">
+                                <Link to="/Register" className="nav-link m-0">
                                     <Button id='signUpButton' onClick={<Register />} className="mt-4 mb-4 ly-0" > SIGN UP</Button>
                                 </Link>
                             </Col>
@@ -86,12 +87,12 @@ function HomeContent() {
                                 <p>* Certified</p>
                                 <p>* Top Products</p>
 
-                                <Link to="/" className="nav-link m-0">
+                                <Link to="/BarberList" className="nav-link m-0">
                                     <Button id='signUpButton' onClick className="mt-4 mb-4 ly-0" > FIND A BARBER</Button>
                                 </Link>
                             </Col>
                             <Col className='div4'>
-                                <img src={process.env.PUBLIC_URL + '/images/home-client-info.png'} height="600" alt="" />
+                                <img src={process.env.PUBLIC_URL + '/Images/home-client-info.png'} height="600" alt="" />
                             </Col>
                         </Row>
                     </div>
@@ -112,7 +113,7 @@ function HomeContent() {
                                 <p>To these four young men God gave knowledge and understanding of all kinds of literature and learning.</p>
                             </div>
 
-                            <Link to="/" className="nav-link m-2">
+                            <Link to="/Gallery" className="nav-link m-2">
                                 <Button id='signInButton' className="mt-4 mb-4 ly-0" >LEARN MORE</Button>
                             </Link>
                             <br />

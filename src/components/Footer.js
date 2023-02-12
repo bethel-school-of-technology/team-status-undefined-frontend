@@ -15,7 +15,7 @@ function Footer() {
                 }}>
 
                 <Link to="/" ><a className="navbar-brand align-items-center" href="#">
-                    <img src={process.env.PUBLIC_URL + '/images/upperlip8.png'} height="200" alt="Upper Lip Holstery" /></a>
+                    <img src={process.env.PUBLIC_URL + '/Images/upperlip8.png'} height="200" alt="Upper Lip Holstery" /></a>
                 </Link>
             </div>
 
@@ -27,7 +27,7 @@ function Footer() {
             <footer id="footer" class="text-center mt-5">
                 <div className="logoBottom">
                     <Link to="/" ><a className="navbar-brand align-items-center" href="#">
-                        <img src={process.env.PUBLIC_URL + '/images/upperlip10.png'} height="100" alt="Upper Lip Holstery" /></a>
+                        <img src={process.env.PUBLIC_URL + '/Images/upperlip10.png'} height="100" alt="Upper Lip Holstery" /></a>
                     </Link>
                 </div>
 
