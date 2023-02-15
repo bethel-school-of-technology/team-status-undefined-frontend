@@ -1,11 +1,12 @@
-import React  from 'react';
+import React from 'react';
 import  UserContext from '../context/UserContext';
 import { Row, Col, Stack, Container} from "react-bootstrap"
+
 import '../styles/BarberList.css'
 
 
 function BarberList () {
-   
+  
 
   return (
     <UserContext.Consumer>
