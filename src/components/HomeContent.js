@@ -2,7 +2,7 @@
 import React from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import '../styles/HomeContent.css'
-import { Stack, Button, Row, Col } from 'react-bootstrap';
+import { Stack, Button, Row, Col} from 'react-bootstrap';
 import Register from './Register';
 import Login from './Login'
 

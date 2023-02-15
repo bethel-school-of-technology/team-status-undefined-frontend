@@ -1,6 +1,6 @@
-import { useContext, useState, useEffect, useNavigate } from 'react'
+import { useContext, useState, useEffect,  } from 'react'
 import { Container, Stack, Button, Form } from 'react-bootstrap'
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom"
 import React from 'react';
 import HomeContent from './HomeContent';
 import '../styles/Home.css'
@@ -12,6 +12,11 @@ import Login from './Login';
 
 function Home() {
     
+    let navigate = useNavigate()
+    const handleChange = (event) => {
+        if (event.target.value === "") return;
+          navigate('Search/' + event.target.value)
+    }
 
     const [showAnimated, setShowAnimated] = useState(false);
 
@@ -24,6 +29,15 @@ function Home() {
                         <Link to="/" ><a class="navbar-brand align-items-center" href="#">
                             <img src={process.env.PUBLIC_URL + '/images/upperlip11.png'} height="100" alt="Upper Lip Holstery" /></a>
                         </Link>
+                        <Form className="d-flex">
+                        <Form.Control
+                            type="search"
+                            placeholder="Looking For A Barber?"
+                            className="d-sm-flex"
+                            aria-label="Search"
+                            onChange={handleChange}/>
+                        <Button variant="outline-success">Search</Button>
+                    </Form>
                     </div>
                     
                 </Container>
