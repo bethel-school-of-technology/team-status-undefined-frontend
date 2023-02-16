@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom'
-import { Card, Container, Row, Col, Figure } from "react-bootstrap"
+import { useParams } from 'react-router-dom'
+import {  Container, Row, Col } from "react-bootstrap"
 import  UserContext from '../context/UserContext';
 
 function Search() {
@@ -26,19 +26,18 @@ function Search() {
     function UserList() {
 
         if (users === null || !users) return
-        return users.map((u) =>
-        <Figure>
-        <Figure.Image
-          width={171}
-          height={180}
-          alt="171x180"
-          src={u.ProfilePic}
-        />
-        <Figure.Caption>
-          {u.FirstName}{u.LastName}
-          {u.City}{u.State}
-        </Figure.Caption>
-      </Figure>
+        return users.map((u) => {
+            return (
+                    <Col xs={6} md={4} lg={3}>
+                            <a href={`/Profile/${u.BarberId}`}>
+                            <img id="pic" src={u.ProfilePic} height="200" alt=""  / >
+                            <p>Name: {u.FirstName} {u.LastName} </p>
+                            <p>City: {u.City}</p>
+                            <p>State: {u.State}</p>
+                            </a>
+                    </Col>
+                    )
+        }
 
         )
     }
@@ -50,7 +49,7 @@ function Search() {
                 <Row>
                     {UserList()}
                 </Row>
-                <Outlet />
+                
             </Container>
         </>
     )

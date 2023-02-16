@@ -15,16 +15,15 @@ function App() {
     <UserProvider>
             <BrowserRouter>
                 <Routes>
-                    <Route  path="/" element={ <Home /> }>
-                    <Route index element={<HomeContent />} />
-                       
-                     <Route path="Register" element={ <Register />}   />
+                  <Route  path="/" element={ <Home /> }>
+                    <Route index element={<HomeContent />} />  
+                    <Route path="Register" element={ <Register />}   />
                     <Route path="Login" element={ <Login />}   />
                     <Route path="BarberList" element={ <BarberList />}>
+                    </Route>
                     <Route path="search/:filter" element={<Search />} />
-                     </Route>
-                     </Route> 
-                      
+                  </Route> 
+                    
                 </Routes>
             </BrowserRouter>
     </UserProvider>
