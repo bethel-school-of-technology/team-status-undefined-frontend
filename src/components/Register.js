@@ -42,7 +42,7 @@ function SignUp ()  {
       function addOrUpdate() {
         if (BarberId === undefined) {
           return createUser(FirstName,LastName, Address, City, State, PhoneNumber,
-             LicenseNumber, ProfilePic, Description, AuthSignInId).then(() =>
+             LicenseNumber, ProfilePic).then(() =>
            navigate('/Login'))
         } else {
           return updateUser(signin).then(() =>
@@ -152,9 +152,9 @@ function SignUp ()  {
             
         </Form.Group >
 
-        <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>PhoneNumber</Form.Label>
-          <Form.Control type="number" name="Zip" value={PhoneNumber} onChange={handleChange}  />
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Phone Number</Form.Label>
+          <Form.Control type="Phone Number" name="PhoneNumber" value={PhoneNumber} onChange={handleChange} />
         </Form.Group>
       </Row>
 

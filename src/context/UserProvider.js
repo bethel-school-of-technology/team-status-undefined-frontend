@@ -28,8 +28,8 @@ useEffect(() => {
         return setUser(response.data);
     }
 
-    async function createUser( Address, City, Description, FirstName, LastName, LicenseNumber, PhoneNumber, ProfilePic, State ) {       
-        let user = {Address, City, Description, FirstName, LastName, LicenseNumber, PhoneNumber, ProfilePic, State };
+    async function createUser( Address, City, FirstName, LastName, LicenseNumber, PhoneNumber, ProfilePic, State ) {       
+        let user = {Address, City, FirstName, LastName, LicenseNumber, PhoneNumber, ProfilePic, State };
         
         const response = await axios.post(baseUrl, user);
         return await new Promise(resolve => resolve(response.data));
