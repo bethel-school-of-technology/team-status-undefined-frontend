@@ -42,7 +42,7 @@ function SignUp ()  {
       function addOrUpdate() {
         if (BarberId === undefined) {
           return createUser(FirstName,LastName, Address, City, State, PhoneNumber,
-             LicenseNumber, ProfilePic, Description, AuthSignInId).then(() =>
+             LicenseNumber, ProfilePic).then(() =>
            navigate('/Login'))
         } else {
           return updateUser(signin).then(() =>
