@@ -36,7 +36,7 @@
 /* Drop Down Menu ------------------------------------------------- */
 
 .dropLogo {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .animated-icon1 {
@@ -106,6 +106,7 @@
   transform: rotate(135deg);
   outline: none;
   box-shadow: none;
+  font-size: 30px;
 }
 
 .firstbutton {
@@ -116,6 +117,7 @@
 .animated-icon1.open span:nth-child(2) {
   opacity: 0;
   left: -60px;
+  font-size: 30px;
 }
 
 .animated-icon1.open span:nth-child(3) {
@@ -126,6 +128,7 @@
   transform: rotate(-135deg);
   outline: none;
   box-shadow: none;
+  font-size: 30px;
 }
 
 #dropdown {
@@ -141,26 +144,80 @@
 .dropdownbg {
   background-color: #1b3d49;
   padding-top: 70px;
-  padding-bottom: 200px;
+  padding-bottom: 150px;
   align-items: center;
   color: #9cd9e1;
   align-items: center;
-  padding-left: 8rem;
-  padding-right: 8rem;
-  font-size: 35px;
+  padding-left: 7.5rem;
+  padding-right: 7.5rem;
+  font-size: 30px;
 }
 
 #home:hover {
   color: #dc5726;
-  font-size: 34px;
+  font-size: 30px;
 }
 
 #barbers:hover {
   color: #dc5726;
-  font-size: 34px;
+  font-size: 30px;
 }
 
 #gallery:hover {
   color: #dc5726;
-  font-size: 34px;
+  font-size: 30px;
+}
+
+
+/* Buttons inside Drop Down Menu ------------------------------------------------- */
+
+#signUpButtonDrop {
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  font-weight: bolder;
+  border-radius: 0em;
+  border-width: 2.5px;
+  border-color: #dc5726;
+  background-color: #dc5726;
+  padding: 4px 21px;
+  margin-top: -10px;
+}
+
+#signUpButtonDrop:hover {
+  font-family: 'Abel', sans-serif;
+  font-size: 15px;
+  color: #dc5726;
+  font-weight: bolder;
+  border-radius: 0em;
+  border-width: 2.5px;
+  border-color: #cdebef;
+  background-color: #cdebef;
+  padding: 4px 21px;
+}
+
+#signInButtonDrop {
+  margin-top: -10rem;
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  color: white;
+  font-weight: bolder;
+  border-radius: 0em;
+  border-width: 5px;
+  border-color: #cdebef;
+  padding: 3px 22px;
+  background-color: transparent;
+}
+
+#signInButtonDrop:hover {
+  margin-top: -30px;
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  color: #cdebef;
+  font-weight: bolder;
+  border-radius: 0em;
+  border-width: 5px;
+  border-color: #dc5726;
+  padding: 3px 22px;
+  background-color: transparent;
+  margin-bottom: -50px;
 }

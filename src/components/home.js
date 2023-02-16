@@ -58,12 +58,12 @@ function Home() {
                         <Link to="/BarberList" id="barbers" className="nav-link m-4">BARBERS</Link>
                         <Link to="/" id="gallery" className="nav-link m-4">GALLERY</Link>
 
-                        <Link to="/Login" className="nav-link m-2">
-                            <Button id='signInButton' onClick={<Login />} className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
+                        <Link to="/Login" className="nav-link m-0">
+                            <Button id='signInButtonDrop' onClick={<Login />} className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
                         </Link>
 
-                        <Link to="/Register" className="nav-link m-0">
-                            <Button id='signUpButton' onClick={<Register />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
+                        <Link to="/Register" className="nav-link mt-0">
+                            <Button id='signUpButtonDrop' onClick={<Register />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
                         </Link>
                     </div>
                 </MDBCollapse>

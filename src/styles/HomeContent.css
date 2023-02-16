@@ -11,9 +11,14 @@
         rgba(255, 255, 255, 0.5)
       ), */
     margin-top: -16px;
-    background:
-        url("/public/Images/barber-home-header.png");
+    background: url("/public/Images/barber-home-header.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+    /* margin-left: -136px;
+    margin-right: -136px;
+    margin-top: -25px; */
 }
 
 .h1 {
@@ -37,7 +42,7 @@
     font-family: 'Abel', sans-serif;
     font-size: 20px;
     color: #cdebef;
-    font-weight:bolder;
+    font-weight: bolder;
     padding-top: -5em;
     padding-bottom: -10px;
 }
@@ -131,7 +136,7 @@
     margin-bottom: 0px;
 }
 
-.cardBarbers{
+.cardBarbers {
     padding: 20px;
     margin: 3rem 3rem;
     border-color: #cdebef;
