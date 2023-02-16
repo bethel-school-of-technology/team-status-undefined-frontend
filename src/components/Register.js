@@ -70,149 +70,95 @@ function SignUp ()  {
       
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Label>FirstName</Form.Label>
+          <Form.Control type="text" name="FirstName" value={FirstName} onChange={handleChange} />
         </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>LastName</Form.Label>
+          <Form.Control type="text" name="LastName" value={LastName} onChange={handleChange} />
         </Form.Group>
       </Row>
 
       <Form.Group className="mb-3" controlId="formGridAddress1">
         <Form.Label>Address</Form.Label>
-        <Form.Control placeholder="1234 Main St" />
+        <Form.Control type="Address" placeholder="1234 Main St" onChange={handleChange}/>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formGridAddress2">
-        <Form.Label>Address 2</Form.Label>
-        <Form.Control placeholder="Apartment, studio, or floor" />
-      </Form.Group>
+      
 
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridCity">
           <Form.Label>City</Form.Label>
-          <Form.Control />
+          <Form.Control type="text" name="City" value={City} onChange={handleChange} />
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridState">
           <Form.Label>State</Form.Label>
           <Form.Select defaultValue="Choose...">
-            <option>Choose...</option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
+        
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>Delaware</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
             
-Alaska
-Arizona
-Arkansas
-California
-Colorado
-Connecticut
-Delaware
-Florida
-Georgia
-Hawaii
-Idaho
-Illinois
-Indiana
-Iowa
-Kansas
-Kentucky
-Louisiana
-Maine
-Maryland
-Massachusetts
-Michigan
-Minnesota
-Mississippi
-Missouri
-Montana
-Nebraska
-Nevada
-New Hampshire
-New Jersey
-New Mexico
-New York
-North Carolina
-North Dakota
-Ohio
-Oklahoma
-Oregon
-Pennsylvania
-Rhode Island
-South Carolina
-South Dakota
-Tennessee
-Texas
-Utah
-Vermont
-Virginia
-Washington
-West Virginia
-Wisconsin
-Wyoming
+            </Form.Select >
             
-          </Form.Select>
-        </Form.Group>
+        </Form.Group >
 
         <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control />
+          <Form.Label>PhoneNumber</Form.Label>
+          <Form.Control type="number" name="Zip" value={PhoneNumber} onChange={handleChange}  />
         </Form.Group>
       </Row>
 
-      <Form.Group className="mb-3" id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
+    
 
       <Button variant="primary" type="submit">
         Submit
