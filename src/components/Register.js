@@ -152,9 +152,9 @@ function SignUp ()  {
             
         </Form.Group >
 
-        <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>PhoneNumber</Form.Label>
-          <Form.Control type="number" name="Zip" value={PhoneNumber} onChange={handleChange}  />
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Phone Number</Form.Label>
+          <Form.Control type="Phone Number" name="PhoneNumber" value={PhoneNumber} onChange={handleChange} />
         </Form.Group>
       </Row>
 
