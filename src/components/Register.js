@@ -82,7 +82,7 @@ function SignUp ()  {
 
       <Form.Group className="mb-3" controlId="formGridAddress1">
         <Form.Label>Address</Form.Label>
-        <Form.Control type="Address" placeholder="1234 Main St" onChange={handleChange}/>
+        <Form.Control type="Address" value={Address} name="Address" placeholder="1234 Main St" onChange={handleChange}/>
       </Form.Group>
 
       
@@ -95,7 +95,7 @@ function SignUp ()  {
 
         <Form.Group as={Col} controlId="formGridState">
           <Form.Label>State</Form.Label>
-          <Form.Select defaultValue="Choose...">
+          <Form.Select defaultValue="Choose..."value={State} onChange={handleChange} >
         
             <option>Alabama</option>
             <option>Alaska</option>
@@ -170,4 +170,3 @@ function SignUp ()  {
     </div>
 )};
 export default SignUp;
-
