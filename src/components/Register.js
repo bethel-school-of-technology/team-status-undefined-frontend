@@ -95,7 +95,7 @@ function SignUp ()  {
 
         <Form.Group as={Col} controlId="formGridState">
           <Form.Label>State</Form.Label>
-          <Form.Select defaultValue="Choose...">
+          <Form.Select defaultValue="Choose..."value={State} onChange={handleChange} >
         
             <option>Alabama</option>
             <option>Alaska</option>
@@ -170,4 +170,3 @@ function SignUp ()  {
     </div>
 )};
 export default SignUp;
-
