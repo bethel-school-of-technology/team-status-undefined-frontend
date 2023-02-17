@@ -18,15 +18,14 @@ function SignUp ()  {
         State:"",
         PhoneNumber:0,
         LicenseNumber:"",
-        ProfilePic:"",
-        Description:"",
-        AuthSignInId:0
+        ProfilePic:""
+        
 
 
     });
     let { createUser, updateUser, getUser } = useContext(UserContext);
     let navigate = useNavigate();
-    let {BarberId, FirstName, LastName, Address, City, State, PhoneNumber, LicenseNumber, ProfilePic, Description, AuthSignInId} = signin
+    let {BarberId, FirstName, LastName, Address, City, State, PhoneNumber, LicenseNumber, ProfilePic} = signin
     useEffect(() => {
         if (BarberId === undefined) return
         async function fetch() {
@@ -64,7 +63,7 @@ function SignUp ()  {
         <Form onSubmit={handleSubmit}>
         
         <Form.Group controlId="formFile" className="mb-3">
-        <Form.Label>Default file input example</Form.Label>
+        <Form.Label></Form.Label>
         <Form.Control type="file" />
       </Form.Group>
       
@@ -85,7 +84,10 @@ function SignUp ()  {
         <Form.Control type="Address" value={Address} name="Address" placeholder="1234 Main St" onChange={handleChange}/>
       </Form.Group>
 
-      
+      <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Phone Number</Form.Label>
+          <Form.Control type="Phone Number" name="PhoneNumber" value={PhoneNumber} onChange={handleChange} />
+        </Form.Group>
 
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridCity">
@@ -152,10 +154,7 @@ function SignUp ()  {
             
         </Form.Group >
 
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control type="Phone Number" name="PhoneNumber" value={PhoneNumber} onChange={handleChange} />
-        </Form.Group>
+        
       </Row>
 
     
