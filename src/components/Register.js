@@ -153,10 +153,12 @@ function SignUp ()  {
             </Form.Select >
             
         </Form.Group >
-
+        <Form.Group className="mb-3" controlId="formGridAddress1">
+        <Form.Label>LicenseNumber</Form.Label>
+        <Form.Control type="LicenseNumber" value={LicenseNumber} name="LicenseNumber" placeholder="LicenseNumber" onChange={handleChange}/>
+      </Form.Group>
         
       </Row>
-
     
 
       <Button variant="primary" type="submit">
