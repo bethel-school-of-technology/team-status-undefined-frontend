@@ -1,5 +1,5 @@
-import { useContext, useState, useEffect,  } from 'react'
-import { Container, Stack, Button, Form } from 'react-bootstrap'
+import { useContext, useState, useEffect, } from 'react'
+import { Container, Stack, Button, Form, Row, Col } from 'react-bootstrap'
 import { Link, Outlet, useNavigate } from "react-router-dom"
 import React from 'react';
 import HomeContent from './HomeContent';
@@ -11,11 +11,11 @@ import Login from './Login';
 // import BarberList from './BarberList';
 
 function Home() {
-    
+
     let navigate = useNavigate()
     const handleChange = (event) => {
         if (event.target.value === "") return;
-          navigate('Search/' + event.target.value)
+        navigate('Search/' + event.target.value)
     }
 
     const [showAnimated, setShowAnimated] = useState(false);
@@ -29,22 +29,37 @@ function Home() {
                         <Link to="/" ><a class="navbar-brand align-items-center" href="#">
                             <img src={process.env.PUBLIC_URL + '/images/upperlip11.png'} height="100" alt="Upper Lip Holstery" /></a>
                         </Link>
-                        <Form className="d-flex">
-                        <Form.Control
-                            type="search"
-                            placeholder="Looking For A Barber?"
-                            className="d-sm-flex"
-                            aria-label="Search"
-                            onChange={handleChange}/>
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
                     </div>
-                    
                 </Container>
-                
             </div>
+
+
+            <div id="searchBar">
+                <Row>
+                    {/* <Col xs sm md lg={1}>
+                       
+                    </Col> */}
+
+                    <Col >
+
+                        <Form className="d-flex">
+                            <Form.Control
+                                id="searchInput"
+                                type="search"
+                                placeholder="Looking For A Barber?"
+                                className="d-sm-flex"
+                                aria-label="Search"
+                                onChange={handleChange} />
+                            <Button id='searchButton' variant="outline-success"><img src={process.env.PUBLIC_URL + '/Images/searchicon.png'} height="20px" alt="Upper Lip Holstery" /></Button>
+                        </Form>
+                    </Col>
+
+                </Row>
+            </div>
+
             {/*Hamburger menu*/}
             <section id='dropdown' className='mb-3'>
+
                 <MDBNavbar>
                     <MDBContainer fluid>
                         <MDBNavbarToggler
