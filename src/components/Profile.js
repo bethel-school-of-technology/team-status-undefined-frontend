@@ -2,11 +2,14 @@
 import React from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import '../styles/Profile.css'
-import { Stack, Button, Row, Col } from 'react-bootstrap';
+import { Stack, Button, Row, Col, Container } from 'react-bootstrap';
 import Register from './Register';
 import Login from './Login'
+import ProfileCoverImage from './ProfileCoverImage';
 
-function HomeContent() {
+function Profile() {
+
+
 
     return (
         <>
@@ -41,7 +44,17 @@ function HomeContent() {
                         </div>
                     </div>
                 </div>
+
             </section>
+
+<ProfileCoverImage/>
+
+            
+         
+
+
+
+
 
             {/* Promotion targeting Barbers */}
             <section>
@@ -129,4 +142,4 @@ function HomeContent() {
     )
 }
 
-export default HomeContent
+export default Profile

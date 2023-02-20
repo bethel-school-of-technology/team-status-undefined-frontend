@@ -2,7 +2,6 @@ import { useContext, useState, useEffect, } from 'react'
 import { Container, Stack, Button, Form, Row, Col } from 'react-bootstrap'
 import { Link, Outlet, useNavigate } from "react-router-dom"
 import React from 'react';
-import HomeContent from './HomeContent';
 import '../styles/Home.css'
 import Footer from './Footer';
 import Register from './Register';
@@ -33,7 +32,7 @@ function Home() {
                 </Container>
             </div>
 
-
+            {/*Search Nav Bar*/}
             <div id="searchBar">
                 <Row>
                     {/* <Col xs sm md lg={1}>

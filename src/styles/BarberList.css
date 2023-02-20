@@ -6,6 +6,50 @@
     font-family: 'Abel', sans-serif;
     align-items: center;
 } */
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+/* Top Section */
+.bgBarberListCover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ), */
+
+    /* margin-top: -16px; */
+    background: url("/public/Images/barber-list-header.png") no-repeat center center ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    /* margin-left: -136px;
+    margin-right: -136px;
+    margin-top: -25px; */
+}
+
+.h1list {
+    font-family: 'Abel', sans-serif;
+    font-size: 140px;
+    color: #cdebef;
+    font-weight: bolder;
+    padding-top: 1em;
+
+}
+
+.pstartsearch {
+    font-family: 'Abel', sans-serif;
+    font-size: 25px;
+    color: #cdebef;
+    font-weight: bolder;
+    padding-top: 1em;
+    padding-bottom: -10px;
+}
+
 #pic{
     border-radius: 50%;
     
