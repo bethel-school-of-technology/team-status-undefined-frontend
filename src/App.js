@@ -9,6 +9,7 @@ import Login from './components/Login';
 import HomeContent from './components/HomeContent';
 import BarberList from './components/BarberList';
 import Profile from './components/Profile';
+import EditProfile from './components/EditProfile';
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
             <Route path="Register" element={<Register />} />
             <Route path="Login" element={<Login />} />
             <Route path="BarberList" element={<BarberList />} />
-            <Route path="Profile" element={<Profile />} />
+            <Route path="Profile/:BarberId" element={<Profile />} />
+            <Route path="EditProfile" element={<EditProfile />} />
             <Route path="search/:filter" element={<Search />} />
           </Route>
 
