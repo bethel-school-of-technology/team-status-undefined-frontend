@@ -18,18 +18,16 @@ function SignUp ()  {
         State:"",
         PhoneNumber:0,
         LicenseNumber:"",
-        ProfilePic:""
         
 
-
     });
-    let { createUser, updateUser, getUser } = useContext(UserContext);
+    let { createBarber, updateBarber, getBarber } = useContext(UserContext);
     let navigate = useNavigate();
-    let {BarberId, FirstName, LastName, Address, City, State, PhoneNumber, LicenseNumber, ProfilePic} = signin
+    let {BarberId, FirstName, LastName, Address, City, State, PhoneNumber, LicenseNumber, img_url} = signin
     useEffect(() => {
         if (BarberId === undefined) return
         async function fetch() {
-          await getUser(BarberId)
+          await getBarber(BarberId)
             .then((signin) => setSignin(signin))
         }
         fetch()
@@ -38,13 +36,15 @@ function SignUp ()  {
         setSignin((preValue) => {
           return { ...preValue, [event.target.name]: event.target.value }})
       }
+      
+
       function addOrUpdate() {
         if (BarberId === undefined) {
-          return createUser(FirstName,LastName, Address, City, State, PhoneNumber,
-             LicenseNumber, ProfilePic).then(() =>
+          return createBarber(FirstName,LastName, Address, City, State, PhoneNumber,
+             LicenseNumber, img_url).then(() =>
            navigate('/Login'))
         } else {
-          return updateUser(signin).then(() =>
+          return updateBarber(signin).then(() =>
           navigate(`/profile/${BarberId}`))
         }
       }
@@ -62,11 +62,15 @@ function SignUp ()  {
       <div className='register'>
         <Form onSubmit={handleSubmit}>
         
-        <Form.Group controlId="formFile" className="mb-3">
+        {/* <Form.Group controlId="formFile" className="mb-3">
         <Form.Label></Form.Label>
         <Form.Control type="file" />
+      </Form.Group> */}
+      <Form.Group className="mb-3" >
+        <Form.Label>Image Url</Form.Label>
+        <Form.Control type="text" name="img_url" value={img_url} placeholder="enter an Image Url" onChange={handleChange} />
       </Form.Group>
-      
+
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>FirstName</Form.Label>
@@ -76,6 +80,11 @@ function SignUp ()  {
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>LastName</Form.Label>
           <Form.Control type="text" name="LastName" value={LastName} onChange={handleChange} />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>LicenseNumber</Form.Label>
+          <Form.Control type="text" name="LicenseNumber" value={LicenseNumber} onChange={handleChange} />
         </Form.Group>
       </Row>
 

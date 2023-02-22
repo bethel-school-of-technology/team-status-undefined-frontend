@@ -5,17 +5,17 @@ import UserContext from '../context/UserContext';
 import '../styles/BarberList.css'
 
 function Search() {
-    let { searchUser } = useContext(UserContext)
-    let [users, setUser] = useState([])
+    let { searchBarber } = useContext(UserContext)
+    let [barbers, setBarber] = useState([])
     let params = useParams();
     console.log(params.filter)
-    searchUser(params.filter)
+    searchBarber(params.filter)
 
     useEffect(() => {
 
         async function fetch() {
-            await searchUser(params.filter).then(response => {
-                setUser(response)
+            await searchBarber(params.filter).then(response => {                                                    
+                setBarber(response)
             })
         }
         fetch();
@@ -26,8 +26,8 @@ function Search() {
 
     function UserList() {
 
-        if (users === null || !users) return
-        return users.map((u) => {
+        if (barbers === null || !barbers) return
+        return barbers.map((u) => {
             return (
                 // <Col xs={6} md={4} lg={3}>
                 //         <a href={`/Profile/${u.BarberId}`}>
@@ -45,13 +45,13 @@ function Search() {
 
                 <Col xs={12} md={4} lg={3}>
                     <Card id='barberCard' >
-                        <div className="cardEffect">
+                        <div className="cardEffect" key={u.barberId}>
 
-                            <a href={`/Profile/${u.BarberId}`}>
-                                <img id="pic" src={u.ProfilePic} height="200" alt="" />
+                            <a href={`/Profile/${u.barberId}`}>
+                                <img id="pic" src={u.profilePic} height="200" alt="" />
                                 <div className="cardText" >
-                                    <div className='p1'><p >{u.FirstName} {u.LastName} </p></div>
-                                    <p>{u.City}, {u.State}</p>
+                                    <div className='p1'><p >{u.firstName} {u.lastName} </p></div>
+                                    <p>{u.city}, {u.state}</p>
                                 </div>
 
                                 <div className="overlay">

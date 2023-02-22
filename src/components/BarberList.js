@@ -11,7 +11,7 @@ function BarberList() {
   return (
     <UserContext.Consumer>
       {
-        ({ user }) => {
+        ({ barber }) => {
           return <>
             <div>
               <Stack gap={3}>
@@ -40,17 +40,17 @@ function BarberList() {
 
                   {/*List of Barbers*/}
                   <Row>
-                    {user.map((u) => {
+                    {barber.map((u) => {
                       return (
                         <Col xs={12} md={4} lg={3}>
                           <Card id='barberCard' >
-                            <div className="cardEffect">
+                            <div className="cardEffect" key={u.barberId}>
 
-                              <a href={`/Profile/${u.BarberId}`}>
-                                <img id="pic" src={u.ProfilePic} height="200" alt="" />
+                              <a href={`/Profile/${u.barberId}`}>
+                                <img id="pic" src={u.profilePic} height="200" alt="" />
                                 <div className="cardText" >
-                                  <div className='p1'><p >{u.FirstName} {u.LastName} </p></div>
-                                  <p>{u.City}, {u.State}</p>
+                                  <div className='p1'><p >{u.firstName} {u.lastName} </p></div>
+                                  <p>{u.city}, {u.state}</p>
                                 </div>
 
                                 <div className="overlay">
