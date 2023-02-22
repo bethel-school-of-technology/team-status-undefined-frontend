@@ -11,21 +11,21 @@ function BarberList () {
   return (
     <UserContext.Consumer>
         {
-            ({ user }) => {
+            ({ barber }) => {
                 return <>
                     <div>
                 <Stack  gap={3}>
                    <Container>
                     <h1>BARBERS</h1>
                      <Row>
-                       {user.map((u) => {
+                       {barber.map((b) => {
                             return (
                                     <Col xs={6} md={4} lg={3}>
-                                            <a href={`/Profile/${u.BarberId}`}>
-                                            <img id="pic" src={u.ProfilePic} height="200" alt=""  / >
-                                            <p>Name: {u.FirstName} {u.LastName} </p>
-                                            <p>City: {u.City}</p>
-                                            <p>State: {u.State}</p>
+                                            <a href={`/Profile/${b.BarberId}`}>
+                                            <img id="pic" src={b.ProfilePic} height="200" alt=""  / >
+                                            <p>Name: {b.FirstName} {b.LastName} </p>
+                                            <p>City: {b.City}</p>
+                                            <p>State: {b.State}</p>
                                             </a>
                                     </Col>
                                     )

@@ -4,16 +4,16 @@ import {  Container, Row, Col } from "react-bootstrap"
 import  UserContext from '../context/UserContext';
 
 function Search() {
-    let { searchUser } = useContext(UserContext)
+    let { searchBarber } = useContext(UserContext)
     let [users, setUser] = useState([])
     let params = useParams();
     console.log(params.filter)
-    searchUser(params.filter)
+    searchBarber(params.filter)
 
     useEffect(() => {
 
         async function fetch() {
-            await searchUser(params.filter).then(response => {                                                    
+            await searchBarber(params.filter).then(response => {                                                    
                 setUser(response)
             })
         }
@@ -30,7 +30,7 @@ function Search() {
             return (
                     <Col xs={6} md={4} lg={3}>
                             <a href={`/Profile/${u.BarberId}`}>
-                            <img id="pic" src={u.ProfilePic} height="200" alt=""  / >
+                            <img id="pic" src={u.img_url} height="200" alt=""  / >
                             <p>Name: {u.FirstName} {u.LastName} </p>
                             <p>City: {u.City}</p>
                             <p>State: {u.State}</p>
