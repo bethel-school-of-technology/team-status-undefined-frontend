@@ -13,7 +13,7 @@ function HomeContent() {
             {/* Header section with Background image and Sign In, Sgn Up, Find a barber buttons */}
             <section>
                 <div className='bgCover'>
-                    <div className="container" style={{ minHeight: '400px' }}>
+                    <div className="container" style={{ minHeight: '600px' }}>
                         <div className="text-center justify-content-center align-self-center">
                             <div className="h1" >
                                 <h1>He who seeks "and keeps on seeking" finds!</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter, Routes} from 'react-router-dom'
+import { Route, BrowserRouter, Routes } from 'react-router-dom'
 import { UserProvider } from './context/UserProvider';
 
 import Home from './components/Home';
@@ -8,24 +8,27 @@ import Register from './components/Register';
 import Login from './components/Login';
 import HomeContent from './components/HomeContent';
 import BarberList from './components/BarberList';
+import Profile from './components/Profile';
+import EditProfile from './components/EditProfile';
 
 
 function App() {
   return (
     <UserProvider>
-            <BrowserRouter>
-                <Routes>
-                  <Route  path="/" element={ <Home /> }>
-                    <Route index element={<HomeContent />} />  
-                    <Route path="Register" element={ <Register />}   />
-                    <Route path="Login" element={ <Login />}   />
-                    <Route path="BarberList" element={ <BarberList />}>
-                    </Route>
-                    <Route path="search/:filter" element={<Search />} />
-                  </Route> 
-                    
-                </Routes>
-            </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}>
+            <Route index element={<HomeContent />} />
+            <Route path="Register" element={<Register />} />
+            <Route path="Login" element={<Login />} />
+            <Route path="BarberList" element={<BarberList />} />
+            <Route path="Profile/:BarberId" element={<Profile />} />
+            <Route path="EditProfile" element={<EditProfile />} />
+            <Route path="search/:filter" element={<Search />} />
+          </Route>
+
+        </Routes>
+      </BrowserRouter>
     </UserProvider>
   );
 }

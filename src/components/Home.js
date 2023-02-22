@@ -1,8 +1,7 @@
-import { useContext, useState, useEffect,  } from 'react'
-import { Container, Stack, Button, Form } from 'react-bootstrap'
+import { useContext, useState, useEffect, } from 'react'
+import { Container, Stack, Button, Form, Row, Col } from 'react-bootstrap'
 import { Link, Outlet, useNavigate } from "react-router-dom"
 import React from 'react';
-import HomeContent from './HomeContent';
 import '../styles/Home.css'
 import Footer from './Footer';
 import Register from './Register';
@@ -11,11 +10,11 @@ import Login from './Login';
 // import BarberList from './BarberList';
 
 function Home() {
-    
+
     let navigate = useNavigate()
     const handleChange = (event) => {
         if (event.target.value === "") return;
-          navigate('Search/' + event.target.value)
+        navigate('Search/' + event.target.value)
     }
 
     const [showAnimated, setShowAnimated] = useState(false);
@@ -29,22 +28,37 @@ function Home() {
                         <Link to="/" ><a class="navbar-brand align-items-center" href="#">
                             <img src={process.env.PUBLIC_URL + '/images/upperlip11.png'} height="100" alt="Upper Lip Holstery" /></a>
                         </Link>
-                        <Form className="d-flex">
-                        <Form.Control
-                            type="search"
-                            placeholder="Looking For A Barber?"
-                            className="d-sm-flex"
-                            aria-label="Search"
-                            onChange={handleChange}/>
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
                     </div>
-                    
                 </Container>
-                
             </div>
+
+            {/*Search Nav Bar*/}
+            <div id="searchBar">
+                <Row>
+                    {/* <Col xs sm md lg={1}>
+                       
+                    </Col> */}
+
+                    <Col >
+
+                        <Form className="d-flex">
+                            <Form.Control
+                                id="searchInput"
+                                type="search"
+                                placeholder="Looking For A Barber?"
+                                className="d-sm-flex"
+                                aria-label="Search"
+                                onChange={handleChange} />
+                            <Button id='searchButton' variant="outline-success"><img src={process.env.PUBLIC_URL + '/Images/searchicon.png'} height="20px" alt="Upper Lip Holstery" /></Button>
+                        </Form>
+                    </Col>
+
+                </Row>
+            </div>
+
             {/*Hamburger menu*/}
             <section id='dropdown' className='mb-3'>
+
                 <MDBNavbar>
                     <MDBContainer fluid>
                         <MDBNavbarToggler
@@ -67,17 +81,17 @@ function Home() {
 
                 <MDBCollapse show={showAnimated}>
                     <div className='dropdownbg'>
-                        <img className="dropLogo" src={process.env.PUBLIC_URL + '/Images/upperlip10.png'} height="120" alt="Upper Lip Holstery" />
+                        {/* <img className="dropLogo" src={process.env.PUBLIC_URL + '/Images/upperlip10.png'} height="120" alt="Upper Lip Holstery" /> */}
                         <Link to="/" id="home" className="nav-link m-4">HOME</Link>
                         <Link to="/BarberList" id="barbers" className="nav-link m-4">BARBERS</Link>
                         <Link to="/" id="gallery" className="nav-link m-4">GALLERY</Link>
 
-                        <Link to="/Login" className="nav-link m-2">
-                            <Button id='signInButton' onClick={<Login />} className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
+                        <Link to="/Login" className="nav-link m-0">
+                            <Button id='signInButtonDrop' onClick={<Login />} className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
                         </Link>
 
-                        <Link to="/Register" className="nav-link m-0">
-                            <Button id='signUpButton' onClick={<Register />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
+                        <Link to="/Register" className="nav-link mt-0">
+                            <Button id='signUpButtonDrop' onClick={<Register />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
                         </Link>
                     </div>
                 </MDBCollapse>
