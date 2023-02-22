@@ -13,33 +13,33 @@ import EditProfile from './EditProfile';
 
 function Profile() {
 
-    let { getUser } = useContext(UserContext);
+    // let { getUser } = useContext(UserContext);
 
-    let params = useParams()
-    const [oneUser, setOneUser] = useState({
-        BarberId: params.BarberId,
-        FirstName: "",
-        LastName: "",
-        Address: "",
-        City: "",
-        State: "",
-        PhoneNumber: 0,
-        LicenseNumber: "",
-        ProfilePic: "",
-        Description: "",
-        AuthSignInId: 0
-    });
+    // let params = useParams()
+    // const [oneUser, setOneUser] = useState({
+    //     BarberId: params.BarberId,
+    //     FirstName: "",
+    //     LastName: "",
+    //     Address: "",
+    //     City: "",
+    //     State: "",
+    //     PhoneNumber: 0,
+    //     LicenseNumber: "",
+    //     ProfilePic: "",
+    //     Description: "",
+    //     AuthSignInId: 0
+    // });
 
-    let { BarberId, FirstName, LastName, Address, City, State, PhoneNumber, LicenseNumber, ProfilePic, Description, AuthSignInId } = oneUser
+    // let { BarberId, FirstName, LastName, Address, City, State, PhoneNumber, LicenseNumber, ProfilePic, Description, AuthSignInId } = oneUser
 
-    useEffect(() => {
-        if (BarberId === undefined) return
-        async function fetch() {
-          await getUser(BarberId)
-            .then((oneUser) => setOneUser(oneUser))
-        }
-        fetch()
-      }, [BarberId])
+    // useEffect(() => {
+    //     if (BarberId === undefined) return
+    //     async function fetch() {
+    //       await getUser(BarberId)
+    //         .then((oneUser) => setOneUser(oneUser))
+    //     }
+    //     fetch()
+    //   }, [BarberId])
     
     return (
         // <UserContext.Consumer>
@@ -59,7 +59,7 @@ function Profile() {
                     <div className='bgCoverProfile'>
                         <div className="container" style={{ minHeight: '600px' }}>
                             <div className="text-center justify-content-center align-self-center">
-                                <div className="h1" >
+                                {/* <div className="h1" >
                                     <img id="pic" src={BarberId.ProfilePic} height="200" alt="" />
                                     <h1>{BarberId.FirstName}{BarberId.LastName}</h1>
                                 </div>
@@ -74,7 +74,7 @@ function Profile() {
                                     <p>Contact</p>
                                     <p> {BarberId.PhoneNumber}</p>
                                     <p> {BarberId.Address}, {BarberId.City}, {BarberId.State},</p>
-                                </div>
+                                </div> */}
 
                             </div>
                         </div>

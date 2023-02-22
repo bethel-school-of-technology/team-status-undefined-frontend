@@ -48,7 +48,7 @@ const EditProfile = () => {
         // <form onSubmit={handleSubmit}>
         <section>
             <div className="returnToProfile">
-                <Link to="/Profile" >
+                <Link to="/Profile/:BarberId" >
                     <Button id='profileButton' onClick={<Profile />}  > GO TO PROFILE</Button>
                 </Link>
 
