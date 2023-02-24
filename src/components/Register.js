@@ -1,7 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
+import Profile from './Profile';
+
 import "./Register.css"
 
 
@@ -51,6 +54,7 @@ function SignUp ()  {
     function handleSubmit(event) {
         event.preventDefault();
         addOrUpdate()
+        navigate('/Profile')
         .catch(error => {
             console.log(error);
             window.alert('Failed registration: error creating user');
@@ -123,7 +127,7 @@ function SignUp ()  {
             <option>GU</option>
             <option>HI</option>
             <option>ID</option>
-            <option>IL	</option>
+            <option>IL</option>
             <option>IN</option>
             <option>IA</option>
             <option>KS</option>
@@ -136,7 +140,7 @@ function SignUp ()  {
             <option>MN</option>
             <option>MS</option>
             <option>MO</option>
-            <option>MT	</option>
+            <option>MT</option>
             <option>NE</option>
             <option>NV</option>
             <option>NH</option>
@@ -145,7 +149,7 @@ function SignUp ()  {
             <option>NY</option>
             <option>NC</option>
             <option>ND</option>
-            <option>MP	</option>
+            <option>MP</option>
             <option>OH</option>
             <option>OK</option>
             <option>OR</option>
@@ -174,9 +178,9 @@ function SignUp ()  {
 
     
 
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
+      <Link to="/Profile" className="nav-link mt-0">
+                            <Button id='primary' type="submit"  className="mt-4 mb-4 ly-0" >Go to Profile</Button>
+                        </Link>
     </Form>
 
     
