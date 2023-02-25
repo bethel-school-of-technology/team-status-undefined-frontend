@@ -21,6 +21,7 @@ function Edit ()  {
         State:"",
         PhoneNumber:0,
         LicenseNumber:"",
+        ProfilePic:""
         
 
     });

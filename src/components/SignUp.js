@@ -18,13 +18,15 @@ function SignUp ()  {
         LastName:"",
         City:"",
         State:"",
-        LicenseNumber:""
+        LicenseNumber:"",
+        Email:"",
+        Password:""
         
 
     });
     let { createBarber, updateBarber, getBarber } = useContext(UserContext);
     let navigate = useNavigate();
-    let { FirstName, LastName, City, State,  LicenseNumber} = signin
+    let { FirstName, LastName, City, State,  LicenseNumber, Email, Password } = signin
     
     function handleChange(event) {
         setSignin((preValue) => {
@@ -151,6 +153,20 @@ function SignUp ()  {
         </Form.Group >
 
         
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="text" name="Email" value={Email} onChange={handleChange} />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="Password" name="Password" value={Password} onChange={handleChange} />
+        </Form.Group>
+
+      
       </Row>
 
     
