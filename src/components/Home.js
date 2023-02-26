@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Register from './Register';
 import { MDBContainer, MDBCollapse, MDBNavbar, MDBNavbarToggler } from 'mdb-react-ui-kit';
 import Login from './Login';
+import SignUp from './SignUp';
 // import BarberList from './BarberList';
 
 function Home() {
@@ -90,8 +91,8 @@ function Home() {
                             <Button id='signInButtonDrop' onClick={<Login />} className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
                         </Link>
 
-                        <Link to="/Register" className="nav-link mt-0">
-                            <Button id='signUpButtonDrop' onClick={<Register />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
+                        <Link to="/SignUp" className="nav-link mt-0">
+                            <Button id='signUpButtonDrop' onClick={<SignUp />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
                         </Link>
                     </div>
                 </MDBCollapse>
