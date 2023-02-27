@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Outlet, Link } from 'react-router-dom'
 import '../styles/Profile.css'
 import { Stack, Button, Row, Col, Container } from 'react-bootstrap';
-import Register from './Register';
+import SignUp from './SignUp';
 import UserContext from '../context/UserContext';
 import Login from './Login'
 // import ProfileCoverImage from './ProfileCoverImage';
@@ -110,8 +110,8 @@ function Profile() {
                                     <p>* Let new client find you</p>
                                     <p>* We promote you in external platforms</p>
 
-                                    <Link to="/Register" className="nav-link m-0">
-                                        <Button id='signUpButton' onClick={<Register />} className="mt-4 mb-4 ly-0" > SIGN UP</Button>
+                                    <Link to="/SignUp" className="nav-link m-0">
+                                        <Button id='signUpButton' onClick={<SignUp />} className="mt-4 mb-4 ly-0" > SIGN UP</Button>
                                     </Link>
                                 </Col>
                             </Row>
