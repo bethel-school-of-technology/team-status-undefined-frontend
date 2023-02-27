@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
@@ -24,7 +24,7 @@ function SignUp ()  {
         
 
     });
-    let { createBarber, updateBarber, getBarber } = useContext(UserContext);
+    let { createBarber } = useContext(UserContext);
     let navigate = useNavigate();
     let { FirstName, LastName, City, State,  LicenseNumber, Email, Password } = signin
     

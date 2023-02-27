@@ -4,7 +4,6 @@ import { Link, Outlet, useNavigate } from "react-router-dom"
 import React from 'react';
 import '../styles/Home.css'
 import Footer from './Footer';
-import Register from './Register';
 import { MDBContainer, MDBCollapse, MDBNavbar, MDBNavbarToggler } from 'mdb-react-ui-kit';
 import Login from './Login';
 import SignUp from './SignUp';

@@ -3,7 +3,6 @@ import React from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import '../styles/HomeContent.css'
 import { Stack, Button, Row, Col} from 'react-bootstrap';
-import Register from './Register';
 import Login from './Login'
 import SignUp from "./SignUp"
 
@@ -63,8 +62,8 @@ function HomeContent() {
                                 <p>* Let new client find you</p>
                                 <p>* We promote you in external platforms</p>
 
-                                <Link to="/Register" className="nav-link m-0">
-                                    <Button id='signUpButton' onClick={<Register />} className="mt-4 mb-4 ly-0" > SIGN UP</Button>
+                                <Link to="/SignUp" className="nav-link m-0">
+                                    <Button id='signUpButton' onClick={<SignUp />} className="mt-4 mb-4 ly-0" > SIGN UP</Button>
                                 </Link>
                             </Col>
                         </Row>
