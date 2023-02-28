@@ -89,7 +89,7 @@ function SignUp ()  {
 
         <Form.Group as={Col} controlId="formGridState">
           <Form.Label>State</Form.Label>
-          <Form.Select defaultValue="Choose..."value={State} onChange={handleChange} >
+          <Form.Select defaultValue="Choose..."value={State} name="State" onChange={handleChange} >
         
             <option>AL</option>
             <option>AK</option>
