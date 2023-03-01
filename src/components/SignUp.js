@@ -1,56 +1,50 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
-import "./Register.css"
+
+
+import "./signUp.css"
 
 
 
 
 function SignUp ()  {
-    let params = useParams()
+    
     const [signin, setSignin] = useState({
-        BarberId: params.BarberId,
+        
         FirstName:"",
         LastName:"",
-        Address:"",
         City:"",
         State:"",
-        PhoneNumber:0,
         LicenseNumber:"",
+        Email:"",
+        Password:""
         
 
     });
-    let { createBarber, updateBarber, getBarber } = useContext(UserContext);
+    let { createBarber } = useContext(UserContext);
     let navigate = useNavigate();
-    let {BarberId, FirstName, LastName, Address, City, State, PhoneNumber, LicenseNumber, img_url} = signin
-    useEffect(() => {
-        if (BarberId === undefined) return
-        async function fetch() {
-          await getBarber(BarberId)
-            .then((signin) => setSignin(signin))
-        }
-        fetch()
-      }, [BarberId])
+    let { FirstName, LastName, City, State,  LicenseNumber, Email, Password } = signin
+    
     function handleChange(event) {
         setSignin((preValue) => {
           return { ...preValue, [event.target.name]: event.target.value }})
       }
       
 
-      function addOrUpdate() {
-        if (BarberId === undefined) {
-          return createBarber(FirstName,LastName, Address, City, State, PhoneNumber,
-             LicenseNumber, img_url).then(() =>
+      function add() {
+         {
+          return createBarber(FirstName,LastName, City, State, 
+             LicenseNumber).then(() =>
            navigate('/Login'))
-        } else {
-          return updateBarber(signin).then(() =>
-          navigate(`/profile/${BarberId}`))
         }
       }
     function handleSubmit(event) {
         event.preventDefault();
-        addOrUpdate()
+        add()
+        navigate('/EditAccount')
         .catch(error => {
             console.log(error);
             window.alert('Failed registration: error creating user');
@@ -59,17 +53,14 @@ function SignUp ()  {
     return (
 
 
-      <div className='register'>
+      <div className='SignUp'>
         <Form onSubmit={handleSubmit}>
         
         {/* <Form.Group controlId="formFile" className="mb-3">
         <Form.Label></Form.Label>
         <Form.Control type="file" />
       </Form.Group> */}
-      <Form.Group className="mb-3" >
-        <Form.Label>Image Url</Form.Label>
-        <Form.Control type="text" name="img_url" value={img_url} placeholder="enter an Image Url" onChange={handleChange} />
-      </Form.Group>
+      
 
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
@@ -88,15 +79,7 @@ function SignUp ()  {
         </Form.Group>
       </Row>
 
-      <Form.Group className="mb-3" controlId="formGridAddress1">
-        <Form.Label>Address</Form.Label>
-        <Form.Control type="Address" value={Address} name="Address" placeholder="1234 Main St" onChange={handleChange}/>
-      </Form.Group>
-
-      <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control type="Phone Number" name="PhoneNumber" value={PhoneNumber} onChange={handleChange} />
-        </Form.Group>
+      
 
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridCity">
@@ -106,7 +89,7 @@ function SignUp ()  {
 
         <Form.Group as={Col} controlId="formGridState">
           <Form.Label>State</Form.Label>
-          <Form.Select defaultValue="Choose..."value={State} onChange={handleChange} >
+          <Form.Select defaultValue="Choose..."value={State} name="State" onChange={handleChange} >
         
             <option>AL</option>
             <option>AK</option>
@@ -123,7 +106,7 @@ function SignUp ()  {
             <option>GU</option>
             <option>HI</option>
             <option>ID</option>
-            <option>IL	</option>
+            <option>IL</option>
             <option>IN</option>
             <option>IA</option>
             <option>KS</option>
@@ -136,7 +119,7 @@ function SignUp ()  {
             <option>MN</option>
             <option>MS</option>
             <option>MO</option>
-            <option>MT	</option>
+            <option>MT</option>
             <option>NE</option>
             <option>NV</option>
             <option>NH</option>
@@ -145,7 +128,7 @@ function SignUp ()  {
             <option>NY</option>
             <option>NC</option>
             <option>ND</option>
-            <option>MP	</option>
+            <option>MP</option>
             <option>OH</option>
             <option>OK</option>
             <option>OR</option>
@@ -172,11 +155,25 @@ function SignUp ()  {
         
       </Row>
 
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="text" name="Email" value={Email} onChange={handleChange} />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="Password" name="Password" value={Password} onChange={handleChange} />
+        </Form.Group>
+
+      
+      </Row>
+
     
 
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
+      <Link to="/EditAccount" className="nav-link mt-0">
+                            <Button id='primary' type="submit"  className="mt-4 mb-4 ly-0" >Go to Edit Profile</Button>
+                        </Link>
     </Form>
 
     

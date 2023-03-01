@@ -4,12 +4,13 @@ import { UserProvider } from './context/UserProvider';
 
 import Home from './components/Home';
 import Search from './components/Search';
-import Register from './components/Register';
+import EditAccount from './components/EditAccount';
 import Login from './components/Login';
 import HomeContent from './components/HomeContent';
 import BarberList from './components/BarberList';
 import Profile from './components/Profile';
 import EditProfile from './components/EditProfile';
+import SignUp from './components/SignUp';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}>
             <Route index element={<HomeContent />} />
-            <Route path="Register" element={<Register />} />
+            <Route path="SignUp" element={<SignUp />} />
+            <Route path="EditAccount" element={<EditAccount />} />
             <Route path="Login" element={<Login />} />
             <Route path="BarberList" element={<BarberList />} />
             <Route path="Profile/:BarberId" element={<Profile />} />
