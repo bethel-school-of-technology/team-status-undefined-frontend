@@ -3,7 +3,7 @@ import React from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import '../styles/HomeContent.css'
 import { Stack, Button, Row, Col} from 'react-bootstrap';
-import Login from './Login'
+//import Login from './Login'
 import SignUp from "./SignUp"
 
 function HomeContent() {
@@ -21,11 +21,11 @@ function HomeContent() {
                             <br />
 
                             <Link to="/Login" className="nav-link m-2">
-                                <Button id='signInButton' onClick={<Login />} className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
+                                <Button id='signInButton'  className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
                             </Link>
 
                             <Link to="/SignUp" className="nav-link m-0">
-                                <Button id='signUpButton' onClick={<SignUp />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
+                                <Button id='signUpButton'  className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
                             </Link>
 
                             <Link to="/BarberList" className="nav-link m-0">

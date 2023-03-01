@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export const UserProvider = (props) => {
     const [ barber, setBarber ] = useState([]);
     //"http://localhost:3000/api/users/" the real baseUrl
-    const baseUrl = "http://localhost:5048/Barber/";
+    const baseUrl = "http://localhost:5003/Barber";
 
 useEffect(() => {
     async function getAllBarber() {
@@ -28,10 +28,10 @@ useEffect(() => {
         return setBarber(response.data);
     }
 
-    async function createBarber( Address, City, FirstName, LastName, LicenseNumber, PhoneNumber, ProfilePic, State ) {       
-        let barber = {Address, City, FirstName, LastName, LicenseNumber, PhoneNumber, ProfilePic, State };
+    async function CreateBarber( firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email, password) {       
+        let barber = { firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email, password };
         
-        const response = await axios.post(baseUrl, barber);
+        const response = await axios.post(`${baseUrl}/register`, barber);
         return await new Promise(resolve => resolve(response.data));
     }
      
@@ -43,18 +43,12 @@ useEffect(() => {
         return await new Promise(resolve => resolve(response.data));
     }
 
-    async function CreateSignIn(email, password) {       
-      let user = { email, password};
-      
-      const response = await axios.post('http://localhost:5048/Auth/register', user);
-      return await new Promise(resolve => resolve(response.data));
-  }
 
-    async function getBarber(id) {
+    async function getBarber(barberId) {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         };
-        const response = await axios.get(baseUrl + id, { headers: myHeaders });
+        const response = await axios.get(baseUrl + barberId, { headers: myHeaders });
         return await new Promise(resolve => resolve(response.data));
     }
 
@@ -69,7 +63,7 @@ useEffect(() => {
 
     function searchBarber(search) {
 
-        return axios.get(`http://localhost:5048/Barber/?q=${search}`)
+        return axios.get(`http://localhost:5003/Barber/search/?q=${search}`)
           .then(response =>
             new Promise((resolve) => resolve(response.data))
           )
@@ -91,12 +85,11 @@ useEffect(() => {
             barber,
             getBarber,
             getAllBarber,
-            createBarber,
+            CreateBarber,
             LogIn,
             updateBarber,
             deleteBarber,
             searchBarber,
-            CreateSignIn
         }}>
             { props.children }
         </UserContext.Provider>
