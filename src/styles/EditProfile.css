@@ -66,4 +66,5 @@
 .Card {
     margin: 20px;
     position: inherit;
+    display: flex;
 }
