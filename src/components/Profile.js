@@ -1,4 +1,3 @@
-
 import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Outlet, Link } from 'react-router-dom'
@@ -89,7 +88,7 @@ function Profile() {
                                     <h3 id='membership'>{FirstName} {LastName}</h3>
                                     <br></br>
 
-                                    {/* <h3 id='membership'> -------------<GiScissors />-------------</h3>
+                                     {/* <h3 id='membership'> -------------<GiScissors />-------------</h3> */}
 
                                     <p>* List your business</p>
                                     <p>* Let new client find you</p>
@@ -100,6 +99,7 @@ function Profile() {
                                     </Link>
                                 </Col>
                             </Row>
+                            </Card>
                         </div>
                     </div>
                 </section>
@@ -109,14 +109,15 @@ function Profile() {
                     <div className='barberTitle'><h1>Looking for a Professional Barber?</h1></div>
                     <div class='container'>
                         <div className="cardBarbers">
+                        <Card>
                             <Row>
                                 <Col className='div3'>
                                     <p>Our certified and skilled barbers are ready to provide you with an amazing uplifting experience; using the latest technology, high quality products, and creating the finest styles, our professionals are ready to serve you! </p>
 
 
                                     <br></br>
-                                    <p><MdPhoneIphone /> (Call or text) {PhoneNumber}</p>
-                                    <p><GiOfficeChair /> {Address}, {City}, {State}</p> */}
+                                    <p> (Call or text) {PhoneNumber}</p>
+                                    <p> {Address}, {City}, {State}</p> */}
                                     <br></br>
                                     <h3 id='membership'> -----------------------------</h3>
                                 </Col>

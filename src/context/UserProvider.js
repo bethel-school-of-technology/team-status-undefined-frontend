@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export const UserProvider = (props) => {
     const [ barber, setBarber ] = useState([]);
     //"http://localhost:3000/api/users/" the real baseUrl
-    const baseUrl = "http://localhost:5003/Barber";
+    const baseUrl = "http://localhost:5003/Barber/";
 
 useEffect(() => {
     async function getAllBarber() {
@@ -31,7 +31,7 @@ useEffect(() => {
     async function CreateBarber( firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email, password) {       
         let barber = { firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email, password };
         
-        const response = await axios.post(`${baseUrl}/register`, barber);
+        const response = await axios.post(`${baseUrl}register`, barber);
         return await new Promise(resolve => resolve(response.data));
     }
      
@@ -44,12 +44,15 @@ useEffect(() => {
     }
 
 
-    async function getBarber(barberId) {
-        let myHeaders = {
-            Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
-        };
-        const response = await axios.get(baseUrl + barberId, { headers: myHeaders });
-        return await new Promise(resolve => resolve(response.data));
+    async function getBarberById(barberId) {
+        // let myHeaders = {
+        //     Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
+        // };
+        
+        return axios.get(baseUrl + barberId).then(response => {
+          console.log(response.data)
+          return new Promise(resolve => resolve(response.data));
+        })
     }
 
     async function updateBarber(signin) {
@@ -83,7 +86,7 @@ useEffect(() => {
     return (
         <UserContext.Provider value={{
             barber,
-            getBarber,
+            getBarberById,
             getAllBarber,
             CreateBarber,
             LogIn,
