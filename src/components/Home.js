@@ -4,9 +4,9 @@ import { Link, Outlet, useNavigate } from "react-router-dom"
 import React from 'react';
 import '../styles/Home.css'
 import Footer from './Footer';
-import Register from './Register';
 import { MDBContainer, MDBCollapse, MDBNavbar, MDBNavbarToggler } from 'mdb-react-ui-kit';
 import Login from './Login';
+import SignUp from './SignUp';
 // import BarberList from './BarberList';
 
 function Home() {
@@ -25,8 +25,8 @@ function Home() {
             <div id="navbarTop">
                 <Container>
                     <div className="h1head">
-                        <Link to="/" ><a class="navbar-brand align-items-center" href="#">
-                            <img src={process.env.PUBLIC_URL + '/images/upperlip11.png'} height="100" alt="Upper Lip Holstery" /></a>
+                        <Link to="/" class="navbar-brand align-items-center">
+                            <img src={process.env.PUBLIC_URL + '/images/upperlip11.png'} height="100" alt="Upper Lip Holstery" />
                         </Link>
                     </div>
                 </Container>
@@ -87,11 +87,11 @@ function Home() {
                         <Link to="/" id="gallery" className="nav-link m-4">GALLERY</Link>
 
                         <Link to="/Login" className="nav-link m-0">
-                            <Button id='signInButtonDrop' onClick={<Login />} className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
+                            <Button id='signInButtonDrop'  className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
                         </Link>
 
-                        <Link to="/Register" className="nav-link mt-0">
-                            <Button id='signUpButtonDrop' onClick={<Register />} className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
+                        <Link to="/SignUp" className="nav-link mt-0">
+                            <Button id='signUpButtonDrop'  className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
                         </Link>
                     </div>
                 </MDBCollapse>

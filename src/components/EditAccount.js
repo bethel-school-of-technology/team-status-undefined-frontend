@@ -1,13 +1,16 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
+import Profile from './Profile';
+
 import "./Register.css"
 
 
+//change to edit and setEdit
 
-
-function SignUp ()  {
+function Edit ()  {
     let params = useParams()
     const [signin, setSignin] = useState({
         BarberId: params.BarberId,
@@ -18,6 +21,7 @@ function SignUp ()  {
         State:"",
         PhoneNumber:0,
         LicenseNumber:"",
+        ProfilePic:""
         
 
     });
@@ -38,19 +42,16 @@ function SignUp ()  {
       }
       
 
-      function addOrUpdate() {
-        if (BarberId === undefined) {
-          return createBarber(FirstName,LastName, Address, City, State, PhoneNumber,
-             LicenseNumber, img_url).then(() =>
-           navigate('/Login'))
-        } else {
-          return updateBarber(signin).then(() =>
-          navigate(`/profile/${BarberId}`))
+      function Update() 
+        {
+          return updateBarber(signin)
+          
         }
-      }
+      
     function handleSubmit(event) {
         event.preventDefault();
-        addOrUpdate()
+        Update()
+        navigate(`/profile/${BarberId}`)
         .catch(error => {
             console.log(error);
             window.alert('Failed registration: error creating user');
@@ -106,8 +107,7 @@ function SignUp ()  {
 
         <Form.Group as={Col} controlId="formGridState">
           <Form.Label>State</Form.Label>
-          <Form.Select defaultValue="Choose..."value={State} onChange={handleChange} >
-        
+          <Form.Select defaultValue="Choose..."value={State} name="State" onChange={handleChange} >
             <option>AL</option>
             <option>AK</option>
             <option>AZ</option>
@@ -123,7 +123,7 @@ function SignUp ()  {
             <option>GU</option>
             <option>HI</option>
             <option>ID</option>
-            <option>IL	</option>
+            <option>IL</option>
             <option>IN</option>
             <option>IA</option>
             <option>KS</option>
@@ -136,7 +136,7 @@ function SignUp ()  {
             <option>MN</option>
             <option>MS</option>
             <option>MO</option>
-            <option>MT	</option>
+            <option>MT</option>
             <option>NE</option>
             <option>NV</option>
             <option>NH</option>
@@ -145,7 +145,7 @@ function SignUp ()  {
             <option>NY</option>
             <option>NC</option>
             <option>ND</option>
-            <option>MP	</option>
+            <option>MP</option>
             <option>OH</option>
             <option>OK</option>
             <option>OR</option>
@@ -174,13 +174,13 @@ function SignUp ()  {
 
     
 
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
+      
+                            <Button id='primary' type="submit" className="mt-4 mb-4 ly-0" >Go to Profile</Button>
+                        
     </Form>
 
     
 
     </div>
 )};
-export default SignUp;
+export default Edit;

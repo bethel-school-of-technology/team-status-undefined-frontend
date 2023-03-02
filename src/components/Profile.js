@@ -1,9 +1,11 @@
-
 import React, { useContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Outlet, Link } from 'react-router-dom'
 import '../styles/Profile.css'
-import { Stack, Button, Row, Col, Card } from 'react-bootstrap';
+
+import { Stack, Button, Row, Col, Container, Card } from 'react-bootstrap';
+import SignUp from './SignUp';
+
 import UserContext from '../context/UserContext';
 
 // import Login from './Login'
@@ -16,7 +18,9 @@ import EditProfile from './EditProfile';
 
 function Profile() {
 
-    let params = useParams();
+    let { getBarberById } = useContext(UserContext);
+
+    let params = useParams()
     const [oneBarber, setOneBarber] = useState({
         barberId: params.barberId,
         firstName: "",
@@ -30,7 +34,6 @@ function Profile() {
         description: "",
     });
 
-    let { getBarberById } = useContext(UserContext);
     let { barberId, firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description } = oneBarber
 
     useEffect(() => {
@@ -85,10 +88,37 @@ function Profile() {
                                     <br></br>
                                     <h3 id='membership'>{firstName} {lastName}</h3>
                                     <br></br>
-                                    {/* <h3 id='membership'> -------------<GiScissors />-------------</h3>
+
+                                     {/* <h3 id='membership'> -------------<GiScissors />-------------</h3> */}
+
+                                    <p>* List your business</p>
+                                    <p>* Let new client find you</p>
+                                    <p>* We promote you in external platforms</p>
+
+                                    <Link to="/SignUp" className="nav-link m-0">
+                                        <Button id='signUpButton' onClick={<SignUp />} className="mt-4 mb-4 ly-0" > SIGN UP</Button>
+                                    </Link>
+                                </Col>
+                            </Row>
+                            </Card>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Promotion targeting barber's clients */}
+                <section>
+                    <div className='barberTitle'><h1>Looking for a Professional Barber?</h1></div>
+                    <div class='container'>
+                        <div className="cardBarbers">
+                        <Card>
+                            <Row>
+                                <Col className='div3'>
+                                    <p>Our certified and skilled barbers are ready to provide you with an amazing uplifting experience; using the latest technology, high quality products, and creating the finest styles, our professionals are ready to serve you! </p>
+
+
                                     <br></br>
-                                    <p><MdPhoneIphone /> (Call or text) {PhoneNumber}</p>
-                                    <p><GiOfficeChair /> {Address}, {City}, {State}</p> */}
+                                    <p> (Call or text) {phoneNumber}</p>
+                                    <p> {address}, {city}, {state}</p>
                                     <br></br>
                                     <h3 id='membership'> -----------------------------</h3>
                                 </Col>

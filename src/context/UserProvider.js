@@ -28,10 +28,10 @@ useEffect(() => {
         return setBarber(response.data);
     }
 
-    async function createBarber( address, city, description, email, firstName, lastName, licenseNumber, password, phoneNumber, profilePic, signInId, state ) {       
-        let barber = {address, city, description, email, firstName, lastName, licenseNumber, password, phoneNumber, profilePic, signInId, state };
+    async function CreateBarber( firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email, password) {       
+        let barber = { firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email, password };
         
-        const response = await axios.post(baseUrl, barber);
+        const response = await axios.post(`${baseUrl}register`, barber);
         return await new Promise(resolve => resolve(response.data));
     }
      
@@ -49,16 +49,17 @@ useEffect(() => {
       return await new Promise(resolve => resolve(response.data));
   }
 
-    async function getBarberById(barberId) {
 
+
+    async function getBarberById(barberId) {
         // let myHeaders = {
         //     Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         // };
-        // const response = await axios.get(baseUrl + barberId);
-        // return await new Promise(resolve => resolve(response.data));
+        
         return axios.get(baseUrl + barberId).then(response => {
+          console.log(response.data)
           return new Promise(resolve => resolve(response.data));
-      });
+        })
     }
 
     async function updateBarber(signin) {
@@ -71,7 +72,7 @@ useEffect(() => {
 
     function searchBarber(search) {
 
-        return axios.get(`http://localhost:5178/Barber/?q=${search}`)
+        return axios.get(`http://localhost:5003/Barber/search/?q=${search}`)
           .then(response =>
             new Promise((resolve) => resolve(response.data))
           )
@@ -93,12 +94,11 @@ useEffect(() => {
             barber,
             getBarberById,
             getAllBarber,
-            createBarber,
+            CreateBarber,
             LogIn,
             updateBarber,
             deleteBarber,
             searchBarber,
-            CreateSignIn
         }}>
             { props.children }
         </UserContext.Provider>
