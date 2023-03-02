@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom'
 import '../styles/Footer.css'
 
 function Footer() {
-
-    $.ajax({
-        url: "https://api.adviceslip.com/advice",
+//Use axios
+    // $.ajax({
+    //     url: "https://api.adviceslip.com/advice",
       
-        dataType: "json",
-        success: function(result){
-            console.log(result)
+    //     dataType: "json",
+    //     success: function(result){
+    //         console.log(result)
     
-            let advice = document.getElementById("advice");
-                advice.innerHTML = result.slip.advice;
+    //         let advice = document.getElementById("advice");
+    //             advice.innerHTML = result.slip.advice;
             
-        }
-    })
+    //     }
+    // })
 
     return (
         <>

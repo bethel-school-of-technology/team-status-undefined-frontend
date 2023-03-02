@@ -43,6 +43,13 @@ useEffect(() => {
         return await new Promise(resolve => resolve(response.data));
     }
 
+    async function CreateSignIn(email, password) {       
+      let user = { email, password};     
+      const response = await axios.post('http://localhost:5178/Auth/register', user);
+      return await new Promise(resolve => resolve(response.data));
+  }
+
+
 
     async function getBarberById(barberId) {
         // let myHeaders = {
@@ -59,7 +66,6 @@ useEffect(() => {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         };
-
         const response = await axios.put(baseUrl + signin.BarberId, signin, { headers: myHeaders });
         return await new Promise(resolve => resolve(response.data));
     }
