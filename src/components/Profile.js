@@ -1,12 +1,12 @@
 
 import React, { useContext, useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Outlet, Link } from 'react-router-dom'
 import '../styles/Profile.css'
-import { Stack, Button, Row, Col, Container, Card } from 'react-bootstrap';
-import Register from './Register';
+import { Stack, Button, Row, Col, Card } from 'react-bootstrap';
 import UserContext from '../context/UserContext';
-import Login from './Login'
+
+// import Login from './Login'
 // import ProfileCoverImage from './ProfileCoverImage';
 import EditProfile from './EditProfile';
 // import { GiScissors, GiOfficeChair } from 'react-icons/gi';
@@ -16,33 +16,32 @@ import EditProfile from './EditProfile';
 
 function Profile() {
 
-    let { getBarber } = useContext(UserContext);
-
-    let params = useParams()
+    let params = useParams();
     const [oneBarber, setOneBarber] = useState({
-        BarberId: params.BarberId,
-        FirstName: "",
-        LastName: "",
-        Address: "",
-        City: "",
-        State: "",
-        PhoneNumber: 0,
-        LicenseNumber: "",
-        ProfilePic: "",
-        Description: "",
+        barberId: params.barberId,
+        firstName: "",
+        lastName: "",
+        address: "",
+        city: "",
+        state: "",
+        phoneNumber: "",
+        licenseNumber: "",
+        profilePic: "",
+        description: "",
     });
 
-    let { BarberId, FirstName, LastName, Address, City, State, PhoneNumber, LicenseNumber, ProfilePic, Description } = oneBarber
+    let { getBarberById } = useContext(UserContext);
+    let { barberId, firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description } = oneBarber
 
     useEffect(() => {
-        if (BarberId === undefined) return
+        if (barberId === undefined) return
         async function fetch() {
-          await getBarber(BarberId)
+          await getBarberById(barberId)
             .then((oneBarber) => setOneBarber(oneBarber))
             console.log(oneBarber);
         }
         fetch()
-      }, [BarberId])
+      }, [barberId])
 
     return (
         <>
@@ -57,14 +56,14 @@ function Profile() {
                     <div className="container" style={{ minHeight: '600px' }}>
                         <div className="text-center justify-content-center align-self-center">
                             <div className="h1" >
-                                <img id="pic" src={ProfilePic} class="rounded-circle" height="150" alt="" />
-                                <h1>{FirstName} {LastName}</h1>
+                                <img id="pic" src={profilePic} class="rounded-circle" height="150" alt="" />
+                                <h1>{firstName} {lastName}</h1>
                             </div>
 
                             <div className="explore" >
-                                <p>License: {LicenseNumber}</p>
+                                <p>License NUmber: {licenseNumber} </p>
                                 <br /><br />
-                                <p> {Description}
+                                <p> {description} {address} {city} {state} {phoneNumber} {barberId}
                                 </p>
                             </div>
                         </div>
@@ -80,11 +79,11 @@ function Profile() {
                         <Card>
                             <Row>
                                 <Col className='div1'>
-                                    <img src={ProfilePic} height="600" alt="" />
+                                    <img src={profilePic} height="600" alt="" />
                                 </Col>
                                 <Col className='div2'>
                                     <br></br>
-                                    <h3 id='membership'>{FirstName} {LastName}</h3>
+                                    <h3 id='membership'>{firstName} {lastName}</h3>
                                     <br></br>
                                     {/* <h3 id='membership'> -------------<GiScissors />-------------</h3>
                                     <br></br>
@@ -106,6 +105,7 @@ function Profile() {
                     <div className="cardBarbers">
                         <Row>
                             <Col className='div3'>
+                            
                                 <p>Our certified and skilled barbers are ready to provide you with an amazing uplifting experience; using the latest technology, high quality products, and creating the finest styles, our professionals are ready to serve you! </p>
 
                                 <br></br>
@@ -158,7 +158,6 @@ function Profile() {
             {/* ) */}
         </>
 
-        // </UserContext.Consumer>
     )
 }
 
