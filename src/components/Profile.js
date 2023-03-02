@@ -17,33 +17,35 @@ import EditProfile from './EditProfile';
 
 function Profile() {
 
-    let { getBarber } = useContext(UserContext);
+    let { getBarberById } = useContext(UserContext);
 
     let params = useParams()
     const [oneBarber, setOneBarber] = useState({
-        BarberId: params.BarberId,
-        FirstName: "",
-        LastName: "",
-        Address: "",
-        City: "",
-        State: "",
-        PhoneNumber: 0,
-        LicenseNumber: "",
-        ProfilePic: "",
-        Description: "",
+        barberId: params.barberId,
+        firstName: "",
+        lastName: "",
+        address: "",
+        city: "",
+        state: "",
+        phoneNumber: 0,
+        licenseNumber: "",
+        profilePic: "",
+        description: "",
     });
 
-    let { BarberId, FirstName, LastName, Address, City, State, PhoneNumber, LicenseNumber, ProfilePic, Description } = oneBarber
+    console.log(params.barberId);
+
+    let { barberId, firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description } = oneBarber
 
     useEffect(() => {
-        if (BarberId === undefined) return
+        if (barberId === undefined) return
         async function fetch() {
-          await getBarber(BarberId)
+          await getBarberById(barberId)
             .then((oneBarber) => setOneBarber(oneBarber))
             console.log(oneBarber);
         }
         fetch()
-      }, [BarberId])
+      }, [barberId])
 
     return (
         <>

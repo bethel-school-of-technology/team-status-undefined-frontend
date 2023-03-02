@@ -46,7 +46,7 @@ function HomeContent() {
             {/* Promotion targeting Barbers */}
             <section>
                 <div className='barberTitle'><h1>Are you a Barber?</h1></div>
-                <div class='container'>
+                <div className='container'>
                     <div className="cardBarbers">
                         <Row>
                             <Col className='div1'>
@@ -63,7 +63,7 @@ function HomeContent() {
                                 <p>* We promote you in external platforms</p>
 
                                 <Link to="/SignUp" className="nav-link m-0">
-                                    <Button id='signUpButton' onClick={<SignUp />} className="mt-4 mb-4 ly-0" > SIGN UP</Button>
+                                    <Button id='signUpButton' className="mt-4 mb-4 ly-0" > SIGN UP</Button>
                                 </Link>
                             </Col>
                         </Row>
@@ -74,7 +74,7 @@ function HomeContent() {
             {/* Promotion targeting barber's clients */}
             <section>
                 <div className='barberTitle'><h1>Looking for a Professional Barber?</h1></div>
-                <div class='container'>
+                <div className='container'>
                     <div className="cardBarbers">
                         <Row>
                             <Col className='div3'>
@@ -88,7 +88,7 @@ function HomeContent() {
                                 <p>* Top Products</p>
 
                                 <Link to="/BarberList" className="nav-link m-0">
-                                    <Button id='signUpButton' onClick className="mt-4 mb-4 ly-0" > FIND A BARBER</Button>
+                                    <Button id='signUpButton'  className="mt-4 mb-4 ly-0" > FIND A BARBER</Button>
                                 </Link>
                             </Col>
                             <Col className='div4'>
