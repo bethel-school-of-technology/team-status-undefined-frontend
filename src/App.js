@@ -24,7 +24,7 @@ function App() {
             <Route path="EditAccount" element={<EditAccount />} />
             <Route path="Login" element={<Login />} />
             <Route path="BarberList" element={<BarberList />} />
-            <Route path="Profile/:BarberId" element={<Profile />} />
+            <Route path="Profile/:barberId" element={<Profile />} />
             <Route path="EditProfile" element={<EditProfile />} />
             <Route path="search/:filter" element={<Search />} />
           </Route>
