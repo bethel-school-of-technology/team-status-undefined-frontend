@@ -56,7 +56,7 @@ function Profile() {
 
             <section>
                 <div className='bgCoverProfile'>
-                    <div className="container" style={{ minHeight: '600px' }}>
+                    <div className="Container" style={{ minHeight: '600px' }}>
                         <div className="text-center justify-content-center align-self-center">
                             <div className="h1" >
                                 <img id="pic" src={profilePic} class="rounded-circle" height="150" alt="" />
@@ -77,7 +77,7 @@ function Profile() {
             {/* Promotion targeting Barbers */}
             <section>
                 <div className='barberTitle'><h1>Contact Me</h1></div>
-                <div class='container'>
+                <div className='container'>
                     <div className="cardBarbers">
                         <Card>
                             <Row>
@@ -110,7 +110,7 @@ function Profile() {
                     <div className='barberTitle'><h1>Looking for a Professional Barber?</h1></div>
                     <div class='container'>
                         <div className="cardBarbers">
-                        <Card>
+                        <Card className='col-lg-12'>
                             <Row>
                                 <Col className='div3'>
                                     <p>Our certified and skilled barbers are ready to provide you with an amazing uplifting experience; using the latest technology, high quality products, and creating the finest styles, our professionals are ready to serve you! </p>

@@ -40,7 +40,19 @@ useEffect(() => {
         const response = await axios.post(`${baseUrl}/login`, barber);
         localStorage.setItem('myMessageToken', response.data.token);
         return await new Promise(resolve => resolve(response.data));
+
     }  
+
+    }
+
+    async function CreateSignIn(email, password) {       
+      let user = { email, password};     
+      const response = await axios.post('http://localhost:5003/Auth/register', user);
+      return await new Promise(resolve => resolve(response.data));
+  }
+
+
+
 
     async function getBarberById(barberId) {
         

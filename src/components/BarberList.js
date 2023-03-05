@@ -47,7 +47,7 @@ function BarberList() {
                             <div className="cardEffect" key={u.barberId}>
 
                               <a href={`/Profile/${u.barberId}`}>
-                                <img id="pic" src={u.profilePic} height="200" alt="" />
+                                <img id="pic" src={u.profilePic} height="100%" width="100%" alt="" />
                                 <div className="cardText" >
                                   <div className='p1'><p >{u.firstName} {u.lastName} </p></div>
                                   <p>{u.city}, {u.state}</p>
