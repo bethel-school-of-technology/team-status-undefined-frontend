@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 export const UserProvider = (props) => {
     const [ barber, setBarber ] = useState([]);
-    //"http://localhost:3000/api/users/" the real baseUrl
     const baseUrl = "http://localhost:5003/Barber/";
 
 useEffect(() => {
@@ -41,6 +40,9 @@ useEffect(() => {
         const response = await axios.post(`${baseUrl}/login`, barber);
         localStorage.setItem('myMessageToken', response.data.token);
         return await new Promise(resolve => resolve(response.data));
+
+    }  
+
     }
 
     async function CreateSignIn(email, password) {       
@@ -51,10 +53,8 @@ useEffect(() => {
 
 
 
+
     async function getBarberById(barberId) {
-        // let myHeaders = {
-        //     Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
-        // };
         
         return axios.get(baseUrl + barberId).then(response => {
           console.log(response.data)
@@ -72,7 +72,7 @@ useEffect(() => {
 
     function searchBarber(search) {
 
-        return axios.get(`http://localhost:5003/Barber/search/?q=${search}`)
+        return axios.get(`http://localhost:5003/Barber/Search/?q=${search}`)
           .then(response =>
             new Promise((resolve) => resolve(response.data))
           )
