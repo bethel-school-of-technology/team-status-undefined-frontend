@@ -117,7 +117,7 @@ function SignUp ()  {
 
         <Form.Group as={Col} >
           <Form.Label>State</Form.Label>
-          <Form.Control type="text" name="state" value={state} onChange={handleChange} />
+          <Form.Control type="text" name="state" placeholder='eg...TX' value={state} onChange={handleChange} />
         </Form.Group>
 
         {/* <Form.Group as={Col} controlId="formGridState">
