@@ -35,21 +35,13 @@ useEffect(() => {
         return await new Promise(resolve => resolve(response.data));
     }
      
-    async function LogIn(email, password) {
+    async function Login(email, password) {
         let barber = { email, password };
 
-        const response = await axios.post(`${baseUrl}/login`, barber);
+        const response = await axios.post(`${baseUrl}login`, barber);
         localStorage.setItem('myMessageToken', response.data.token);
         return await new Promise(resolve => resolve(response.data));
     }
-
-    async function CreateSignIn(email, password) {       
-      let user = { email, password};     
-      const response = await axios.post('http://localhost:5003/Auth/register', user);
-      return await new Promise(resolve => resolve(response.data));
-  }
-
-
 
     async function getBarberById(barberId) {
         // let myHeaders = {
@@ -95,7 +87,7 @@ useEffect(() => {
             getBarberById,
             getAllBarber,
             CreateBarber,
-            LogIn,
+            Login,
             updateBarber,
             deleteBarber,
             searchBarber,
