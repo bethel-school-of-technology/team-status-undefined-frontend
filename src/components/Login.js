@@ -4,7 +4,7 @@ import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
 
 
-import "./Register.css"
+import "../styles/Register.css"
 
 function SignIn() {
   const [login, setLogin] = useState({

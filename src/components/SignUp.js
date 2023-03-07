@@ -5,7 +5,7 @@ import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
 
 
-import "./signUp.css"
+import "../styles/signUp.css"
 
 
 

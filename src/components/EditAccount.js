@@ -5,7 +5,7 @@ import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
 import Profile from './Profile';
 
-import "./Register.css"
+import "../styles/Register.css"
 
 
 //change to edit and setEdit
