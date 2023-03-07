@@ -41,6 +41,7 @@ useEffect(() => {
 
     }  
     
+
     async function getBarberById(barberId) {
         
         return axios.get(baseUrl + barberId).then(response => {
