@@ -35,16 +35,12 @@ useEffect(() => {
     }
      
     async function Login(email, password) {
-        
-
         const response = await axios.get(`${baseUrl}login?email=${email}&password=${password}`);
         localStorage.setItem('myMessageToken', response.data);
         return await new Promise(resolve => resolve(response.data));
 
     }  
-
     
-
     async function getBarberById(barberId) {
         
         return axios.get(baseUrl + barberId).then(response => {
@@ -63,7 +59,7 @@ useEffect(() => {
 
     function searchBarber(search) {
 
-        return axios.get(`http://localhost:5003/Barber/Search/?q=${search}`)
+        return axios.get(`${baseUrl}Search/${search}`)
           .then(response =>
             new Promise((resolve) => resolve(response.data))
           )
