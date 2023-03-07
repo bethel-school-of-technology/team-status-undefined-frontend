@@ -34,15 +34,13 @@ useEffect(() => {
         return await new Promise(resolve => resolve(response.data));
     }
      
-    async function LogIn(email, password) {
-        let barber = { email, password };
-
-        const response = await axios.post(`${baseUrl}login`, barber);
-        localStorage.setItem('myMessageToken', response.data.token);
+    async function Login(email, password) {
+        const response = await axios.get(`${baseUrl}login?email=${email}&password=${password}`);
+        localStorage.setItem('myMessageToken', response.data);
         return await new Promise(resolve => resolve(response.data));
 
     }  
-
+    
     async function getBarberById(barberId) {
         
         return axios.get(baseUrl + barberId).then(response => {
@@ -84,7 +82,7 @@ useEffect(() => {
             getBarberById,
             getAllBarber,
             CreateBarber,
-            LogIn,
+            Login,
             updateBarber,
             deleteBarber,
             searchBarber,
