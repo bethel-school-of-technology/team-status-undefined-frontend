@@ -10,6 +10,7 @@
   justify-content: center;
   position: sticky;
   top: 0px;
+  z-index: 1;
 }
 
 .h1head {
@@ -30,6 +31,7 @@
   position: sticky;
   top: 180px;
   align-items: flex-start;
+  z-index: 1;
 }
 
 #searchInput {
@@ -45,8 +47,6 @@
   max-width: 300px;
   border-color:#9cd9e1;
   color:#1b3d49;
-
-
 }
 
 #searchButton {
@@ -181,6 +181,7 @@ padding-right: 8px;
   font-family: 'Abel', sans-serif;
   font-size: x-large;
   text-align: center;
+  z-index: 1;
 }
 
 .dropdownbg {
