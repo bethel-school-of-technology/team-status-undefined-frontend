@@ -1,59 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
-
-
-.editButtonPosition{
+/* Edit Button */
+.editButtonPosition {
     align-items: flex-end;
     align-content: flex-end;
     justify-content: flex-end;
     display: flex;
-}
-
-/* Top Section */
-.bgCoverProfile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      ), */
-    margin-top: -16px;
-    background: url("/public/Images/barber-profile-header.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    /* margin-left: -136px;
-    margin-right: -136px;
-    margin-top: -25px; */
-}
-
-.h1 {
-    font-family: 'Abel', sans-serif;
-    font-size: 60px;
-    color: #cdebef;
-    font-weight: bolder;
-    padding-top: 2em;
-}
-
-.explore {
-    font-family: 'Abel', sans-serif;
-    font-size: 15px;
-    color: #cdebef;
-    font-weight: bolder;
-    padding-top: 2em;
-    padding-bottom: -10px;
-}
-
-.v {
-    font-family: 'Abel', sans-serif;
-    font-size: 20px;
-    color: #cdebef;
-    font-weight: bolder;
-    padding-top: -5em;
-    padding-bottom: -10px;
 }
 
 #editButton {
@@ -78,138 +30,149 @@
     padding: 3px 20px;
 }
 
-#signInButton {
-    margin-top: -30px;
-    font-family: 'Abel', sans-serif;
-    font-size: 30px;
-    color: white;
-    font-weight: bolder;
-    border-radius: 0em;
-    border-width: 6px;
-    border-color: #cdebef;
-    padding: 5px 25px;
-    background-color: transparent;
-    margin-bottom: -50px;
+/* Top Section Background with profile pic, barber name & lic# ---------------- */
+.bgCoverProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -16px;
+    background: url("/public/Images/profile-cover.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-#signInButton:hover {
-    margin-top: -30px;
+#coverInfo {
+    background-color: #1b3d49;
+    margin: 5rem 30rem;
+    opacity: 0.9;
+    position: inherit;
+}
+
+#coverInfo:hover {
+    background-color: #dc5726;
+    margin: 5rem 30rem;
+    opacity: 0.9;
+    position: inherit;
+    color: white;
+    display: flexbox;
+    align-items: center;
+}
+
+.h1 {
     font-family: 'Abel', sans-serif;
-    font-size: 30px;
+    font-size: 60px;
     color: #cdebef;
     font-weight: bolder;
-    border-radius: 0em;
-    border-width: 6px;
-    border-color: #dc5726;
-    padding: 4px 24px;
-    background-color: transparent;
-    margin-bottom: -50px;
+    padding-top: 2em;
 }
 
-#findBarberButton {
-    margin-top: -30px;
-    font-family: 'Abel', sans-serif;
-    font-size: 30px;
-    color: white;
-    font-weight: bolder;
-    border-radius: 0em;
-    border-width: 6px;
-    border-color: #cdebef;
-    padding: 5px 30px;
-    background-color: transparent;
+#pic {
+    margin-bottom: 35px;
 }
 
-#findBarberButton:hover {
-    margin-top: -30px;
+.lic {
     font-family: 'Abel', sans-serif;
-    font-size: 30px;
+    font-size: 15px;
     color: #cdebef;
     font-weight: bolder;
-    border-radius: 0em;
-    border-width: 6px;
-    border-color: #dc5726;
-    padding: 4px 29px;
-    background-color: transparent;
+    padding-top: 0.5em;
 }
 
-/* Barbers info section ---------------------------------- */
-
-.barberTitle {
-    text-align: center;
-    font-family: 'Abel', sans-serif;
-    font-weight: bolder;
-    font-size: 50px;
-    color: #1b3d49;
-    margin-top: 5rem;
-    margin-bottom: 0px;
+/* Description Card ---------------------------------- */
+.descriptionSection {
+    display: flexbox;
 }
 
-.cardBarbers {
-    padding: 20px;
-    margin: 3rem 3rem;
-    border-color: #cdebef;
+.div1 {
+    position: inherit;
+    display: flex;
+    align-items:center;
+    padding: 2rem;
 }
 
 .div2 {
     font-family: 'Abel', sans-serif;
     margin-top: 4rem;
-    padding: 3rem;
+    padding: 2rem;
     float: right;
     font-size: 20px;
     color: #1b3d49;
-    align-items: center;
-    text-align: center;
+    align-items:center;
+    text-align:center;
 }
 
-/* Info for barber's clients section ---------------------------------- */
-
-.div3 {
-    font-family: 'Abel', sans-serif;
-    margin-top: 4rem;
-    padding: 3rem;
-    font-size: 20px;
-    color: #1b3d49;
-    align-items: center;
-    text-align: center;
-    margin-right: 3rem;
-}
-
-.div4 {
-    float: right;
-    padding: 3rem;
-}
-
-#membership {
+#aboutMeTittle {
     font-size: 40px;
     color: #1b3d49;
 }
 
-/* Gallery info section ---------------------------------- */
-
-.bgGalleryCover {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      ), */
-    margin-top: -16px;
-    background:
-        url("/public/Images/home-gallery-info.png");
-    background-size: cover;
+.description {
+    margin-top: 2rem;
+    color: #1b3d49;
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 
-.verse {
+/* Contact section ----------------------------------- */
+.contactTitle {
+    text-align: center;
     font-family: 'Abel', sans-serif;
-    font-size: 20px;
-    color: #cdebef;
     font-weight: bolder;
-    padding-top: 2em;
-    padding-bottom: -10px;
+    font-size: 50px;
+    color: #1b3d49;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-.container{
-    text-align:center;
+.contactCard {
+    background-color: transparent;
+    padding: 5rem 2rem;
+    border: 2px solid #cdebef;
+    color: #1b3d49;
+    font-family: 'Abel', sans-serif;
+    align-content: center;
+    border-radius: 0px;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 40px;
+    position: inherit;
+    transform: translate(0);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.contactCard::before {
+    content: "";
+    background: #cdebef;
+    position: absolute;
+    width: 8px;
+    top: 0;
+    bottom: 0;
+    left: -32px;
+    transform: rotate(-16deg);
+    filter: blur(6px);
+}
+
+.contactCard:hover::before {
+    left: calc(100% + 32px);
+    transition: 0.75s;
+}
+
+.contactImg {
+    align-self: center;
+    padding: 1rem;
+}
+
+/* Coupon Ad section ----------------------------------- */
+#coupon {
+    font-family: 'Abel', sans-serif;
+    font-size: small;
+    color: #1b3d49;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    align-content: center;
 }
