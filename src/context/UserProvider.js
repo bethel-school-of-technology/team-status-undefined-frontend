@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 export const UserProvider = (props) => {
     const [ barber, setBarber ] = useState([]);
-    //"http://localhost:3000/api/users/" the real baseUrl
     const baseUrl = "http://localhost:5003/Barber/";
 
 useEffect(() => {
@@ -35,26 +34,15 @@ useEffect(() => {
         return await new Promise(resolve => resolve(response.data));
     }
      
-    async function LogIn(email, password) {
-        let barber = { email, password };
-
-        const response = await axios.post(`${baseUrl}/login`, barber);
-        localStorage.setItem('myMessageToken', response.data.token);
+    async function Login(email, password) {
+        const response = await axios.get(`${baseUrl}login?email=${email}&password=${password}`);
+        localStorage.setItem('myMessageToken', response.data);
         return await new Promise(resolve => resolve(response.data));
-    }
 
-    async function CreateSignIn(email, password) {       
-      let user = { email, password};     
-      const response = await axios.post('http://localhost:5178/Auth/register', user);
-      return await new Promise(resolve => resolve(response.data));
-  }
-
-
+    }  
+    
 
     async function getBarberById(barberId) {
-        // let myHeaders = {
-        //     Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
-        // };
         
         return axios.get(baseUrl + barberId).then(response => {
           console.log(response.data)
@@ -72,7 +60,7 @@ useEffect(() => {
 
     function searchBarber(search) {
 
-        return axios.get(`http://localhost:5003/Barber/search/?q=${search}`)
+        return axios.get(`${baseUrl}Search/${search}`)
           .then(response =>
             new Promise((resolve) => resolve(response.data))
           )
@@ -95,7 +83,7 @@ useEffect(() => {
             getBarberById,
             getAllBarber,
             CreateBarber,
-            LogIn,
+            Login,
             updateBarber,
             deleteBarber,
             searchBarber,

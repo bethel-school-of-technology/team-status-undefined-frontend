@@ -51,8 +51,10 @@ function Profile() {
             {/* Top Section Bakground Image with profile pic, barber name & lic#  */}
             <section>
                 <div className='bgCoverProfile'>
+
                     <div className="container" style={{ minHeight: '600px' }}>
                         <div id='coverInfo' className="text-center justify-content-center align-self-center">
+
                             <div className="h1" >
                                 <img id="pic" src={profilePic} class="rounded-circle" height="150" alt="" />
                                 <h1>{firstName} {lastName}</h1>
@@ -66,7 +68,6 @@ function Profile() {
                     </div>
                 </div>
             </section>
-
 
             {/* Description Card*/}
             <section>

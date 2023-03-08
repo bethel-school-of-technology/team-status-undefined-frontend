@@ -1,72 +1,72 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
 
 
-import "./Register.css"
+import "../styles/Register.css"
 
+function SignIn() {
+  const [login, setLogin] = useState({
+    Email:"",
+    Password:""
+    
 
+});
+let { Login } = useContext(UserContext);
+let navigate = useNavigate();
+let {email, password} = login
 
+function handleChange(event) {
+    setLogin((preValue) => {
+      return { ...preValue, [event.target.name]: event.target.value }})
+  }
+  
 
-function Login ()  {
-    let params = useParams()
-    const [signin, setSignin] = useState({
-      BarberId:params.BarberId,
-        Email:"",
-        Password:""
-    });
-    let { getBarber } = useContext(UserContext);
-    let navigate = useNavigate();
-    let {BarberId, Email, Password} = signin
-    useEffect(() => {
-        if (BarberId === undefined) return
-        async function fetch() {
-          await getBarber(BarberId)
-            .then((signin) => setSignin(signin))
-        }
-        fetch()
-      }, [BarberId])
-    function handleChange(event) {
-        setSignin((preValue) => {
-          return { ...preValue, [event.target.name]: event.target.value }})
-      }
-      
+  
+function handleSubmit(event) {
+    event.preventDefault();
+    Login(email, password)
+    console.log(login)
+    navigate('/')
+}
 
-      
-    function handleSubmit(event) {
-        event.preventDefault();
-         navigate(`/Profile/${BarberId}`)
-        .catch(error => {
-            console.log(error);
-            window.alert('Failed registration: error creating user');
-        });
-    }
+  // const SignIn = () => {
+  //   const [email, setEmail] = useState("");
+  //   const [password, setPassword] = useState("");
+
+  //   let { Login } = useContext(UserContext);
+  //   let navigate = useNavigate();
+
+  //   function handleSubmit(event) {
+  //       event.preventDefault();
+  //       Login(email, password).then(() => {
+  //           navigate('/');
+  //       }).catch(error => {
+  //           console.log(error);
+  //           window.alert('Failed login');
+  //       });
+  //   }
     return (
 
 
       <div className='register'>
-        <Form onSubmit={handleSubmit}>
-        
-        
-      
-
+    <Form onSubmit={handleSubmit}>
       <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridEmail">
+        <Form.Group as={Col}>
           <Form.Label>Email</Form.Label>
-          <Form.Control type="Email" name="Email" value={Email} onChange={handleChange} />
+          <Form.Control type="email" name="email" value={email} onChange={handleChange} />
         </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridEmail">
+        <Form.Group as={Col}>
           <Form.Label>Password</Form.Label>
-          <Form.Control type="text" name="Password" value={Password} onChange={handleChange} />
+          <Form.Control type="text" name="password" value={password} onChange={handleChange} />
         </Form.Group>
 
        </Row>
 
       
-  <Button id='primary' type="submit"  className="mt-4 mb-4 ly-0" >Go to Edit Account</Button>
+  <Button id='primary' type="submit"  className="mt-4 mb-4 ly-0" >Login</Button>
                         
     </Form>
 
@@ -74,4 +74,5 @@ function Login ()  {
 
     </div>
 )};
-export default Login;
+
+export default SignIn;

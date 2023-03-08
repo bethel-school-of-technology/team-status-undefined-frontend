@@ -1,21 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import '../styles/Footer.css'
+import {React} from 'react'
+import '../styles/Footer.css';
+import Advice from '../ThirdParty/Advice';
+import Bored from '../ThirdParty/Bored';
 
 function Footer() {
-//Use axios
-    // $.ajax({
-    //     url: "https://api.adviceslip.com/advice",
-      
-    //     dataType: "json",
-    //     success: function(result){
-    //         console.log(result)
-    
-    //         let advice = document.getElementById("advice");
-    //             advice.innerHTML = result.slip.advice;
-            
-    //     }
-    // })
 
     return (
         <>
@@ -35,14 +23,8 @@ function Footer() {
                 <br></br>
                 <p className='everything'>QUOTE OF THE DAY</p>
             </div>
-            <div id="advice" class="row justify-content-evenly">
-            </div>
-
-            {/* <div className="text-center pb-0">
-                <br></br>
-                <p className='everything'>Everything that you do, do it as for the Lord</p>
-            </div> */}
-
+         <Advice />
+         <Bored />
             <footer id="footer" class="text-center mt-5">
                 <div className="logoBottom">
                     <a className="navbar-brand align-items-center" href="/">

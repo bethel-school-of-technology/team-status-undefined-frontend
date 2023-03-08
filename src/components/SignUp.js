@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+
 import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
 
 
-import "./signUp.css"
+import "../styles/signUp.css"
 
 
 
@@ -117,7 +117,7 @@ function SignUp ()  {
 
         <Form.Group as={Col} >
           <Form.Label>State</Form.Label>
-          <Form.Control type="text" name="state" value={state} onChange={handleChange} />
+          <Form.Control type="text" name="state" placeholder='eg...TX' value={state} onChange={handleChange} />
         </Form.Group>
 
         {/* <Form.Group as={Col} controlId="formGridState">
