@@ -11,9 +11,10 @@ import "../styles/Register.css"
 //change to edit and setEdit
 
 function Edit ()  {
-    
-    const [signin, setSignin] = useState({
-      firstName:"",
+    let params = useParams()
+    const [edit, setEdit] = useState({
+        barberId: params.barberId,
+        firstName:"",
         lastName:"",
         address:"",
         city:"",
@@ -24,37 +25,30 @@ function Edit ()  {
         description:"",
         email:"",
         password:""
-        
-        
-
     });
-    let { updateBarber, getBarber } = useContext(UserContext);
+
+    let { updateBarber, getBarberById } = useContext(UserContext);
     let navigate = useNavigate();
-    let {BarberId, firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic} = signin
+    let {barberId, firstName, lastName, address, city, state, 
+      phoneNumber, licenseNumber, profilePic, 
+      description, email, password} = edit
     useEffect(() => {
-        if (BarberId === undefined) return
+        if (barberId === undefined) return
         async function fetch() {
-          await getBarber(BarberId)
-            .then((signin) => setSignin(signin))
+          await getBarberById(barberId)
+            .then((edit) => setEdit(edit))
         }
         fetch()
-      }, [BarberId])
+      }, [barberId])
     function handleChange(event) {
-        setSignin((preValue) => {
+        setEdit((preValue) => {
           return { ...preValue, [event.target.name]: event.target.value }})
       }
       
-
-      function Update() 
-        {
-          return updateBarber(signin)
-          
-        }
-      
     function handleSubmit(event) {
         event.preventDefault();
-        Update()
-        navigate(`/profile/${BarberId}`)
+        updateBarber(edit)
+        navigate(`/profile/${barberId}`)
         .catch(error => {
             console.log(error);
             window.alert('Failed registration: error creating user');
@@ -63,68 +57,78 @@ function Edit ()  {
     return (
 
 
-      <div className='register'>
-        <Form onSubmit={handleSubmit}>
-        
-        {/* <Form.Group controlId="formFile" className="mb-3">
-        <Form.Label></Form.Label>
-        <Form.Control type="file" />
-      </Form.Group> */}
+      <div className='SignUp'>
+  <Form onSubmit={handleSubmit}>
+      
       <Form.Group as={Col} >
-          <Form.Label>ProfilePic</Form.Label>
-          <Form.Control type="text" name="profilePic" value={profilePic} placeholder="enter an Image Url" onChange={handleChange} />
-        </Form.Group>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>FirstName</Form.Label>
-          <Form.Control type="text" name="firstName" value={firstName} onChange={handleChange} />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>LastName</Form.Label>
-          <Form.Control type="text" name="lastName" value={lastName} onChange={handleChange} />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>LicenseNumber</Form.Label>
-          <Form.Control type="text" name="licenseNumber" value={licenseNumber} onChange={handleChange} />
-        </Form.Group>
-      </Row>
-
-      <Form.Group className="mb-3" controlId="formGridAddress1">
-        <Form.Label>Address</Form.Label>
-        <Form.Control type="address" value={address} name="address" placeholder="1234 Main St" onChange={handleChange}/>
+        <Form.Label>ProfilePic</Form.Label>
+        <Form.Control type="text" name="profilePic" value={profilePic} placeholder="enter an Image Url" onChange={handleChange} />
+      </Form.Group>
+    
+    <Row className="mb-3">
+      <Form.Group as={Col} >
+        <Form.Label>FirstName</Form.Label>
+        <Form.Control type="text" name="firstName" value={firstName} onChange={handleChange} />
       </Form.Group>
 
-      <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control type="Phone Number" name="phoneNumber" value={phoneNumber} onChange={handleChange} />
-        </Form.Group>
+      <Form.Group as={Col} >
+        <Form.Label>LastName</Form.Label>
+        <Form.Control type="text" name="lastName" value={lastName} onChange={handleChange} />
+      </Form.Group>
 
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>City</Form.Label>
-          <Form.Control type="text" name="city" value={city} onChange={handleChange} />
-        </Form.Group>
+      <Form.Group as={Col} >
+        <Form.Label>LicenseNumber</Form.Label>
+        <Form.Control type="text" name="licenseNumber" value={licenseNumber} onChange={handleChange} />
+      </Form.Group>
 
-        <Form.Group as={Col} >
-          <Form.Label>State</Form.Label>
-          <Form.Control type="text" name="state" placeholder='eg...TX' value={state} onChange={handleChange} />
-        </Form.Group>
+      <Form.Group as={Col} >
+        <Form.Label>PhoneNumber</Form.Label>
+        <Form.Control type="text" name="phoneNumber" value={phoneNumber} onChange={handleChange} />
+      </Form.Group>
+    </Row>
 
-        
-      </Row>
+    <Row className="mb-3">
 
-    
+      <Form.Group as={Col} >
+        <Form.Label>Address</Form.Label>
+        <Form.Control type="text" name="address" value={address} onChange={handleChange} />
+      </Form.Group>
 
+      <Form.Group as={Col} >
+        <Form.Label>City</Form.Label>
+        <Form.Control type="text" name="city" value={city} onChange={handleChange} />
+      </Form.Group>
+
+      <Form.Group as={Col} >
+        <Form.Label>State</Form.Label>
+        <Form.Control type="text" name="state" placeholder='eg...TX' value={state} onChange={handleChange} />
+      </Form.Group>
       
-        <Button id='primary' type="submit" className="mt-4 mb-4 ly-0" >Go to Profile</Button>
-                        
-    </Form>
+    </Row>
 
+    <Row className="mb-3">
+      <Form.Group as={Col} >
+        <Form.Label>Email</Form.Label>
+        <Form.Control type="text" name="email" value={email} onChange={handleChange} />
+      </Form.Group>
+
+      <Form.Group as={Col} >
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="Password" name="password" value={password} onChange={handleChange} />
+      </Form.Group>
+
+      <Form.Group as={Col} >
+        <Form.Label>Description</Form.Label>
+        <Form.Control type="text" name="description" value={description} onChange={handleChange} />
+      </Form.Group>
     
+    </Row>
 
-    </div>
+       <Button id='primary' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
+  </Form>
+
+  
+
+  </div>
 )};
 export default Edit;

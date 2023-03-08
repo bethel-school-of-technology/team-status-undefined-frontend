@@ -1,15 +1,51 @@
 import { useContext, useState, useEffect, } from 'react'
-import { Container, Stack, Button, Form, Row, Col } from 'react-bootstrap'
-import { Link, Outlet, useNavigate } from "react-router-dom"
+import { Container, Stack, Button, Form, Row, Col, Nav } from 'react-bootstrap'
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom"
 import React from 'react';
 import '../styles/Home.css'
 import Footer from './Footer';
+import UserContext from '../context/UserContext';
 import { MDBContainer, MDBCollapse, MDBNavbar, MDBNavbarToggler } from 'mdb-react-ui-kit';
 import Login from './Login';
 import SignUp from './SignUp';
 // import BarberList from './BarberList';
 
 function Home() {
+    let params = useParams()
+    let [ barber, setBarber] = useState ({
+        barberId: params.barberId,
+        firstName: "",
+    })
+
+    let { getBarberById } = useContext(UserContext)
+    useEffect(() => {
+        async function fetch() {
+            await getBarberById(params.barberId)
+                .then((barber) => setBarber(barber))
+        }
+        fetch()
+    },[params.barberId] )
+    
+     function onSignOut(){
+        localStorage.clear();
+         setBarber("")
+         navigate('/login')
+    }
+    function onSignIn(){
+        navigate('/login')
+    }
+
+    function authLink(){
+        if (barber.firstName === "")
+                    return(
+                            <Nav className="justify-content-end">
+                            <button variant="link" onClick={onSignIn}>Login</button>
+                            </Nav>
+                    )
+                    else {
+                        return<nav>Signed in as: {barber.firstName} <button variant="link" onClick={onSignOut}>Log Out</button></nav>
+                         
+                    }}
 
     let navigate = useNavigate()
     const handleChange = (event) => {
@@ -28,6 +64,7 @@ function Home() {
                         <Link to="/" class="navbar-brand align-items-center">
                             <img src={process.env.PUBLIC_URL + '/images/upperlip11.png'} height="100" alt="Upper Lip Holstery" />
                         </Link>
+                    
                     </div>
                 </Container>
             </div>
@@ -51,6 +88,7 @@ function Home() {
                                 onChange={handleChange} />
                             <Button id='searchButton' variant="outline-success"><img src={process.env.PUBLIC_URL + '/Images/searchicon.png'} height="20px" alt="Upper Lip Holstery" /></Button>
                         </Form>
+                        {authLink()}
                     </Col>
 
                 </Row>

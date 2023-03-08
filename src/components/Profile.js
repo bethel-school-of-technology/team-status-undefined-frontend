@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Outlet, Link } from 'react-router-dom'
 import '../styles/Profile.css'
 
@@ -18,8 +18,8 @@ import EditProfile from './EditProfile';
 
 function Profile() {
 
-    let { getBarberById } = useContext(UserContext);
-
+    let { getBarberById, deleteBarber } = useContext(UserContext);
+    let navigate = useNavigate()
     let params = useParams()
     const [oneBarber, setOneBarber] = useState({
         barberId: params.barberId,
@@ -46,12 +46,23 @@ function Profile() {
         fetch()
       }, [barberId])
 
+      function handleDeleteBarber(barberId) {
+        deleteBarber(barberId).then(() => {
+            navigate('/Login');
+        }).catch(error => {
+            console.log(error);
+            
+        });
+       
+    }
+
     return (
         <>
             <div className="editButtonPosition">
-                <Link to="/EditProfile" >
-                    <Button id='editButton' onClick={<EditProfile />}  > EDIT PROFILE</Button>
+                <Link to= {`/EditAccount/${barberId}`} >
+                    <Button id='editButton'> EDIT PROFILE</Button>  
                 </Link>
+                    <Button id='deleteButton'onClick={handleDeleteBarber.bind(this, oneBarber.barberId)} > DELETE PROFILE</Button>
             </div>
 
             <section>

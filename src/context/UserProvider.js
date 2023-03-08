@@ -54,7 +54,7 @@ useEffect(() => {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         };
-        const response = await axios.put(baseUrl + signin.BarberId, signin, { headers: myHeaders });
+        const response = await axios.put(baseUrl + signin.barberId, signin, { headers: myHeaders });
         return await new Promise(resolve => resolve(response.data));
     }
 
@@ -69,11 +69,11 @@ useEffect(() => {
           )
       }
 
-    async function deleteBarber(id) {
+    async function deleteBarber(barberId) {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         };
-        const response = await axios.delete(baseUrl + id, { headers: myHeaders });
+        const response = await axios.delete(baseUrl + barberId, { headers: myHeaders });
         return await new Promise(resolve => resolve(response.data));
     }
 
