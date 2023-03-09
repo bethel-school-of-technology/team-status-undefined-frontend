@@ -11,7 +11,7 @@ function BarberList() {
   return (
     <UserContext.Consumer>
       {
-        ({ barber }) => {
+        ({ barberList }) => {
           return <>
             <div>
               <Stack gap={3}>
@@ -40,7 +40,7 @@ function BarberList() {
 
                   {/*List of Barbers*/}
                   <Row>
-                    {barber.map((u) => {
+                    {barberList.map((u) => {
                       return (
                         <Col xs={12} md={4} lg={3}>
                           <Card id='barberCard' >

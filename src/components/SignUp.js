@@ -54,7 +54,7 @@ function SignUp ()  {
           phoneNumber, licenseNumber, profilePic, 
            description, email, password)
         console.log(signin)
-        navigate('/')
+        navigate('/Login')
         // .catch(error => {
         //     console.log(error);
         //     window.alert('Failed registration: error creating user');

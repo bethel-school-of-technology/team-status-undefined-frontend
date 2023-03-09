@@ -3,34 +3,35 @@ import UserContext from "./UserContext";
 import { useState, useEffect } from "react";
 
 export const UserProvider = (props) => {
-    const [ barber, setBarber ] = useState([]);
+    const [ barberList, setBarberList ] = useState([]);
     const baseUrl = "http://localhost:5003/Barber/";
 
 useEffect(() => {
-    async function getAllBarber() {
-      await  refreshBarber()
+    async function getAllBarbers() {
+      await  refreshBarberList()
     }
-    getAllBarber()
+    getAllBarbers()
   }, []);
 
-  function refreshBarber() {
+  function refreshBarberList() {
     return axios.get(baseUrl)
       .then(response => {
-        setBarber(response.data)
+        setBarberList(response.data)
         console.log(response.data)
       })
   }
 
-    async function getAllBarber() {
+    async function getAllBarbers() {
         const response = await axios.get(baseUrl);
         console.log(response.data)
-        return setBarber(response.data);
+        return setBarberList(response.data);
     }
 
     async function CreateBarber( firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email, password) {       
         let barber = { firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email, password };
         
         const response = await axios.post(`${baseUrl}register`, barber);
+        refreshBarberList();
         return await new Promise(resolve => resolve(response.data));
     }
      
@@ -54,7 +55,8 @@ useEffect(() => {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         };
-        const response = await axios.put(baseUrl + signin.BarberId, signin, { headers: myHeaders });
+        const response = await axios.put(baseUrl + signin.barberId, signin, { headers: myHeaders });
+        refreshBarberList();
         return await new Promise(resolve => resolve(response.data));
     }
 
@@ -69,19 +71,20 @@ useEffect(() => {
           )
       }
 
-    async function deleteBarber(id) {
+    async function deleteBarber(barberId) {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         };
-        const response = await axios.delete(baseUrl + id, { headers: myHeaders });
+        const response = await axios.delete(baseUrl + barberId, { headers: myHeaders });
+        refreshBarberList();
         return await new Promise(resolve => resolve(response.data));
     }
 
     return (
         <UserContext.Provider value={{
-            barber,
+            barberList,
             getBarberById,
-            getAllBarber,
+            getAllBarbers,
             CreateBarber,
             Login,
             updateBarber,

@@ -28,7 +28,7 @@ function handleSubmit(event) {
     event.preventDefault();
     Login(email, password)
     console.log(login)
-    navigate('/')
+    navigate('/BarberList')
 }
 
   // const SignIn = () => {
