@@ -51,19 +51,21 @@ function Profile() {
             {/* Top Section Bakground Image with profile pic, barber name & lic#  */}
             <section>
                 <div className='bgCoverProfile'>
-
                     <div className="container" style={{ minHeight: '600px' }}>
-                        <div id='coverInfo' className="text-center justify-content-center align-self-center">
+                        <div className="text-center justify-content-center align-self-center">
+                            <Row>
+                                <Col id='coverInfo' xs={12} sm={12} md={4} lg={4} className="text-center justify-content-center align-self-center">
+                                    <div className="h1" >
+                                        <img id="pic" src={profilePic} class="rounded-circle" height="150" alt="" />
+                                        <h1>{firstName} {lastName}</h1>
+                                    </div>
 
-                            <div className="h1" >
-                                <img id="pic" src={profilePic} class="rounded-circle" height="150" alt="" />
-                                <h1>{firstName} {lastName}</h1>
-                            </div>
-
-                            <div className="lic" >
-                                <p>License #: {licenseNumber} </p>
-                                <br /><br />
-                            </div>
+                                    <div className="lic" >
+                                        <p>License #: {licenseNumber} </p>
+                                        <br /><br />
+                                    </div>
+                                </Col>
+                            </Row>
                         </div>
                     </div>
                 </div>
@@ -72,28 +74,68 @@ function Profile() {
             {/* Description Card*/}
             <section>
                 <div className="descriptionSection">
-                    {/* <Card> */}
+                    <Card>
                         <Row>
-                            <Col className='div1'>
-                                <img src={profilePic} height="300" width="300" alt="" />
+                            <Col className='div1' xs={12} md={8} sm={12} lg={4}>
+                                <img src={profilePic} height="500px" alt="" />
                             </Col>
                             <Col className='div2'>
                                 <br></br>
-                                <h3 id='aboutMeTitle'>About Me</h3>
+                                <h1 id='aboutMeTitle'>About Me</h1>
                                 <br></br>
 
                                 <p className='description'> {description}</p>
-                                <h4>~ {firstName}{lastName}</h4>
+                                <h4>~ {firstName} {lastName}</h4>
                             </Col>
                         </Row>
-                    {/* </Card> */}
+                    </Card>
                 </div>
             </section>
 
             {/* Gallery Section */}
-            <section className='contactSection'>
-                <div className='bgContactCover'>
-                    <div className='contactTitle'><h1>Work Gallery</h1></div>
+            <section>
+                <div>
+                    <div className='galleryTitle'>
+                        <h1>Gallery</h1>
+                        <h5>A selection of haircuts and beard styles</h5>
+                    </div>
+                    <div>
+                        <Row>
+                            <Col className='flip-card' xs={12} md={6} lg={4}>
+                                <div className='flip-card-inner'>
+                                    <div className='flip-card-front'>
+                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/profile-gallery1.jpg'} height="450" alt="Haircut" />
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h1>The Shepperd</h1>
+                                        <p>A fancy hair style with cool beard</p>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col className='flip-card' xs={12} md={6} lg={4}>
+                                <div className='flip-card-inner'>
+                                    <div className='flip-card-front'>
+                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/profile-gallery2.jpg'} height="450" alt="Haircut" />
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h1>Youth Revival</h1>
+                                        <p>Ready to conquer</p>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col className='flip-card' xs={12} md={6} lg={4}>
+                                <div className='flip-card-inner'>
+                                    <div className='flip-card-front'>
+                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/profile-gallery3.jpg'} height="450" alt="Haircut" />
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h1>Glory Kid</h1>
+                                        <p>Arrow in the hand of The Father</p>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
                 </div>
             </section>
 
