@@ -11,6 +11,7 @@ import BarberList from './components/BarberList';
 import Profile from './components/Profile';
 import EditProfile from './components/EditProfile';
 import SignUp from './components/SignUp';
+import Gallery from './components/Gallery';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="BarberList" element={<BarberList />} />
             <Route path="Profile/:barberId" element={<Profile />} />
             <Route path="EditProfile" element={<EditProfile />} />
+            <Route path="Gallery" element={<Gallery />} />
             <Route path="search/:filter" element={<Search />} />
           </Route>
 
