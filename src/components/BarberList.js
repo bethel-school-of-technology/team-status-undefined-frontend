@@ -1,7 +1,6 @@
 import React from 'react';
 import UserContext from '../context/UserContext';
 import { Row, Col, Stack, Container, Card } from "react-bootstrap"
-
 import '../styles/BarberList.css'
 
 

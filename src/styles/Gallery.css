@@ -137,7 +137,7 @@
     border-radius: 6px;
     color: #1b3d49;
     padding: 16px;
-    width: 220px;
+    width: 270px;
     overflow: hidden;
     transition: 0.6s;
     transform: translate(0);
@@ -151,8 +151,10 @@
 }
 
 .revealCard img {
-    margin-top: 4rem;
+    margin-top: 3rem;
     align-content: center;
+    align-self: center;
+    padding-left: 5rem;
 }
 
 .revealCard::before {
@@ -174,5 +176,6 @@
 
 .card {
     margin-top: 4rem;
-    background: url("/public/Images/barber-profile-header.png");
+    /* background: url("/public/Images/barber-list-header.png");
+    height: 300px; */
 }

@@ -5,6 +5,7 @@ import { Stack, Row, Col, Card } from 'react-bootstrap';
 
 function Gallery() {
 
+
     return (
         <>
             {/* Top Section Bakground Image with profile pic, barber name & lic#  */}
@@ -71,64 +72,67 @@ function Gallery() {
 
             {/* Moustache Section */}
             <section>
-                <Card>
-                    <div className='mustacheTitle'>
-                        <h3>Reveal the Mustache</h3>
-                        <h5>Know your styles</h5>
-                    </div>
-                    <div className='mustacheSection'>
+
+                <div className='mustacheSection'>
+                    <Card>
+                        <div className='mustacheTitle'>
+                            <h3>Reveal the Mustache</h3>
+                            <h5>Know your styles</h5>
+                        </div>
+
                         <Row>
-                            <Col xs={6} md={6} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <div className='revealCard'>
                                     <h3>Chevron</h3>
-                                    <img className="galleryImg pt-5" src={process.env.PUBLIC_URL + '/images/mustache-chevron.png'} width="190" alt="Haircut" />
+                                    <img src={process.env.PUBLIC_URL + '/images/mustache-chevron.png'} width="150" alt="Haircut" />
                                 </div>
                             </Col>
-                            <Col xs={6} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <div className='revealCard'>
                                     <h3>Handlebars</h3>
-                                    <img className="galleryImg pt-5" src={process.env.PUBLIC_URL + '/images/mustache-handlebars.png'} width="190" alt="Haircut" />
+                                    <img src={process.env.PUBLIC_URL + '/images/mustache-handlebars.png'} width="150" alt="Haircut" />
                                 </div>
                             </Col>
-                            <Col xs={6} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <div className='revealCard'>
                                     <h3>Horse Shoe</h3>
-                                    <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/mustache-horseshoe.png'} width="190" alt="Haircut" />
+                                    <img src={process.env.PUBLIC_URL + '/images/mustache-horseshoe.png'} width="150" alt="Haircut" />
                                 </div>
                             </Col>
-                            <Col xs={6} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <div className='revealCard'>
                                     <h3>Imperial</h3>
-                                    <img className="galleryImg pt-5" src={process.env.PUBLIC_URL + '/images/mustache-imperial.png'} width="190" alt="Haircut" />
+                                    <img src={process.env.PUBLIC_URL + '/images/mustache-imperial.png'} width="150" alt="Haircut" />
                                 </div>
                             </Col>
-                            <Col xs={6} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <div className='revealCard'>
                                     <h3>Lamp Shade</h3>
-                                    <img className="galleryImg  pt-5" src={process.env.PUBLIC_URL + '/images/mustache-lampshade.png'} width="190" alt="Haircut" />
+                                    <img src={process.env.PUBLIC_URL + '/images/mustache-lampshade.png'} width="150" alt="Haircut" />
                                 </div>
                             </Col>
-                            <Col xs={6} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <div className='revealCard'>
                                     <h3>Pencil</h3>
-                                    <img className="galleryImg  pt-5" src={process.env.PUBLIC_URL + '/images/mustache-pencil.png'} width="190" alt="Haircut" />
+                                    <img src={process.env.PUBLIC_URL + '/images/mustache-pencil.png'} width="150" alt="Haircut" />
                                 </div>
                             </Col>
-                            <Col xs={6} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <div className='revealCard'>
                                     <h3>Walrus</h3>
-                                    <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/mustache-walrus.png'} width="190" alt="Haircut" />
+                                    <img src={process.env.PUBLIC_URL + '/images/mustache-walrus.png'} width="150" alt="Haircut" />
                                 </div>
                             </Col>
-                            <Col xs={6} md={4} lg={3}>
+                            <Col xs={12} md={4} lg={3}>
                                 <div className='revealCard'>
                                     <h3>ULH</h3>
-                                    <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/uppericon3.png'} width="90" alt="Haircut" />
+                                    <img src={process.env.PUBLIC_URL + '/images/uppericon3.png'} width="150" alt="Haircut" />
                                 </div>
-                            </Col>                            
+                            </Col>
                         </Row>
-                    </div>
-                </Card>
+                    </Card>
+                </div>
+
             </section>
 
             {/* <ProfileCoverImage /> */}
