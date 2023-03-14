@@ -112,10 +112,10 @@ function Edit ()  {
         <Form.Control type="text" name="email" value={email} onChange={handleChange} />
       </Form.Group>
 
-      <Form.Group as={Col} >
+      {/* <Form.Group as={Col} >
         <Form.Label>Password</Form.Label>
         <Form.Control type="Password" name="password" value={password} onChange={handleChange} />
-      </Form.Group>
+      </Form.Group> */}
 
       <Form.Group as={Col} >
         <Form.Label>Description</Form.Label>

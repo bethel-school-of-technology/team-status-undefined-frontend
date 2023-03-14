@@ -38,6 +38,7 @@ useEffect(() => {
     async function Login(email, password) {
         const response = await axios.get(`${baseUrl}login?email=${email}&password=${password}`);
         localStorage.setItem('myMessageToken', response.data);
+        localStorage.setItem('email', email);
         return await new Promise(resolve => resolve(response.data));
 
     }  
@@ -76,6 +77,7 @@ useEffect(() => {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         };
         const response = await axios.delete(baseUrl + barberId, { headers: myHeaders });
+        localStorage.clear();
         refreshBarberList();
         return await new Promise(resolve => resolve(response.data));
     }
