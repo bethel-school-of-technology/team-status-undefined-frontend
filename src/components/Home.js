@@ -107,7 +107,7 @@ function Home() {
                         {/* <img className="dropLogo" src={process.env.PUBLIC_URL + '/Images/upperlip10.png'} height="120" alt="Upper Lip Holstery" /> */}
                         <Link to="/" id="home" className="nav-link m-4">HOME</Link>
                         <Link to="/BarberList" id="barbers" className="nav-link m-4">BARBERS</Link>
-                        <Link to="/" id="gallery" className="nav-link m-4">GALLERY</Link>
+                        <Link to="/Gallery" id="gallery" className="nav-link m-4">GALLERY</Link>
 
                         <Link to="/Login" className="nav-link m-0">
                             <Button id='signInButtonDrop'  className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
