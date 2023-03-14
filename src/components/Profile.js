@@ -11,8 +11,9 @@ import EditProfile from './EditProfile';
 function Profile() {
 
     let { getBarberById, deleteBarber } = useContext(UserContext);
-    let navigate = useNavigate()
-    let params = useParams()
+    let navigate = useNavigate();
+    let params = useParams();
+
     const [oneBarber, setOneBarber] = useState({
         barberId: params.barberId,
         firstName: "",
@@ -48,17 +49,26 @@ function Profile() {
         });
        
     }
+    let Auth = localStorage.getItem('email')
 
-    return (
-        <>
-            {/* Edit Profile Button */}
+    function authProfile() {
+        if (Auth === oneBarber.email)
+        return (
+            <>
             <div className="editButtonPosition">
                 <Link to= {`/EditAccount/${barberId}`} >
                     <Button id='editButton'> EDIT PROFILE</Button>  
                 </Link>
                     <Button id='deleteButton'onClick={handleDeleteBarber.bind(this, oneBarber.barberId)} > DELETE PROFILE</Button>
             </div>
+            </>
+    )
+    }
 
+    return (
+        <>
+            
+            {authProfile()}
             {/* Top Section Bakground Image with profile pic, barber name & lic#  */}
             <section>
                 <div className='bgCoverProfile'>

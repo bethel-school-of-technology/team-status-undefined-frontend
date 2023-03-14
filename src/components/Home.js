@@ -11,39 +11,24 @@ import SignUp from './SignUp';
 // import BarberList from './BarberList';
 
 function Home() {
-    let params = useParams()
-    let [ barber, setBarber] = useState ({
-        barberId: params.barberId,
-        firstName: "",
-    })
-
-    let { getBarberById } = useContext(UserContext)
-    useEffect(() => {
-        async function fetch() {
-            await getBarberById(params.barberId)
-                .then((barber) => setBarber(barber))
-        }
-        fetch()
-    },[params.barberId] )
     
      function onSignOut(){
         localStorage.clear();
-         setBarber("")
          navigate('/login')
     }
     function onSignIn(){
         navigate('/login')
     }
-
+    const token = localStorage.getItem('email')
     function authLink(){
-        if (barber.firstName === "")
+        if (token === null)
                     return(
                             <Nav className="justify-content-end">
                             <button variant="link" onClick={onSignIn}>Login</button>
                             </Nav>
                     )
                     else {
-                        return<nav>Signed in as: {barber.firstName} <button variant="link" onClick={onSignOut}>Log Out</button></nav>
+                        return<nav>Signed in as: {token} <button variant="link" onClick={onSignOut}>Log Out</button></nav>
                          
                     }}
 
