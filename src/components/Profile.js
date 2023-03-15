@@ -83,24 +83,37 @@ function Profile() {
             </section>
 
             {/* Description Card*/}
-            <section>
-                <div className="descriptionSection">
-                    <Card>
-                        <Row>
-                            <Col className='div1' xs={12} md={8} sm={12} lg={4}>
-                                <img src={profilePic} height="500px" alt="" />
-                            </Col>
-                            <Col className='div2'>
-                                <br></br>
-                                <h1 id='aboutMeTitle'>About Me</h1>
-                                <br></br>
 
-                                <p className='description'> {description}</p>
-                                <h4>~ {firstName} {lastName}</h4>
-                            </Col>
-                        </Row>
-                    </Card>
-                </div>
+            <section>
+                
+<div className='container-{breakpoint} d-flex'>
+<div class="row g-5 justify-content-evenly">
+<div className="col-12">
+
+<div className="card" >
+<Row>
+<Col xs={12} sm={12} md={6} lg={6}>
+<img src={profilePic}   height="100%" width="100%" class="card-img-top" alt=""/>
+</Col>
+<Col >
+  <div className="card-body"></div>
+  <br></br>
+  <h1 id='aboutMeTitle'>About Me</h1>
+  <br></br>
+  <h4> {firstName} {lastName}</h4>
+    <p className="card-text">{description}</p>
+    </Col>
+    </Row>
+    
+    </div>
+  </div>
+  
+</div>
+</div>
+
+
+
+
             </section>
 
             {/* Gallery Section */}
