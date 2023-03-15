@@ -102,7 +102,7 @@ function Profile() {
 
 <div className="card" >
 <Row>
-<Col xs={12} sm={12} md={6} lg={6}>
+<Col xs={12} sm={4} md={4} lg={4}>
 <img src={profilePic}   height="100%" width="100%" class="card-img-top" alt=""/>
 </Col>
 <Col >
