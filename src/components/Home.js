@@ -8,26 +8,24 @@ import { MDBContainer, MDBCollapse, MDBNavbar, MDBNavbarToggler } from 'mdb-reac
 
 
 function Home() {
-    
-    function onSignOut(){
+
+    function onSignOut() {
         localStorage.clear();
-         navigate('/login')
+        navigate('/login')
     }
-    function onSignIn(){
+    function onSignIn() {
         navigate('/login')
     }
     const token = localStorage.getItem('email')
-    function authLink(){
+    function authLink() {
         if (token === null)
-                    return(
-                            <Nav className="justify-content-end">
-                            <button variant="link" onClick={onSignIn}>Login</button>
-                            </Nav>
-                    )
-                    else {
-                        return<nav>Signed in as: {token} <button variant="link" onClick={onSignOut}>Log Out</button></nav>
-                         
-                    }}
+            return (
+                <button variant="link" onClick={onSignIn}>Login</button>
+            )
+        else {
+            return <div>Signed in as: {token} | <button variant="link" onClick={onSignOut}>Log Out</button></div>
+        }
+    }
 
     let navigate = useNavigate()
     const handleChange = (event) => {
@@ -46,7 +44,7 @@ function Home() {
                         <Link to="/" class="navbar-brand align-items-center">
                             <img src={process.env.PUBLIC_URL + '/images/upperlip11.png'} height="100" alt="Upper Lip Holstery" />
                         </Link>
-                    
+
                     </div>
                 </Container>
             </div>
@@ -69,8 +67,9 @@ function Home() {
                                 aria-label="Search"
                                 onChange={handleChange} />
                             <Button id='searchButton' variant="outline-success"><img src={process.env.PUBLIC_URL + '/Images/searchicon.png'} height="20px" alt="Upper Lip Holstery" /></Button>
+                            {authLink()}
                         </Form>
-                        {authLink()}
+
                     </Col>
 
                 </Row>
@@ -102,16 +101,16 @@ function Home() {
                 <MDBCollapse show={showAnimated}>
                     <div className='dropdownbg'>
                         {/* <img className="dropLogo" src={process.env.PUBLIC_URL + '/Images/upperlip10.png'} height="120" alt="Upper Lip Holstery" /> */}
-                        <Link to="/" id="home" className="nav-link m-4">HOME</Link>
-                        <Link to="/BarberList" id="barbers" className="nav-link m-4">BARBERS</Link>
-                        <Link to="/Gallery" id="gallery" className="nav-link m-4">GALLERY</Link>
+                        <Link to="/" id="home" className="nav-link m-4" onClick={() => setShowAnimated(!showAnimated)}>HOME</Link>
+                        <Link to="/BarberList" id="barbers" className="nav-link m-4" onClick={() => setShowAnimated(!showAnimated)}>BARBERS</Link>
+                        <Link to="/Gallery" id="gallery" className="nav-link m-4" onClick={() => setShowAnimated(!showAnimated)}>GALLERY</Link>
 
-                        <Link to="/Login" className="nav-link m-0">
-                            <Button id='signInButtonDrop'  className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
+                        <Link to="/Login" className="nav-link m-0" onClick={() => setShowAnimated(!showAnimated)}>
+                            <Button id='signInButtonDrop' className="mt-4 mb-4 ly-0" >BARBER SIGN IN</Button>
                         </Link>
 
-                        <Link to="/SignUp" className="nav-link mt-0">
-                            <Button id='signUpButtonDrop'  className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
+                        <Link to="/SignUp" className="nav-link mt-0" onClick={() => setShowAnimated(!showAnimated)}>
+                            <Button id='signUpButtonDrop' className="mt-4 mb-4 ly-0" > BARBER SIGN UP</Button>
                         </Link>
                     </div>
                 </MDBCollapse>
