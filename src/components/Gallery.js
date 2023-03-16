@@ -1,45 +1,30 @@
 import '../styles/Gallery.css'
-import { React, useContext } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom'
-import { Stack, Row, Col, Card, Button } from 'react-bootstrap';
-import GalleryContext from '../context/GalleryContext';
+import { React } from 'react';
+import { Outlet } from 'react-router-dom'
+import { Stack, Row, Col, Card } from 'react-bootstrap';
+import Image from 'react-bootstrap/Image'
 
 function Gallery() {
 
-let {deleteImage} = useContext(GalleryContext)
-let navigate = useNavigate();
-
-    function handleDeleteImage(barberImageLinkId) {
-        deleteImage(barberImageLinkId).then(() => {
-            navigate('/Gallery');
-        }).catch(error => {
-            console.log(error);
-            
-        });
-    }
 
     return (
-    <GalleryContext.Consumer>
-    {
-        ({ imageList }) => {
-          return <>
+        <>
             {/* Top Section Bakground Image with profile pic, barber name & lic#  */}
             <section>
+                
                 <div className='bgCoverGallery'>
                     <div className="container" style={{ minHeight: '620px' }}>
                         <div className="text-center justify-content-center align-self-center">
                             <div>
                                 <h1 className="galleryh1">Be Inspired. Be Trendy.</h1>
                             </div>
-                        </div>
                     </div>
+                </div>
                 </div>
             </section>
 
 
             {/* Top Creative Styles Section */}
-            
-       
             <section>
                 <div>
                     <div className='galleryTitle'>
@@ -48,22 +33,39 @@ let navigate = useNavigate();
                     </div>
                     <div>
                         <Row>
-                            {imageList.map((i) => {
-                                return (
-                                    <Col className='flip-card' xs={12} md={6} lg={4} >
-                                    <div className='flip-card-inner'>
-                                        <div className='flip-card-front'>
-                                            <img className="galleryImg" src={i.imageUrl} height="450" alt="Haircut" />
-                                        </div>
-                                        <div class="flip-card-back">
-                                            <h1>The Handlebars</h1>
-                                            <p>First Place</p>
-                                            <Button id='deleteButton'onClick={handleDeleteImage.bind(this, i.barberImageLinkId)} > DELETE PICTURE</Button>
-                                        </div>
+                            <Col className='flip-card' xs={12} md={6} lg={4}>
+                                <div className='flip-card-inner'>
+                                    <div className='flip-card-front'>
+                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/creative3.jpg'} height="450" alt="Haircut" />
                                     </div>
-                                </Col>
-                                )
-                            })}
+                                    <div class="flip-card-back">
+                                        <h1>The Handlebars</h1>
+                                        <p>First Place</p>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col className='flip-card' xs={12} md={6} lg={4}>
+                                <div className='flip-card-inner'>
+                                    <div className='flip-card-front'>
+                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/creative2.jpg'} height="450" alt="Haircut" />
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h1>The Goat</h1>
+                                        <p>Second Place</p>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col className='flip-card' xs={12} md={6} lg={4}>
+                                <div className='flip-card-inner'>
+                                    <div className='flip-card-front'>
+                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/creative1.jpg'} height="450" alt="Haircut" />
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h1>The Square</h1>
+                                        <p>Third place</p>
+                                    </div>
+                                </div>
+                            </Col>
                         </Row>
                     </div>
                 </div>
@@ -141,8 +143,6 @@ let navigate = useNavigate();
                 <Outlet />
             </Stack>
         </>
-        }}
-    </GalleryContext.Consumer>
     )
 }
 
