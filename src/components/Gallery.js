@@ -25,16 +25,18 @@ let navigate = useNavigate();
           return <>
             {/* Top Section Bakground Image with profile pic, barber name & lic#  */}
             <section>
+                
                 <div className='bgCoverGallery'>
                     <div className="container" style={{ minHeight: '620px' }}>
                         <div className="text-center justify-content-center align-self-center">
                             <div>
-                                <h1 className="galleryh1">Be Inspired. Be Trendy.</h1>
+                                
                             </div>
-                        </div>
                     </div>
                 </div>
+                </div>
             </section>
+
 
 
             {/* Top Creative Styles Section */}
