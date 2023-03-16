@@ -10,8 +10,6 @@ function SignIn() {
   const [login, setLogin] = useState({
     Email:"",
     Password:""
-    
-
 });
 let { Login } = useContext(UserContext);
 let navigate = useNavigate();
@@ -22,8 +20,6 @@ function handleChange(event) {
       return { ...preValue, [event.target.name]: event.target.value }})
   }
   
-
-  
 function handleSubmit(event) {
     event.preventDefault();
     Login(email, password)
@@ -31,22 +27,6 @@ function handleSubmit(event) {
     navigate('/BarberList')
 }
 
-  // const SignIn = () => {
-  //   const [email, setEmail] = useState("");
-  //   const [password, setPassword] = useState("");
-
-  //   let { Login } = useContext(UserContext);
-  //   let navigate = useNavigate();
-
-  //   function handleSubmit(event) {
-  //       event.preventDefault();
-  //       Login(email, password).then(() => {
-  //           navigate('/');
-  //       }).catch(error => {
-  //           console.log(error);
-  //           window.alert('Failed login');
-  //       });
-  //   }
     return (
 
 
