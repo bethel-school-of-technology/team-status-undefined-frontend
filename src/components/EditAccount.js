@@ -1,14 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-
 import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
-import Profile from './Profile';
 
 import "../styles/Register.css"
 
-
-//change to edit and setEdit
 
 function Edit ()  {
     let params = useParams()
@@ -31,7 +27,7 @@ function Edit ()  {
     let navigate = useNavigate();
     let {barberId, firstName, lastName, address, city, state, 
       phoneNumber, licenseNumber, profilePic, 
-      description, email, password} = edit
+      description, email} = edit
     useEffect(() => {
         if (barberId === undefined) return
         async function fetch() {
@@ -55,9 +51,8 @@ function Edit ()  {
         });
     }
     return (
-
-
-      <div className='SignUp'>
+      
+<div className='SignUp'>
   <Form onSubmit={handleSubmit}>
       
       <Form.Group as={Col} >
@@ -112,11 +107,6 @@ function Edit ()  {
         <Form.Control type="text" name="email" value={email} onChange={handleChange} />
       </Form.Group>
 
-      {/* <Form.Group as={Col} >
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="Password" name="password" value={password} onChange={handleChange} />
-      </Form.Group> */}
-
       <Form.Group as={Col} >
         <Form.Label>Description</Form.Label>
         <Form.Control type="text" name="description" value={description} onChange={handleChange} />
@@ -126,9 +116,6 @@ function Edit ()  {
 
        <Button id='primary' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
   </Form>
-
-  
-
-  </div>
+</div>
 )};
 export default Edit;

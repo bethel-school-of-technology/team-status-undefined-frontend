@@ -3,8 +3,6 @@ import React from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import '../styles/HomeContent.css'
 import { Stack, Button, Row, Col} from 'react-bootstrap';
-//import Login from './Login'
-import SignUp from "./SignUp"
 
 function HomeContent() {
 

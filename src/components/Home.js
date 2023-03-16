@@ -4,15 +4,12 @@ import { Link, Outlet, useNavigate, useParams } from "react-router-dom"
 import React from 'react';
 import '../styles/Home.css'
 import Footer from './Footer';
-import UserContext from '../context/UserContext';
 import { MDBContainer, MDBCollapse, MDBNavbar, MDBNavbarToggler } from 'mdb-react-ui-kit';
-import Login from './Login';
-import SignUp from './SignUp';
-// import BarberList from './BarberList';
+
 
 function Home() {
     
-     function onSignOut(){
+    function onSignOut(){
         localStorage.clear();
          navigate('/login')
     }

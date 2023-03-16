@@ -29,20 +29,6 @@ function Search() {
         if (barbers === null || !barbers) return
         return barbers.map((u) => {
             return (
-                // <Col xs={6} md={4} lg={3}>
-                //         <a href={`/Profile/${u.BarberId}`}>
-                //         <img id="pic" src={u.ProfilePic} height="200" alt=""  / >
-                //         <p>Name: {u.FirstName} {u.LastName} </p>
-                //         <p>City: {u.City}</p>
-                //         <p>State: {u.State}</p>
-                //         </a>
-                // </Col>
-
-
-
-
-                
-
                 <Col xs={12} md={4} lg={3}>
                     <Card id='barberCard' >
                         <div className="cardEffect" key={u.barberId}>
@@ -63,53 +49,36 @@ function Search() {
                         </div>
                     </Card>
                 </Col>
-
-
-
-
-
             )
         }
-
-        )
-    }
+     )
+}
 
     return (
         <>
-
-<section>
-<div className='bgBarberListCover'>
-                      <div className="container" style={{ minHeight: '400px' }}>
+            <section>
+                <div className='bgBarberListCover'>
+                    <div className="container" style={{ minHeight: '400px' }}>
                         <div className="text-center justify-content-center align-self-center">
-
-                          <div className="h1list" >
-                            <h1>Find your barber... Only the Best...!</h1>
-                          </div>
-
-                          <div className="pstartsearch" >
-                            {/* <p>Making your dream tream come true</p> */}
-                            <p>Start searching!</p>
-                          </div>
+                            <div className="h1list" >
+                                <h1>Find your barber... Only the Best...!</h1>
+                            </div>
+                            <div className="pstartsearch" >
+                                <p>Start searching!</p>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </section>
+                </div>
+            </section>
 
-                  <div className='title'><h1>Come to the professionals</h1></div>
-        
-            {/* <h1>Barbers</h1> */}
+                <div className='title'><h1>Come to the professionals</h1></div>
             <Container fluid>
-
-
-            
                 <Row>
                     {UserList()}
                 </Row>
-
             </Container>
         </>
     )
-
 }
 
 
