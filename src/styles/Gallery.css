@@ -2,17 +2,21 @@
 .bgCoverGallery {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: 50% 50%;
     justify-content: center;
     /* background: linear-gradient(
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)
       ), */
-    margin-top: -80px;
+    /* margin-top: -80px;  */
     background:
         url("/public/Images/Status-cover-forweb.png");
-    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
 }
+
+
 
 .galleryh1 {
     font-family: 'Abel', sans-serif;
