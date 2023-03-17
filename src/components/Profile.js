@@ -4,12 +4,14 @@ import { Outlet, Link } from 'react-router-dom'
 import '../styles/Profile.css'
 import { Stack, Button, Row, Col, Card } from 'react-bootstrap';
 import UserContext from '../context/UserContext';
+import GalleryContext from '../context/GalleryContext';
 // import ProfileCoverImage from './ProfileCoverImage';
 
 
 function Profile() {
 
     let { getBarberById, deleteBarber } = useContext(UserContext);
+    let {deleteImage} = useContext(GalleryContext)
     let navigate = useNavigate();
     let params = useParams();
 
@@ -26,6 +28,15 @@ function Profile() {
         description: "",
         email: "",
     });
+
+    // const [img, setImg] = useState({
+    //     barberImageLinkId: 0,
+    //     barberId: params.barberId,
+    //     imageUrl:""
+        
+    // })
+
+
 
     let { barberId, firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email } = oneBarber
 
@@ -48,6 +59,18 @@ function Profile() {
         });
        
     }
+
+    function handleDeleteImage(barberImageLinkId) {
+        deleteImage(barberImageLinkId).then(() => {
+            navigate('/Gallery');
+        }).catch(error => {
+            console.log(error);
+            
+        });
+    }
+
+    const token = localStorage.getItem('email')
+
     let Auth = localStorage.getItem('email')
 
     function authProfile() {
@@ -67,9 +90,19 @@ function Profile() {
     )
     }
 
+    // function deletePictureButton() {
+    //     if (token === oneBarber.email)
+    //     return (
+    //         <Button id='deleteButton'onClick={handleDeleteImage.bind(this, i.barberImageLinkId)} > DELETE PICTURE</Button>
+    // )
+    // }
+
     return (
-        <>
-            
+        <GalleryContext.Consumer>
+        
+            {({imageList}) => {
+                return(
+            <>
             {authProfile()}
             {/* Top Section Bakground Image with profile pic, barber name & lic#  */}
             <section>
@@ -131,45 +164,31 @@ function Profile() {
                         <h5>A selection of haircuts and beard styles</h5>
                     </div>
                     <div>
-                        <Row>
-                            <Col className='flip-card' xs={12} md={6} lg={4}>
-                                <div className='flip-card-inner'>
-                                    <div className='flip-card-front'>
-                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/profile-gallery1.jpg'} height="450" alt="Haircut" />
+                    <Row>
+                            {imageList.map((i) => {
+                                if(i.barberId == params.barberId)
+                                return (
+                                    <Col className='flip-card' xs={12} md={6} lg={4} >
+                                    <div className='flip-card-inner'>
+                                        <div className='flip-card-front'>
+                                            <img className="galleryImg" src={i.imageUrl} height="450" alt="Haircut" />
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <h1>The Handlebars</h1>
+                                            <p>First Place</p>
+                                            <Button id='deleteButton'onClick={handleDeleteImage.bind(this, i.barberImageLinkId)} > DELETE PICTURE</Button>
+                                            
+                                        </div>
                                     </div>
-                                    <div class="flip-card-back">
-                                        <h1>The Shepperd</h1>
-                                        <p>A fancy hair style with cool beard</p>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col className='flip-card' xs={12} md={6} lg={4}>
-                                <div className='flip-card-inner'>
-                                    <div className='flip-card-front'>
-                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/profile-gallery2.jpg'} height="450" alt="Haircut" />
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h1>Youth Revival</h1>
-                                        <p>Ready to conquer</p>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col className='flip-card' xs={12} md={6} lg={4}>
-                                <div className='flip-card-inner'>
-                                    <div className='flip-card-front'>
-                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/profile-gallery3.jpg'} height="450" alt="Haircut" />
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h1>Glory Kid</h1>
-                                        <p>Arrow in the hand of The Father</p>
-                                    </div>
-                                </div>
-                            </Col>
+                                </Col>
+                                )
+                            })}
                         </Row>
                     </div>
                 </div>
             </section>
 
+            
             {/* Contact Info */}
             <section>
                 <div className='bgContactCover'>
@@ -221,6 +240,8 @@ function Profile() {
                 <Outlet />
             </Stack>
         </>
+        )}}
+        </GalleryContext.Consumer>
     )
 }
 
