@@ -4,15 +4,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      ),
+    background: 
       url(/public/Images/signUp.jpg);
     background-size: cover;
   }
   
-  .registerTitle {
+  /* .registerTitle {
     font-size: 50px;
   }
   
@@ -58,4 +55,4 @@
     border: none;
     color: white;
     border-radius: 10px;
-  }
+  } */
