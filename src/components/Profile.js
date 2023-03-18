@@ -4,6 +4,7 @@ import { Outlet, Link } from 'react-router-dom'
 import '../styles/Profile.css'
 import { Stack, Button, Row, Col, Card } from 'react-bootstrap';
 import UserContext from '../context/UserContext';
+import GalleryContext from '../context/GalleryContext';
 // import ProfileCoverImage from './ProfileCoverImage';
 
 
