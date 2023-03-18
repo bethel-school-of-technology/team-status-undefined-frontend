@@ -10,6 +10,9 @@ import UserContext from '../context/UserContext';
 function Profile() {
 
     let { getBarberById, deleteBarber } = useContext(UserContext);
+
+    let { deleteImage, getImageByBarberId } = useContext(GalleryContext)
+
     let navigate = useNavigate();
     let params = useParams();
 
@@ -27,6 +30,17 @@ function Profile() {
         email: "",
     });
 
+
+    const [img, setImg] = useState([{
+        title: "",
+        description: "",
+        barberImageLinkId: 0,
+        BarberId: params.barberId,
+        imageUrl: ""
+
+    }])
+
+
     let { barberId, firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email } = oneBarber
 
     useEffect(() => {
@@ -39,37 +53,105 @@ function Profile() {
         fetch()
     }, [params.barberId])
 
-      function handleDeleteBarber(barberId) {
+    useEffect(() => {
+        async function Fetch() {
+            await getImageByBarberId(barberId)
+                .then((img) => setImg(img))
+            console.log(img);
+        }
+        Fetch()
+    }, [params.barberId, handleDeleteBarber])
+
+    function handleDeleteBarber(barberId) {
         deleteBarber(barberId).then(() => {
             navigate('/Login');
         }).catch(error => {
             console.log(error);
-            
+
         });
-       
+
     }
+
+
+    function handleDeleteImage(barberImageLinkId) {
+        deleteImage(barberImageLinkId)
+        navigate(`/Profile/${params.barberId}`)
+    }
+
+
     let Auth = localStorage.getItem('email')
+
+    function displayGallery() {
+        if (Auth === oneBarber.email) {
+            return (
+                <Row>
+                    {img.map((i) => {
+                        return (
+                            <Col className='flip-card' xs={12} md={6} lg={4} >
+                                <div className='flip-card-inner'>
+                                    <div className='flip-card-front'>
+                                        <img className="galleryImg" src={i.imageUrl} height="450" alt="Haircut" />
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h1>{i.title}</h1>
+                                        <p>{i.description}</p>
+                                        <Button id='deleteButton' onClick={handleDeleteImage.bind(this, i.barberImageLinkId)} > DELETE PICTURE</Button>
+                                    </div>
+                                </div>
+                            </Col>
+                        )
+                    })}
+                </Row>
+            )
+        }
+        else {
+            return (
+                <Row>
+                    {img.map((i) => {
+                        return (
+                            <Col className='flip-card' xs={12} md={6} lg={4} >
+                                <div className='flip-card-inner'>
+                                    <div className='flip-card-front'>
+                                        <img className="galleryImg" src={i.imageUrl} height="450" alt="Haircut" />
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h1>{i.title}</h1>
+                                        <p>{i.description}</p>
+                                    </div>
+                                </div>
+                            </Col>
+                        )
+                    })}
+                </Row>
+            )
+        }
+    }
+
+
+
 
     function authProfile() {
         if (Auth === oneBarber.email)
-        return (
-            <>
-            <div className="editButtonPosition">
-                <Link to= {`/EditAccount/${barberId}`} >
-                    <Button id='editButton'> EDIT PROFILE</Button>  
-                </Link>
-                    <Button id='deleteButton'onClick={handleDeleteBarber.bind(this, oneBarber.barberId)} > DELETE PROFILE</Button>
-                  <Link to= {`/AddImage/${barberId}`} >
-                    <Button id='addImages'> ADD TO YOUR GALLERY</Button>  
-                  </Link>
-            </div>
-            </>
-    )
+            return (
+                <>
+                    <div className="editButtonPosition">
+                        <Link to={`/EditAccount/${barberId}`} >
+                            <Button id='editButton'> EDIT PROFILE</Button>
+                        </Link>
+                        <Button id='deleteButton' onClick={handleDeleteBarber.bind(this, oneBarber.barberId)} > DELETE PROFILE</Button>
+                        <Link to={`/AddImage/${barberId}`} >
+                            <Button id='addImages'> ADD TO YOUR GALLERY</Button>
+                        </Link>
+                    </div>
+                </>
+            )
     }
+
+
 
     return (
         <>
-            
+
             {authProfile()}
             {/* Top Section Bakground Image with profile pic, barber name & lic#  */}
             <section>
@@ -97,30 +179,32 @@ function Profile() {
             {/* Description Card*/}
 
             <section>
-            <div className='container-{breakpoint} d-flex'>
-                <div class="row g-5 justify-content-evenly">
-                    <div className="col-12">
+                <div className='container-{breakpoint} d-flex'>
+                    <div class="row g-5 justify-content-evenly">
+                        <div className="col-12">
 
-                        <div className="card" >
-                            <Row>
-                            <Col xs={12} sm={4} md={4} lg={4}>
-                                <img src={profilePic}   height="100%" width="100%" class="card-img-top" alt=""/>
-                                </Col>
+
+                            <div className="card" >
+                                <Row>
+                                    <Col xs={12} sm={4} md={4} lg={4}>
+                                        <img src={profilePic} height="100%" width="100%" class="card-img-top" alt="" />
+                                    </Col>
+
                                     <Col>
-                                    <div className="card-body"></div>
-                                    <br></br>
-                                    <h1 id='aboutMeTitle'>About Me</h1>
-                                    <br></br>
-                                    <h4> {firstName} {lastName}</h4>
+                                        <div className="card-body"></div>
+                                        <br></br>
+                                        <h1 id='aboutMeTitle'>About Me</h1>
+                                        <br></br>
+                                        <h4> {firstName} {lastName}</h4>
                                         <p className="card-text">{description}</p>
                                     </Col>
-                            </Row>
-                            
+                                </Row>
+
+                            </div>
                         </div>
+
                     </div>
-                
                 </div>
-            </div>
             </section>
 
             {/* Gallery Section */}
@@ -131,44 +215,15 @@ function Profile() {
                         <h5>A selection of haircuts and beard styles</h5>
                     </div>
                     <div>
-                        <Row>
-                            <Col className='flip-card' xs={12} md={6} lg={4}>
-                                <div className='flip-card-inner'>
-                                    <div className='flip-card-front'>
-                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/profile-gallery1.jpg'} height="100%" alt="Haircut" />
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h1>The Shepperd</h1>
-                                        <p>A fancy hair style with cool beard</p>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col className='flip-card' xs={12} md={6} lg={4}>
-                                <div className='flip-card-inner'>
-                                    <div className='flip-card-front'>
-                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/profile-gallery2.jpg'} height="100%" alt="Haircut" />
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h1>Youth Revival</h1>
-                                        <p>Ready to conquer</p>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col className='flip-card' xs={12} md={6} lg={4}>
-                                <div className='flip-card-inner'>
-                                    <div className='flip-card-front'>
-                                        <img className="galleryImg" src={process.env.PUBLIC_URL + '/images/profile-gallery3.jpg'} height="100%" alt="Haircut" />
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h1>Glory Kid</h1>
-                                        <p>Arrow in the hand of The Father</p>
-                                    </div>
-                                </div>
-                            </Col>
-                        </Row>
+
+                        {displayGallery()}
+
                     </div>
                 </div>
             </section>
+
+
+
 
             {/* Contact Info */}
             <section>
@@ -223,5 +278,4 @@ function Profile() {
         </>
     )
 }
-
 export default Profile
