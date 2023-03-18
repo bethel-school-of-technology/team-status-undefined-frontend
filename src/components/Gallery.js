@@ -24,6 +24,7 @@ function Gallery() {
                 </div>
                 </div>
             </section>
+            
 
 
 
