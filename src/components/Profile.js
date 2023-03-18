@@ -61,7 +61,7 @@ function Profile() {
             console.log(img);
         }
         Fetch()
-    }, [params.barberId, handleDeleteBarber])
+    }, [params.barberId])
 
     function handleDeleteBarber(barberId) {
         deleteBarber(barberId).then(() => {
@@ -76,6 +76,7 @@ function Profile() {
 
     function handleDeleteImage(barberImageLinkId) {
         deleteImage(barberImageLinkId)
+        window.location.reload()
         navigate(`/Profile/${params.barberId}`)
     }
 
