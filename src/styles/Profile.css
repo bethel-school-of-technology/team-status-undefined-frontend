@@ -147,6 +147,7 @@
     perspective: 1000px;
     width: 450px;
     height: 450px;
+    padding: 2rem;
 }
 
 .flip-card-inner {
@@ -156,6 +157,7 @@
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    
 }
 
 .flip-card:hover .flip-card-inner {
@@ -177,6 +179,7 @@
     width: 100%;
     height: 100%;
     font-family: 'Abel', sans-serif;
+    
 }
 
 .flip-card-back h1{

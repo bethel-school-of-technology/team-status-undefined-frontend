@@ -4,14 +4,15 @@ import { Outlet, Link } from 'react-router-dom'
 import '../styles/Profile.css'
 import { Stack, Button, Row, Col, Card } from 'react-bootstrap';
 import UserContext from '../context/UserContext';
-import GalleryContext from '../context/GalleryContext';
 // import ProfileCoverImage from './ProfileCoverImage';
 
 
 function Profile() {
 
     let { getBarberById, deleteBarber } = useContext(UserContext);
+
     let { deleteImage, getImageByBarberId } = useContext(GalleryContext)
+
     let navigate = useNavigate();
     let params = useParams();
 
@@ -29,6 +30,7 @@ function Profile() {
         email: "",
     });
 
+
     const [img, setImg] = useState([{
         title: "",
         description: "",
@@ -37,6 +39,7 @@ function Profile() {
         imageUrl: ""
 
     }])
+
 
     let { barberId, firstName, lastName, address, city, state, phoneNumber, licenseNumber, profilePic, description, email } = oneBarber
 
@@ -69,10 +72,12 @@ function Profile() {
 
     }
 
+
     function handleDeleteImage(barberImageLinkId) {
         deleteImage(barberImageLinkId)
         navigate(`/Profile/${params.barberId}`)
     }
+
 
     let Auth = localStorage.getItem('email')
 
@@ -143,8 +148,10 @@ function Profile() {
     }
 
 
+
     return (
         <>
+
             {authProfile()}
             {/* Top Section Bakground Image with profile pic, barber name & lic#  */}
             <section>
@@ -176,11 +183,13 @@ function Profile() {
                     <div class="row g-5 justify-content-evenly">
                         <div className="col-12">
 
+
                             <div className="card" >
                                 <Row>
                                     <Col xs={12} sm={4} md={4} lg={4}>
                                         <img src={profilePic} height="100%" width="100%" class="card-img-top" alt="" />
                                     </Col>
+
                                     <Col>
                                         <div className="card-body"></div>
                                         <br></br>
@@ -206,10 +215,14 @@ function Profile() {
                         <h5>A selection of haircuts and beard styles</h5>
                     </div>
                     <div>
+
                         {displayGallery()}
+
                     </div>
                 </div>
             </section>
+
+
 
 
             {/* Contact Info */}
