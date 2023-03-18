@@ -27,8 +27,8 @@ useEffect(() => {
         return setImageList(response.data);
     }
 
-    async function createImage(barberId, imageUrl) {       
-        let image = {barberId, imageUrl};
+    async function createImage(barberId, imageUrl, title, description) {       
+        let image = {barberId, imageUrl, title, description};
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         };
@@ -38,9 +38,9 @@ useEffect(() => {
         return await new Promise(resolve => resolve(response.data));
     }
     
-    async function getImageLinkById(barberImageLinkId) {
+    async function getImageByBarberId(barberId) {
         
-        return axios.get(baseUrl + barberImageLinkId).then(response => {
+        return axios.get(baseUrl + barberId).then(response => {
           console.log(response.data)
           return new Promise(resolve => resolve(response.data));
         })
@@ -51,14 +51,14 @@ useEffect(() => {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         };
         const response = await axios.delete(baseUrl + barberImageLinkId, { headers: myHeaders });
-        refreshImageList();
+        
         return await new Promise(resolve => resolve(response.data));
     }
 
     return (
         <GalleryContext.Provider value={{
             imageList,
-            getImageLinkById,
+            getImageByBarberId,
             getAllImages,
             createImage,
             deleteImage,

@@ -58,9 +58,8 @@ let navigate = useNavigate();
                                             <img className="galleryImg" src={i.imageUrl} height="450" alt="Haircut" />
                                         </div>
                                         <div class="flip-card-back">
-                                            <h1>The Handlebars</h1>
-                                            <p>First Place</p>
-                                            <Button id='deleteButton'onClick={handleDeleteImage.bind(this, i.barberImageLinkId)} > DELETE PICTURE</Button>
+                                            <h1>{i.title}</h1>
+                                            <p>{i.description}</p>
                                         </div>
                                     </div>
                                 </Col>
