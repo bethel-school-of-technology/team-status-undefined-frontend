@@ -1,22 +1,10 @@
 import '../styles/Gallery.css'
-import { React, useContext } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom'
-import { Stack, Row, Col, Card, Button } from 'react-bootstrap';
+import {React} from 'react';
+import {Outlet} from 'react-router-dom'
+import {Stack, Row, Col, Card} from 'react-bootstrap';
 import GalleryContext from '../context/GalleryContext';
 
 function Gallery() {
-
-let {deleteImage} = useContext(GalleryContext)
-let navigate = useNavigate();
-
-    function handleDeleteImage(barberImageLinkId) {
-        deleteImage(barberImageLinkId).then(() => {
-            navigate('/Gallery');
-        }).catch(error => {
-            console.log(error);
-            
-        });
-    }
 
     return (
     <GalleryContext.Consumer>

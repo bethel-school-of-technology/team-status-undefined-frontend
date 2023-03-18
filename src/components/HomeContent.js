@@ -14,7 +14,8 @@ function HomeContent() {
                     <div className="container" style={{ minHeight: '600px' }}>
                         <div className="text-center justify-content-center align-self-center">
                             <div className="h1" >
-                                <h1>He who seeks "and keeps on seeking" finds!</h1>
+                                <h1>Connecting barber to client</h1>
+                                <h1>one strand at a time</h1>
                             </div>
                             <br />
 
@@ -31,11 +32,11 @@ function HomeContent() {
                             </Link>
 
                             <div className="explore" >
-                                <p>SCROLL DOWN TO LEARN MORE ABOUT US</p>
+                                <p>SCROLL DOWN TO LEARN MORE</p>
                             </div>
-                            <div className="v" >
+                            {/* <div className="v" >
                                 <p>V</p>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -51,7 +52,7 @@ function HomeContent() {
                                 <img src={process.env.PUBLIC_URL + '/Images/home-barber-info.png'} height="600" alt="" />
                             </Col>
                             <Col className='div2'>
-                                <p>If you are eather a barber startup or an experienced professional, we can help you connect with potential customers that are looking for you! Join our membership to get started... </p>
+                                <p>If you are either a barber startup or an experienced professional, we can help you connect with potential customers that are looking for you! Join our membership to get started... </p>
                                 <br></br>
                                 <h3 id='membership'>Barbers Membership</h3>
                                 <h3 id='membership'>$0.99 only</h3>

@@ -9,25 +9,66 @@
 }
 
 #editButton {
-    font-family: 'Abel', sans-serif;
-    font-size: large;
-    font-weight: bolder;
-    border-radius: 0em;
-    border-width: 2.5px;
-    border-color: #dc5726;
-    background-color: #dc5726;
-    padding: 4px 21px;
+    margin-left: 4px;
+  border-radius: 50px;
+  border: 0pt;
+  background-color: #9cd9e1;
+  padding: 5px 10px;
+  color: #1b3d49;
+  font-weight: bolder;
 }
 
 #editButton:hover {
-    font-family: 'Abel', sans-serif;
-    color: #dc5726;
+    margin-left: 4px;
+    border-radius: 50px;
+    border-width: 0%;
+    border: 0pt;
+    background-color: #dc5726;
+    padding: 5px 10px;
+    color: white;
     font-weight: bolder;
-    border-radius: 0em;
-    border-width: 2.5px;
-    border-color: #cdebef;
-    background-color: #cdebef;
-    padding: 3px 20px;
+}
+
+#deleteButton {
+    margin-left: 4px;
+  border-radius: 50px;
+  border: 0pt;
+  background-color: #9cd9e1;
+  padding: 5px 10px;
+  color: #1b3d49;
+  font-weight: bolder;
+}
+
+#deleteButton:hover {
+    margin-left: 4px;
+    border-radius: 50px;
+    border-width: 0%;
+    border: 0pt;
+    background-color: #dc5726;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bolder;
+}
+
+#addImages {
+    margin-left: 4px;
+  border-radius: 50px;
+  border: 0pt;
+  background-color: #9cd9e1;
+  padding: 5px 10px;
+  color: #1b3d49;
+  font-weight: bolder;
+}
+
+#addImages:hover {
+    margin-left: 4px;
+    border-radius: 50px;
+    border-width: 0%;
+    border: 0pt;
+    background-color: #dc5726;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bolder;
 }
 
 /* Top Section Background with profile pic, barber name & lic# ---------------- */

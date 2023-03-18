@@ -36,7 +36,8 @@ useEffect(() => {
     }
      
     async function Login(email, password) {
-        const response = await axios.post(`${baseUrl}login?email=${email}&password=${password}`);
+      let signin = {email, password};
+        const response = await axios.post(`${baseUrl}login`, signin);
         localStorage.setItem('myMessageToken', response.data);
         localStorage.setItem('email', email);
         return await new Promise(resolve => resolve(response.data));
