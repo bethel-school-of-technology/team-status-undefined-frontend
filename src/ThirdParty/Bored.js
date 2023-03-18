@@ -22,7 +22,7 @@ function Bored(){
 
     return(
     <div id="advice" class="row justify-content-evenly">
-       <h1 id="advice" class="row justify-content-evenly">Activity Of The Day</h1>
+       <h1 id="advice" class="row justify-content-evenly">ACTIVITY OF THE DAY</h1>
         {bored}
     </div>)
     

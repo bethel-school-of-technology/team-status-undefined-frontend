@@ -75,10 +75,39 @@ padding-right: 8px;
   align-self: flex-end;
 }
 
+.user {
+  margin-top: 2px;
+  margin-left: 35px;
+  font-family: 'Abel', sans-serif;
+  /* color:#1b3d49; */
+  font-weight: bolder;
+}
+
+.userButton {
+  margin-left: 4px;
+  border-radius: 50px;
+  border: 0pt;
+  background-color: #9cd9e1;
+  padding: 5px 10px;
+  color: #1b3d49;
+  font-weight: bolder;
+}
+
+.userButton:hover {
+  margin-left: 4px;
+  border-radius: 50px;
+  border-width: 0%;
+  border: 0pt;
+  background-color: #dc5726;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bolder;
+}
+
 /* Drop Down Menu ------------------------------------------------- */
 
 .dropLogo {
-  padding-bottom: 1rem;
+  padding-bottom: 5rem;
 }
 
 .animated-icon1 {

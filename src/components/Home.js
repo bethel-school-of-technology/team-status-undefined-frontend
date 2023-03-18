@@ -5,10 +5,11 @@ import React from 'react';
 import '../styles/Home.css'
 import Footer from './Footer';
 import { MDBContainer, MDBCollapse, MDBNavbar, MDBNavbarToggler } from 'mdb-react-ui-kit';
-
+import { FaUserAlt } from 'react-icons/fa';
 
 function Home() {
 
+    {/* Sign In & Sign Out */ }
     function onSignOut() {
         localStorage.clear();
         navigate('/login')
@@ -20,19 +21,26 @@ function Home() {
     function authLink() {
         if (token === null)
             return (
-                <button variant="link" onClick={onSignIn}>Login</button>
+                <div className='user'>
+                <button className='userButton' variant="link" onClick={onSignIn}>SIGN IN</button>
+                </div>
             )
         else {
-            return <div>Signed in as: {token} | <button variant="link" onClick={onSignOut}>Log Out</button></div>
+            return <div className='user'>
+                <FaUserAlt /> {token}
+                <button className='userButton' variant="link" onClick={onSignOut}>SIGN OUT</button>
+            </div>
         }
     }
 
+    {/* Search */ }
     let navigate = useNavigate()
     const handleChange = (event) => {
         if (event.target.value === "") return;
         navigate('Search/' + event.target.value)
     }
 
+    {/* For Hamburger Menu */ }
     const [showAnimated, setShowAnimated] = useState(false);
 
     return (
@@ -52,12 +60,7 @@ function Home() {
             {/*Search Nav Bar*/}
             <div id="searchBar">
                 <Row>
-                    {/* <Col xs sm md lg={1}>
-                       
-                    </Col> */}
-
                     <Col >
-
                         <Form className="d-flex">
                             <Form.Control
                                 id="searchInput"
@@ -69,15 +72,12 @@ function Home() {
                             <Button id='searchButton' variant="outline-success"><img src={process.env.PUBLIC_URL + '/Images/searchicon.png'} height="20px" alt="Upper Lip Holstery" /></Button>
                             {authLink()}
                         </Form>
-
                     </Col>
-
                 </Row>
             </div>
 
-            {/*Hamburger menu*/}
+            {/*Hamburger Menu*/}
             <section id='dropdown' className='mb-3'>
-
                 <MDBNavbar>
                     <MDBContainer fluid>
                         <MDBNavbarToggler
@@ -100,7 +100,6 @@ function Home() {
 
                 <MDBCollapse show={showAnimated}>
                     <div className='dropdownbg'>
-                        {/* <img className="dropLogo" src={process.env.PUBLIC_URL + '/Images/upperlip10.png'} height="120" alt="Upper Lip Holstery" /> */}
                         <Link to="/" id="home" className="nav-link m-4" onClick={() => setShowAnimated(!showAnimated)}>HOME</Link>
                         <Link to="/BarberList" id="barbers" className="nav-link m-4" onClick={() => setShowAnimated(!showAnimated)}>BARBERS</Link>
                         <Link to="/Gallery" id="gallery" className="nav-link m-4" onClick={() => setShowAnimated(!showAnimated)}>GALLERY</Link>
