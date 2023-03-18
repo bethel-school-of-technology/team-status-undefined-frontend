@@ -6,27 +6,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      ), */
     margin-top: -16px;
-    background: url("/public/Images/barber-home-header.png") no-repeat center center fixed;
+    background: url("/public/Images/bg-home.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /* margin-left: -136px;
-    margin-right: -136px;
-    margin-top: -25px; */
 }
 
 .h1 {
     font-family: 'Abel', sans-serif;
-    font-size: 60px;
+    font-size: 100px;
     color: #cdebef;
     font-weight: bolder;
     padding-top: 2em;
+}
+
+.h1:hover {
+    color: #f16330;
+    text-shadow: #1b3d49;
+    font-weight: bolder;
 }
 
 .explore {
