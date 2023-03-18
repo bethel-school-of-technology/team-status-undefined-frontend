@@ -1,61 +1,42 @@
-.login {
-    height: calc(100vh - 50px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      ),
-      url(/public/Images/login.jpg);
-    background-size: cover;
-  }
-  
-  .loginTitle {
-    font-size: 50px;
-  }
-  
-  .loginForm {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .loginForm > label {
-    margin: 10px 0;
-  }
-  
-  .loginInput {
-    padding: 10px;
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-  }
-  
-  .loginInput:focus {
-    outline: none;
-  }
-  
-  .loginButton {
-    margin-top: 20px;
-    cursor: pointer;
-     background-color: rgb(128, 81, 0);
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .loginRegisterButton {
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: tan;
-    cursor: pointer;
-    padding: 10px;
-    border: none;
-    color: white;
-    border-radius: 10px;
-  }
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: 50% 50%;
+  justify-content: center;
+  height: calc(100vh - 50px);
+  position: relative;
+  background: url("/public/Images/login-register.jpg");
+background-size: cover;
+overflow: hidden;
+margin-top: 5rem;
+color: #cdebef;
+ 
+}
+
+#formButton {
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  font-weight: bolder;
+  border-radius: 0em;
+  border-width: 2.5px;
+  border-color: #dc5726;
+  background-color: #dc5726;
+  padding: 4px 21px;
+  margin-top: 2rem;
+  white-space: normal;
+}
+
+#formButton:hover {
+  font-family: 'Abel', sans-serif;
+  font-size: 15px;
+  color: #dc5726;
+  font-weight: bolder;
+  border-radius: 0em;
+  border-width: 2.5px;
+  border-color: #cdebef;
+  background-color: #cdebef;
+  padding: 4px 21px;
+}
+
+
+

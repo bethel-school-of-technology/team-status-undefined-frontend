@@ -55,7 +55,7 @@ let navigate = useNavigate();
                                     <Col className='flip-card' xs={12} md={6} lg={4} >
                                     <div className='flip-card-inner'>
                                         <div className='flip-card-front'>
-                                            <img className="galleryImg" src={i.imageUrl} height="450" alt="Haircut" />
+                                            <img className="galleryImg" src={i.imageUrl} height="450" width='450' alt="Haircut" />
                                         </div>
                                         <div class="flip-card-back">
                                             <h1>The Handlebars</h1>

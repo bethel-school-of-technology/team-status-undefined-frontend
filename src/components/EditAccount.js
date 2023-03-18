@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
 
-import "../styles/Register.css"
+import "../styles/Login.css"
 
 
 function Edit ()  {
