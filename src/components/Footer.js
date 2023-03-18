@@ -24,8 +24,6 @@ function Footer() {
                 <p className='everything'>QUOTE OF THE DAY</p>
             </div>
          <Advice />
-         <br/>
-         <Bored />
             <footer id="footer" class="text-center mt-5">
                 <div className="logoBottom">
                     <a className="navbar-brand align-items-center" href="/">
