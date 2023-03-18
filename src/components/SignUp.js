@@ -110,7 +110,7 @@ function SignUp ()  {
           <Form.Control type="text" name="description" value={description} onChange={handleChange} />
         </Form.Group>
       </Row>
-         <Button id='primary' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
+         <Button id='submitButton' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
     </Form>
   </div>
 )};

@@ -37,25 +37,23 @@
     outline: none;
   }
   
-  .registerButton {
-    margin-top: 20px;
-    cursor: pointer;
-    background-color: rgb(128, 81, 0);
+  #submitButton {
+    margin-left: 4px;
+  border-radius: 50px;
+  border: 0pt;
+  background-color: #9cd9e1;
+  padding: 5px 10px;
+  color: #1b3d49;
+  font-weight: bolder;
+}
+
+#submitButton:hover {
+    margin-left: 4px;
+    border-radius: 50px;
+    border-width: 0%;
+    border: 0pt;
+    background-color: #dc5726;
+    padding: 5px 10px;
     color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .registerLoginButton {
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: tan;
-    cursor: pointer;
-    padding: 10px;
-    border: none;
-    color: white;
-    border-radius: 10px;
-  }
+    font-weight: bolder;
+}
