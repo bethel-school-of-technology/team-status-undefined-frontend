@@ -28,6 +28,7 @@ function AddImage(){
         event.preventDefault();
         createImage(barberId, imageUrl, title, description)
         navigate(`/profile/${barberId}`)
+        window.location.reload()
         .catch(error => {
             console.log(error);
             window.alert('Failed Creating Image: error creating image');
