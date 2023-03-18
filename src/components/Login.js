@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import { Form, Button, Col, Row } from "react-bootstrap";
-
+import Bored from '../ThirdParty/Bored';
 import "../styles/Login.css";
 
 function SignIn() {
@@ -32,10 +32,11 @@ function SignIn() {
     <>
     <section >
     <div className="container" style={{ minHeight: '350px' }}>
+     
     <div className='login' >
-       
+   
             <div className="text-center justify-content-center align-self-center">
-                
+            <Bored />    
         </div>
     </div>
     </div>
@@ -45,6 +46,7 @@ function SignIn() {
 
 <Form onSubmit={handleSubmit}>
 <Row className=" justify-content-center">
+<h1 className="text-center justify-content-center align-self-center">SIGN IN</h1>
   <Form.Group className="mb-3">
     <Form.Label >Email</Form.Label>
     <Form.Control
@@ -74,7 +76,7 @@ function SignIn() {
   <Form.Group className="col-1">
     <Col xs={12} sm={4} md={4} lg={4}>
       <Button id="formButton" type="submit">
-        Submit
+        SignIn
       </Button>
     </Col>
   </Form.Group>

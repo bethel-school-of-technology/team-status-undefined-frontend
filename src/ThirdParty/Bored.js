@@ -21,8 +21,8 @@ function Bored(){
     },[]);
 
     return(
-    <div id="advice" class="row justify-content-evenly">
-       <h1 id="advice" class="row justify-content-evenly">ACTIVITY OF THE DAY</h1>
+    <div id="bored" class="row justify-content-evenly">
+       <h1 id="bored" class="row justify-content-evenly">WANT TO TRY SOMETHING NEW?</h1>
         {bored}
     </div>)
     
