@@ -7,9 +7,17 @@
     background: 
       url(/public/Images/signUp.jpg);
     background-size: cover;
+    color: aliceblue;
+  }
+  .h{
+    font-family: 'Abel', sans-serif;
+    font-size: bold;
+    color: #dc5726;
+    background-color: aliceblue;;
   }
   
    /* .registerTitle {
+
     font-size: 50px;
   }
   
@@ -54,3 +62,4 @@
     color: white;
     font-weight: bolder;
 } */
+
