@@ -221,7 +221,7 @@ function Profile() {
 
       {/* Description Card*/}
 
-      {/* <div className="cater">
+      <div className="cater">
         <img src={profilePic} alt="" id="test" height="350" width="200" />
 
         <div id="p">
@@ -232,9 +232,9 @@ function Profile() {
             {description}
           </p>
         </div>
-      </div> */}
+      </div>
 
-      <section>
+      {/* <section>
                 <div className='container-{breakpoint} d-flex'>
                     <div class="row g-5 justify-content-evenly">
                         <div className="col-12">
@@ -261,7 +261,7 @@ function Profile() {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
 
       {/* Gallery Section */}
       <section>
