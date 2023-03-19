@@ -64,7 +64,7 @@ function SignIn() {
       password
     </Form.Label>
     <Form.Control
-      type="text"
+      type="Password"
       name="password"
       value={password}
       onChange={handleChange}
