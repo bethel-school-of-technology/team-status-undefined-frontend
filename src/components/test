@@ -1,183 +1,98 @@
-  <Form onSubmit={handleSubmit}>
-                  <Row className=" justify-content-center">
-                    <Form.Group className="col-3">
-                      <Form.Label>Email</Form.Label>
-                      <Form.Control
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-                  </Row>
+<div className="cater">
+        <img src={profilePic} alt="" id="test" height="350" width="200" />
 
-                  <Row className=" justify-content-center">
-                    <Form.Group className="col-3">
-                      <Form.Label xs={12} sm={4} md={4} lg={4}>
-                        password
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="password"
-                        value={password}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-                  </Row>
+        <div id="p">
+          <p>
+            <h4>
+              {firstName} {lastName}:
+            </h4>
+            {description}
+          </p>
+        </div>
+      </div>
 
-                  <Row className=" justify-content-center">
-                    <Form.Group className="col-1">
-                      <Col xs={12} sm={4} md={4} lg={4}>
-                        <Button id="formButton" type="submit">
-                        
-                          Submit
-                        </Button>
-                      </Col>
-                    </Form.Group>
-                  </Row>
-                </Form>
-
-
-
-
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group as={Col} >
-                      <Form.Label>ProfilePic</Form.Label>
-                      <Form.Control type="text" name="profilePic" value={profilePic} placeholder="enter an Image Url" onChange={handleChange} />
-                    </Form.Group>
-            
-                  <Row className="mb-3">
-                    <Form.Group as={Col} >
-                      <Form.Label>FirstName</Form.Label>
-                      <Form.Control type="text" name="firstName" value={firstName} onChange={handleChange} />
-                    </Form.Group>
-            
-                    <Form.Group as={Col} >
-                      <Form.Label>LastName</Form.Label>
-                      <Form.Control type="text" name="lastName" value={lastName} onChange={handleChange} />
-                    </Form.Group>
-            
-                    <Form.Group as={Col} >
-                      <Form.Label>LicenseNumber</Form.Label>
-                      <Form.Control type="text" name="licenseNumber" value={licenseNumber} onChange={handleChange} />
-                    </Form.Group>
-            
-                    <Form.Group as={Col} >
-                      <Form.Label>PhoneNumber</Form.Label>
-                      <Form.Control type="text" name="phoneNumber" value={phoneNumber} onChange={handleChange} />
-                    </Form.Group>
-            
-                    
-                  </Row>
-            
-                  
-            
-                  <Row className="mb-3">
-            
-                    <Form.Group as={Col} >
-                      <Form.Label>Address</Form.Label>
-                      <Form.Control type="text" name="address" value={address} onChange={handleChange} />
-                    </Form.Group>
-            
-                    <Form.Group as={Col} >
-                      <Form.Label>City</Form.Label>
-                      <Form.Control type="text" name="city" value={city} onChange={handleChange} />
-                    </Form.Group>
-            
-                    <Form.Group as={Col} >
-                      <Form.Label>State</Form.Label>
-                      <Form.Control type="text" name="state" placeholder='eg...TX' value={state} onChange={handleChange} />
-                    </Form.Group>
-                  </Row>
-            
-                  <Row className="mb-3">
-                    <Form.Group as={Col} >
-                      <Form.Label>Email</Form.Label>
-                      <Form.Control type="text" name="email" value={email} onChange={handleChange} />
-                    </Form.Group>
-            
-                    <Form.Group as={Col} >
-                      <Form.Label>Password</Form.Label>
-                      <Form.Control type="Password" name="password" value={password} onChange={handleChange} />
-                    </Form.Group>
-            
-                    <Form.Group as={Col} >
-                      <Form.Label>Description</Form.Label>
-                      <Form.Control type="text" name="description" value={description} onChange={handleChange} />
-                    </Form.Group>
-                  </Row>
-                     <Button id='primary' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
-                </Form>
-
-
-
-
-
-
-
-
-                /* Top Section Background ---------------------------------- */
-
-
-                .register {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: 50% 50%;
-                  justify-content: center;
-                  background:
-                      url("/public/Images/signUp.jpg");
-                  background-size: 100%;
-                  background-repeat: no-repeat;
-                  color: #cdebef;
-                  
-                }
-                 
-                
-                
-                .registerTitle {
-                  font-size: 50px;
-                }
-                
-                .registerForm {
-                  margin-top: 20px;
-                  display: flex;
-                  flex-direction: column;
-                }
-                
-                .registerForm > label {
-                  margin: 10px 0;
-                }
-                
-                .registerInput {
-                  padding: 10px;
-                  background-color: white;
-                  border: none;
-                  border-radius: 10px;
-                }
-                
-                .registerInput:focus {
-                  outline: none;
-                }
-                
-                .registerButton {
-                  margin-top: 20px;
-                  cursor: pointer;
-                  background-color: rgb(128, 81, 0);
-                  color: white;
-                  padding: 10px;
-                  border: none;
-                  border-radius: 10px;
-                  text-align: center;
-                }
-                
-                .registerLoginButton {
-                  position: absolute;
-                  top: 60px;
-                  right: 20px;
-                  background-color: tan;
-                  cursor: pointer;
-                  padding: 10px;
-                  border: none;
-                  color: white;
-                  border-radius: 10px;
-                }
+      .p{
+        font-size:medium;
+      }
+      .containerb{
+        color: white;
+        text-align: center;
+        padding-top: 60px;
+      }
+      .cater {
+        border: 1px solid black;
+        padding: 60px;
+        overflow: auto;
+        text-align:center;
+        font-size: 40px;
+        background-color:#dc5726;
+      }
+      #p{
+        color: black;
+      }
+      
+      
+      .cater::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+      #test{ float: left; }
+      
+      
+      
+        
+      
+      
+      .pics {
+          display: flex;
+          height: 300px;
+          flex-wrap: wrap;
+          align-content:space-between;
+          margin: 20px;
+        }
+      
+        .pis {
+          display: flex;
+          height: 300px;
+          flex-wrap: wrap;
+          align-content:space-between;
+          margin: 20px;
+        }
+      
+      
+      
+        
+        .headerb {
+          margin-top: 60px;
+          background-color: #000;
+          font-size: 30px;
+        }
+        
+        .headerTitles {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-family: "Lora", serif;
+          
+        }
+        
+        .headerTitleSmb {
+          align-items: flex-start;
+          top: 18%;
+         
+        }
+        
+        .headerTitleLg {
+          position: absolute;
+          top: 20%;
+          font-size: 100px;
+        }
+        
+        .logo {
+          width: 100%;
+          height: 450px;
+          margin-top: 80px;
+          object-fit: cover;
+        }
