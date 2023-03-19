@@ -13,7 +13,7 @@
   font-family: 'Abel', sans-serif;
   }
 
-  #formButton {
+  #addButton {
     margin-left: 4em;
   border-radius: 50px;
   border: 0pt;
@@ -23,7 +23,7 @@
   font-weight: bolder;
   }
   
-  #formButton:hover {
+  #addButton:hover {
     margin-left: 4em;
     border-radius: 50px;
     border-width: 0%;

@@ -54,7 +54,7 @@ function AddImage(){
         <Form.Label>Description</Form.Label>
         <Form.Control type="text" name="description" value={description} placeholder="enter an Image Url" onChange={handleChange} />
       </Form.Group>
-      <Button id='formButton' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
+      <Button id='addButton' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
     </Form>
     </div>
     )
