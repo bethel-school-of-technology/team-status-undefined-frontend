@@ -42,17 +42,17 @@ function AddImage(){
     <h1>ADD AN IMAGE</h1>
       <Form.Group as={Col} >
         <Form.Label>Add Image</Form.Label>
-        <Form.Control type="text" name="imageUrl" value={imageUrl} placeholder="enter an Image Url" onChange={handleChange} />
+        <Form.Control type="text" name="imageUrl" value={imageUrl}  onChange={handleChange} />
       </Form.Group>
 
       <Form.Group as={Col} >
         <Form.Label>Title</Form.Label>
-        <Form.Control type="text" name="title" value={title} placeholder="enter an Image Url" onChange={handleChange} />
+        <Form.Control type="text" name="title" value={title}  onChange={handleChange} />
       </Form.Group>
 
       <Form.Group as={Col} >
         <Form.Label>Description</Form.Label>
-        <Form.Control type="text" name="description" value={description} placeholder="enter an Image Url" onChange={handleChange} />
+        <Form.Control type="text" name="description" value={description}  onChange={handleChange} />
       </Form.Group>
       <Button id='addButton' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
     </Form>

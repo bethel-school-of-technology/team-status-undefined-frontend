@@ -222,11 +222,11 @@ function Profile() {
       {/* Description Card*/}
 
       <div className="cater">
-        <img src={profilePic} alt="" id="test" height="350" width="200" />
+        <img src={profilePic} alt="" id="test" height="450px" width="450px" />
 
         <div id="p">
           <p>
-            <h4>
+            <h4 id="name">
               {firstName} {lastName}:
             </h4>
             {description}

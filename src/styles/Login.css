@@ -1,6 +1,23 @@
 /* Top Section Background ---------------------------------- */
 
 
+#edit-header {
+  align-self: center;
+align-content: center;
+text-align: center;
+align-content: center;
+align-items: center important !;
+display: 'flex';
+justify-content: center;
+flex-direction: row;
+font-size: 4em;
+font-family: 'Abel', sans-serif;
+}
+
+
+
+
+
 .login {
 
   display: flex;

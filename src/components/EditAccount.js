@@ -2,8 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import UserContext from '../context/UserContext';
 import {Form, Button, Col, Row } from 'react-bootstrap';
-
-import "../styles/Login.css"
+import "../styles/EditAccount.css"
 
 
 function Edit ()  {
@@ -55,7 +54,7 @@ function Edit ()  {
       
 <div className='SignUp'>
   <Form onSubmit={handleSubmit}>
-      
+  <p id="edit-header">EDIT PROFILE</p>
       <Form.Group as={Col} >
         <Form.Label>ProfilePic</Form.Label>
         <Form.Control type="text" name="profilePic" value={profilePic} placeholder="enter an Image Url" onChange={handleChange} />
@@ -110,12 +109,12 @@ function Edit ()  {
 
       <Form.Group as={Col} >
         <Form.Label>Description</Form.Label>
-        <Form.Control type="text" name="description" value={description} onChange={handleChange} />
+        <Form.Control type="text" name="description" placeholder='200 max characters' value={description} onChange={handleChange} />
       </Form.Group>
     
     </Row>
 
-       <Button id='primary' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
+    <Button id='submitButton' type="submit"  className="mt-4 mb-4 ly-0" >Edit Profile</Button>
   </Form>
 </div>
 )};
