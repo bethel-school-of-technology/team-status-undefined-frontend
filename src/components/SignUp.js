@@ -45,6 +45,7 @@ function SignUp ()  {
     return (
   <div className='SignUp'>
     <Form onSubmit={handleSubmit}>
+    <p id="signUp-header">SIGN UP</p>
         <Form.Group as={Col} >
           <Form.Label>ProfilePic</Form.Label>
           <Form.Control type="text" name="profilePic" value={profilePic} placeholder="enter an Image Url" onChange={handleChange} />
@@ -107,7 +108,7 @@ function SignUp ()  {
 
         <Form.Group as={Col} >
           <Form.Label>Description</Form.Label>
-          <Form.Control type="text" name="description" value={description} onChange={handleChange} />
+          <Form.Control type="text" name="description" placeholder='200 max characters' value={description} onChange={handleChange} />
         </Form.Group>
       </Row>
          <Button id='submitButton' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>

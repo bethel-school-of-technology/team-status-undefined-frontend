@@ -48,8 +48,8 @@
 
 .flip-card-inner {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 350px;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
@@ -72,8 +72,8 @@
     background-color: #1b3d49;
     color: #cdebef;
     transform: rotateY(180deg);
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 350px;
     font-family: 'Abel', sans-serif;
 }
 

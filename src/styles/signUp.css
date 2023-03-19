@@ -1,15 +1,35 @@
 .SignUp {
     height: calc(100vh - 50px);
     display: flex;
-    flex-direction: column;
+    flex-direction: row, column;
     align-items: center;
     justify-content: center;
+    
+    width: 100%;
+    color:#cdebef;
+    background-color: #cdebef;
+    padding-top: 1em;
+    font-family: 'Abel', sans-serif;
     background: 
       url(/public/Images/signUp.jpg);
     background-size: cover;
   }
+
+  #signUp-header {
+    align-self: center;
+  align-content: center;
+  text-align: center;
+  align-content: center;
+  align-items: center important !;
+  display: 'flex';
+  justify-content: center;
+  flex-direction: row;
+  font-size: 4em;
+  font-family: 'Abel', sans-serif;
+  }
   
    /* .registerTitle {
+
     font-size: 50px;
   }
   
@@ -32,10 +52,10 @@
   
   .registerInput:focus {
     outline: none;
-  }
+  } */
   
   #submitButton {
-    margin-left: 4px;
+    margin-left: 17em;
   border-radius: 50px;
   border: 0pt;
   background-color: #9cd9e1;
@@ -45,7 +65,7 @@
 }
 
 #submitButton:hover {
-    margin-left: 4px;
+    margin-left: 17em;
     border-radius: 50px;
     border-width: 0%;
     border: 0pt;
@@ -53,4 +73,5 @@
     padding: 5px 10px;
     color: white;
     font-weight: bolder;
-} */
+}
+
