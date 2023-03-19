@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import {Form, Button, Col, Row } from 'react-bootstrap';
 import GalleryContext from '../context/GalleryContext';
+import "../styles/AddImages.css";
 
 function AddImage(){
     let navigate = useNavigate();
@@ -36,7 +37,9 @@ function AddImage(){
     }
 
     return (
+      <div id="background-addImage" xs={12} md={6} lg={4}> 
     <Form onSubmit={handleSubmit}>
+    <h1>ADD AN IMAGE</h1>
       <Form.Group as={Col} >
         <Form.Label>Add Image</Form.Label>
         <Form.Control type="text" name="imageUrl" value={imageUrl} placeholder="enter an Image Url" onChange={handleChange} />
@@ -51,9 +54,9 @@ function AddImage(){
         <Form.Label>Description</Form.Label>
         <Form.Control type="text" name="description" value={description} placeholder="enter an Image Url" onChange={handleChange} />
       </Form.Group>
-      <Button id='primary' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
+      <Button id='addButton' type="submit"  className="mt-4 mb-4 ly-0" >Submit</Button>
     </Form>
-    
+    </div>
     )
 
 }
