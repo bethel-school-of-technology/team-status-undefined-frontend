@@ -123,6 +123,97 @@
 }
 
 /* Description Card ---------------------------------- */
+
+
+  .p{
+    font-size:medium;
+  }
+  .containerb{
+    color: white;
+    text-align: center;
+    padding-top: 60px;
+  }
+  .cater {
+    border: 1px solid black;
+    padding: 60px;
+    overflow: auto;
+    text-align:center;
+    font-size: 40px;
+    background-color:#dc5726;
+  }
+  #p{
+    color: black;
+  }
+  
+  
+  .cater::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  #test{ float: left; }
+  
+  
+  
+    
+  
+  
+  .pics {
+      display: flex;
+      height: 300px;
+      flex-wrap: wrap;
+      align-content:space-between;
+      margin: 20px;
+    }
+  
+    .pis {
+      display: flex;
+      height: 300px;
+      flex-wrap: wrap;
+      align-content:space-between;
+      margin: 20px;
+    }
+  
+  
+  
+    
+    .headerb {
+      margin-top: 60px;
+      background-color: #000;
+      font-size: 30px;
+    }
+    
+    .headerTitles {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Lora", serif;
+      
+    }
+    
+    .headerTitleSmb {
+      align-items: flex-start;
+      top: 18%;
+     
+    }
+    
+    .headerTitleLg {
+      position: absolute;
+      top: 20%;
+      font-size: 100px;
+    }
+    
+    .logo {
+      width: 100%;
+      height: 450px;
+      margin-top: 80px;
+      object-fit: cover;
+    }
+
+
+
+
 .descriptionSection {
     display: flexbox;
 }
@@ -186,15 +277,15 @@
 .flip-card {
     background-color: transparent;
     perspective: 1000px;
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
     padding: 2rem;
 }
 
 .flip-card-inner {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 350px;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
@@ -207,8 +298,8 @@
 
 .flip-card-front, .flip-card-back {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 350px;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
@@ -217,8 +308,8 @@
     background-color:#1b3d49;
     color: #cdebef;
     transform: rotateY(180deg);
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 350px;
     font-family: 'Abel', sans-serif;
     
 }
