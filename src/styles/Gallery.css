@@ -4,39 +4,10 @@
     flex-direction: column;
     align-items: 50% 50%;
     justify-content: center;
-    /* background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      ), */
-    /* margin-top: -80px;  */
     background:
-        url("/public/Images/Status-cover-forweb.png");
+        url("/public/Images/gallery-cover.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    
-}
-
-
-
-.galleryh1 {
-    font-family: 'Abel', sans-serif;
-    color: #cdebef;
-    font-weight: bolder;
-    padding-top: 20rem;
-    align-content: space-between;
-    display: flow-root;
-}
-
-#pic {
-    margin-bottom: 35px;
-}
-
-.lic {
-    font-family: 'Abel', sans-serif;
-    font-size: 15px;
-    color: #cdebef;
-    font-weight: bolder;
-    padding-top: 0.5em;
 }
 
 /* Top Creative Section ---------------------------------- */
@@ -46,7 +17,7 @@
     font-size: 50px;
     color: #1b3d49;
     margin-bottom: 1rem;
-    margin-top: 5rem;
+    margin-top: 1rem;
     align-items: center;
     align-content: center;
 }
@@ -91,10 +62,9 @@
 .flip-card-front,
 .flip-card-back {
     position: absolute;
-    width: 350px;
-    height: 350px;
-    -webkit-backface-visibility: hidden;
-    /* Safari */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
 
@@ -108,15 +78,16 @@
 }
 
 .flip-card-back h1 {
-    padding-top: 11rem;
+    padding-top: 9rem;
 }
 
-/* Mustache Section ---------------------------------- */
-.mustacheTitle h3 {
+/* Reveal Mustache Section ---------------------------------- */
+.mustacheTitle h1 {
     text-align: center;
     font-family: 'Abel', sans-serif;
-    color: #1b3d49;
-    margin-top: 2rem;
+    color:#1b3d49;
+    margin-top: 1rem;
+    padding-top: 2rem;
     align-items: center;
     align-content: center;
 }
@@ -133,53 +104,53 @@
 }
 
 .mustacheSection {
-    padding: 2rem;
+margin-top: 2rem;
 }
 
 .revealCard {
-    background-color: white;
-    border-radius: 6px;
-    color: #1b3d49;
-    padding: 16px;
-    width: 270px;
-    overflow: hidden;
-    transition: 0.6s;
-    transform: translate(0);
-    font-weight: 400;
-    font-family: 'Abel', sans-serif;
-    margin-bottom: 2rem;
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
+    margin: 1rem;
 }
 
-.revealCard:hover {
-    color: white;
+.revealCard-inner {
+    background-color: #cdebef;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
-.revealCard img {
-    margin-top: 3rem;
-    align-content: center;
-    align-self: center;
-    padding-left: 5rem;
+.revealCard:hover .revealCard-inner {
+    transform: rotateY(180deg);
 }
 
-.revealCard::before {
-    content: "";
+.revealCard-front, .revealCard-back {
     position: absolute;
-    top: -75px;
-    left: -45px;
-    z-index: -1;
-    background: linear-gradient(to right, #3bd9d9, #36a6bf);
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    transition: 0.6s;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
 }
 
-.revealCard:hover::before {
-    transform: scale(4.5);
+.revealCard-back {
+    background-color: #1b3d49;
+    color: #cdebef;
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    background-color: #1b3d49;
+    color: #cdebef;
+    font-family: 'Abel', sans-serif;
 }
 
-.card {
-    margin-top: 4rem;
-    /* background: url("/public/Images/barber-list-header.png");
-    height: 300px; */
+.revealCard-front {
+    padding: 2rem 1rem;
+    background-color:#1b3d49;
+    color:#cdebef;
+    font-family: 'Abel', sans-serif;
 }
