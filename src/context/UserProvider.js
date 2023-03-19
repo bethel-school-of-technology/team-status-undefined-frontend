@@ -57,7 +57,7 @@ useEffect(() => {
         let myHeaders = {
             Authorization: `Bearer ${localStorage.getItem('myMessageToken')}`
         };
-        const response = await axios.put(baseUrl + signin.barberId, signin, { headers: myHeaders });
+        const response = await axios.put(baseUrl, signin, { headers: myHeaders });
         refreshBarberList();
         return await new Promise(resolve => resolve(response.data));
     }
