@@ -45,6 +45,7 @@ function Edit ()  {
         event.preventDefault();
         updateBarber(edit)
         navigate(`/profile/${barberId}`)
+        window.location.reload()
         .catch(error => {
             console.log(error);
             window.alert('Failed registration: error creating user');
