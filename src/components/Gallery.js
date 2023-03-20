@@ -11,7 +11,7 @@ function Gallery() {
             {
                 ({ imageList }) => {
                     return <>
-                        {/* Top Section Bakground Cover  */}
+                        {/* Top Section Background Cover  */}
                         <section>
                             <div className='bgCoverGallery'>
                                 <div className="container" style={{ minHeight: '400px' }}>

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
-/* Edit Button */
+
 .editButtonPosition {
     align-items: flex-end;
     align-content: flex-end;
@@ -10,12 +10,13 @@
 
 #editButton {
     margin-left: 4px;
-  border-radius: 50px;
-  border: 0pt;
-  background-color: #9cd9e1;
-  padding: 5px 10px;
-  color: #1b3d49;
-  font-weight: bolder;
+    border-radius: 50px;
+    border: 0pt;
+    background-color: #9cd9e1;
+    padding: 5px 10px;
+    color: #1b3d49;
+    font-weight: bolder;
+    font-family: 'Abel', sans-serif;
 }
 
 #editButton:hover {
@@ -31,12 +32,13 @@
 
 #deleteButton {
     margin-left: 4px;
-  border-radius: 50px;
-  border: 0pt;
-  background-color: #9cd9e1;
-  padding: 5px 10px;
-  color: #1b3d49;
-  font-weight: bolder;
+    border-radius: 50px;
+    border: 0pt;
+    background-color: #9cd9e1;
+    padding: 5px 10px;
+    color: #1b3d49;
+    font-weight: bolder;
+    font-family: 'Abel', sans-serif;
 }
 
 #deleteButton:hover {
@@ -52,12 +54,13 @@
 
 #addImages {
     margin-left: 4px;
-  border-radius: 50px;
-  border: 0pt;
-  background-color: #9cd9e1;
-  padding: 5px 10px;
-  color: #1b3d49;
-  font-weight: bolder;
+    border-radius: 50px;
+    border: 0pt;
+    background-color: #9cd9e1;
+    padding: 5px 10px;
+    color: #1b3d49;
+    font-weight: bolder;
+    font-family: 'Abel', sans-serif;
 }
 
 #addImages:hover {
@@ -87,14 +90,12 @@
 
 #coverInfo {
     background-color: #1b3d49;
-    /* margin: 5rem 30rem; */
     opacity: 0.9;
     position: inherit;
 }
 
 #coverInfo:hover {
     background-color: #dc5726;
-    /* margin: 5rem 30rem; */
     opacity: 0.9;
     position: inherit;
     color: white;
@@ -123,72 +124,65 @@
 }
 
 /* Description Card ---------------------------------- */
-
-
-   
 .cater {
-    border: 1px solid black;
-    padding: 60px;
+    border: 1px solid #dc5726;
+    padding: 3rem 2rem 3rem 2rem;
     overflow: auto;
-    text-align:center;
-    background-color:#dc5726;
-  }
-  #p{
-    color: black;
+    text-align: center;
+    background-color: #dc5726;
+}
+
+.cater::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.cater img {
+    margin: 2rem;
+}
+
+#p {
+    color: white;
     font-family: 'Abel', sans-serif;
     margin-top: 60px;
     font-size: 30px;
     font-family: 'Abel', sans-serif;
-    }
-  
-    #name{
-        font-size: 40px;
-        font-weight: bold;
-    }
-  
-  .cater::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  #test{ float: left; }
-  
-  
-  
-    
-  
-  
-  .pics {
-      display: flex;
-      height: 300px;
-      flex-wrap: wrap;
-      align-content:space-between;
-      margin: 20px;
-    }
-  
-    .pis {
-      display: flex;
-      height: 300px;
-      flex-wrap: wrap;
-      align-content:space-between;
-      margin: 20px;
-    }
-  
-  
-  
-    
-    .headerb {
-      margin-top: 60px;
-      background-color: #000;
-      font-size: 20px;
-      font-family: 'Abel', sans-serif;
+}
 
-    }
+#name {
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 2rem;
+    padding-top: 1 rem;
+}
 
+#test {
+    float: left;
+}
 
+.pics {
+    display: flex;
+    height: 300px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 20px;
+}
 
+.pis {
+    display: flex;
+    height: 300px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 20px;
+}
 
+.headerb {
+    margin-top: 60px;
+    background-color: #000;
+    font-size: 20px;
+    font-family: 'Abel', sans-serif;
+}
 
 .descriptionSection {
     display: flexbox;
@@ -237,7 +231,7 @@
     text-align: center;
     font-family: 'Abel', sans-serif;
     font-weight: bolder;
-    color:#dc5726;
+    color: #dc5726;
     margin-top: 1rem;
     margin-bottom: 3rem;
     align-items: center;
@@ -255,7 +249,8 @@
     perspective: 1000px;
     width: 350px;
     height: 350px;
-    padding: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .flip-card-inner {
@@ -265,35 +260,29 @@
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    
 }
 
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
     position: absolute;
     width: 350px;
     height: 350px;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
 }
 
 .flip-card-back {
-    background-color:#1b3d49;
+    background-color: #1b3d49;
     color: #cdebef;
     transform: rotateY(180deg);
     width: 350px;
     height: 350px;
     font-family: 'Abel', sans-serif;
-    
 }
-
-.flip-card-back h1{
-    padding-top: 11rem;
-}
-
 
 /* Contact section ----------------------------------- */
 .contactTitle {
