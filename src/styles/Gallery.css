@@ -42,14 +42,12 @@
 .flip-card {
     background-color: transparent;
     perspective: 1000px;
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
 }
 
 .flip-card-inner {
     position: relative;
-    width: 350px;
-    height: 350px;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
