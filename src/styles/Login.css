@@ -1,83 +1,103 @@
 /* Top Section Background ---------------------------------- */
 
-
 #edit-header {
   align-self: center;
-align-content: center;
-text-align: center;
-align-content: center;
-align-items: center important !;
-display: 'flex';
-justify-content: center;
-flex-direction: row;
-font-size: 4em;
-font-family: 'Abel', sans-serif;
+  align-content: center;
+  text-align: center;
+  align-content: center;
+  align-items: center important !;
+  display: 'flex';
+  justify-content: center;
+  flex-direction: row;
+  font-size: 4em;
+  font-family: 'Abel', sans-serif;
 }
 
-
-
-
-
 .login {
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: 
+  background:
     url(/public/Images/login.jpg);
-    height: 200px;;
-  background-size:contain;
+  height: 200px;
+  ;
+  background-size: contain;
+  color: #cdebef;
+
+}
+
+#background {
+  border: 1px solid #1b3d49;
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  margin-top: -10em;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b3d49;
+  padding-top: 1em;
+  color: #cdebef;
+  font-family: 'Abel', sans-serif;
+}
+
+#background h1 {
+  color: #cdebef;
+  margin-bottom: 2rem;
+  margin: 1.5rem;
+}
+
+#linkSignIn {
   color:#cdebef;
-
+  text-align: center;
 }
 
-
-#background{
-  border: 1px solid black; max-width: 700px;
-width: 100%;
-margin: auto;
-margin-top: -10em;
-height: 50vh;
-display: flex;
-align-items:center;
-justify-content: center;
-background-color: #cdebef;
-padding-top: 1em;
-  
+#linkColor {
+  color: #dc5726;
+  text-decoration: underline;
 }
 
-#formButton {
+/* #background {
   margin-left: -2.5em;
-border-radius: 50px;
-border: 0pt;
-background-color: #9cd9e1;
-padding: 5px 10px;
-color: #1b3d49;
-font-weight: bolder;
+  border-radius: 50px;
+  border: 0pt;
+  background-color: #9cd9e1;
+  padding: 5px 10px;
+  color: #1b3d49;
+  font-weight: bolder;
+} */
+
+ #signinFormButton {
+  margin-left: -2.5em;
+  border-radius: 50px;
+  border: 0pt;
+  background-color: #9cd9e1;
+  padding: 10px 20px;
+  color: #1b3d49;
+  font-weight: bolder;
+  font-family: 'Abel', sans-serif;
+  color: #1b3d49;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-#formButton:hover {
+#signinFormButton:hover {
   margin-left: -2.5em;
   border-radius: 50px;
   border-width: 0%;
   border: 0pt;
   background-color: #dc5726;
-  padding: 5px 10px;
+  padding: 10px 20px;
   color: white;
   font-weight: bolder;
+  font-family: 'Abel', sans-serif;
 }
 
 #bored {
   font-family: 'Abel', sans-serif;
-  color:#cdebef;
+  color: #cdebef;
   font-size: medium;
 }
-
-#signUp:hover {
-  color:#dc5726;
-}
-
-
-
 

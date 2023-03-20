@@ -11,7 +11,7 @@ function Gallery() {
             {
                 ({ imageList }) => {
                     return <>
-                        {/* Top Section Bakground Cover  */}
+                        {/* Top Section Background Cover  */}
                         <section>
                             <div className='bgCoverGallery'>
                                 <div className="container" style={{ minHeight: '400px' }}>
@@ -31,10 +31,10 @@ function Gallery() {
                                 <Row>
                                     {imageList.map((i) => {
                                         return (
-                                            <Col className='flip-card' xs={12} md={6} lg={4} >
+                                            <Col className='flip-card' xs={12} md={6} lg={4}>
                                                 <div className='flip-card-inner'>
                                                     <div className='flip-card-front'>
-                                                        <img className="galleryImg" src={i.imageUrl} height="450" width='450' alt="Haircut" />
+                                                        <img className="galleryImg" src={i.imageUrl} height="350" width='350' alt="Haircut" />
                                                     </div>
                                                     <div class="flip-card-back">
                                                         <h1>{i.title}</h1>

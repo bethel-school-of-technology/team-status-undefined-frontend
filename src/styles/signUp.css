@@ -1,22 +1,27 @@
 .SignUp {
-    height: calc(100vh - 50px);
-    display: flex;
-    flex-direction: row, column;
-    align-items: center;
-    justify-content: center;
-    
-    width: 100%;
-    color:#cdebef;
-    background-color: #cdebef;
-    padding-top: 1em;
-    font-family: 'Abel', sans-serif;
-    background: 
-      url(/public/Images/signUp.jpg);
-    background-size: cover;
-  }
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: row, column;
+  align-items: center;
+  justify-content: center;
 
-  #signUp-header {
-    align-self: center;
+  width: 100%;
+  color: #cdebef;
+  background-color: #cdebef;
+  padding-top: 1em;
+  font-family: 'Abel', sans-serif;
+  background:
+    url(/public/Images/signUp.jpg);
+  background-size: cover;
+}
+
+.SignUp form {
+  padding: 2rem;
+  text-shadow: black 2px 2px;
+}
+
+#signUp-header {
+  align-self: center;
   align-content: center;
   text-align: center;
   align-content: center;
@@ -26,52 +31,32 @@
   flex-direction: row;
   font-size: 4em;
   font-family: 'Abel', sans-serif;
-  }
-  
-   /* .registerTitle {
+}
 
-    font-size: 50px;
-  }
-  
-  .registerForm {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .registerForm > label {
-    margin: 10px 0;
-  }
-  
-  .registerInput {
-    padding: 10px;
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-  }
-  
-  .registerInput:focus {
-    outline: none;
-  } */
-  
-  #submitButton {
-    margin-left: 17em;
+#submitButton {
+  margin-left: 15em;
   border-radius: 50px;
   border: 0pt;
   background-color: #9cd9e1;
-  padding: 5px 10px;
+  padding: 5px 15px;
   color: #1b3d49;
   font-weight: bolder;
 }
 
 #submitButton:hover {
-    margin-left: 17em;
-    border-radius: 50px;
-    border-width: 0%;
-    border: 0pt;
-    background-color: #dc5726;
-    padding: 5px 10px;
-    color: white;
-    font-weight: bolder;
+  border-radius: 50px;
+  border-width: 0%;
+  border: 0pt;
+  background-color: #dc5726;
+  padding: 5px 15px;
+  color: white;
+  font-weight: bolder;
 }
 
+#signupFormSpacing {
+  margin-bottom: 2rem;
+}
+
+.profilePicSpacing {
+  margin-bottom: 2rem;
+}

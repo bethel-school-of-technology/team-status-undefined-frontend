@@ -4,24 +4,27 @@ import { Container, Row, Col, Card } from "react-bootstrap"
 import UserContext from '../context/UserContext';
 import '../styles/BarberList.css'
 
+
+{/* Search Bar Function - Find barber by City*/ }
 function Search() {
+
     let { searchBarber } = useContext(UserContext)
     let [barbers, setBarber] = useState([])
     let params = useParams();
+
     console.log(params.filter)
+
     searchBarber(params.filter)
 
     useEffect(() => {
 
         async function fetch() {
-            await searchBarber(params.filter).then(response => {                                                    
+            await searchBarber(params.filter).then(response => {
                 setBarber(response)
             })
         }
         fetch();
-
     }, [params])
-
 
 
     function UserList() {
@@ -44,15 +47,13 @@ function Search() {
                                     <div class="text">LET'S GO!</div>
                                 </div>
                             </a>
-
-
                         </div>
                     </Card>
                 </Col>
             )
         }
-     )
-}
+        )
+    }
 
     return (
         <>
@@ -71,7 +72,8 @@ function Search() {
                 </div>
             </section>
 
-                <div className='title'><h1>Come to the professionals</h1></div>
+            <div className='title'><h1>Come to the professionals</h1></div>
+
             <Container fluid>
                 <Row>
                     {UserList()}
@@ -80,6 +82,5 @@ function Search() {
         </>
     )
 }
-
 
 export default Search;

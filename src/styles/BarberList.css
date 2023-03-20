@@ -1,12 +1,3 @@
-/* #barberList {
-    border: 1px solid black;
-    margin: 2;
-    background-color: #1b3d49;
-    color: #cdebef;
-    font-family: 'Abel', sans-serif;
-    align-items: center;
-} */
-
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 /* Top Section */
@@ -28,7 +19,6 @@
     color: #cdebef;
     font-weight: bolder;
     padding-top: 1em;
-
 }
 
 .pstartsearch {
@@ -42,7 +32,6 @@
 
 #pic {
     padding: 5%;
-
 }
 
 #barberCard {
