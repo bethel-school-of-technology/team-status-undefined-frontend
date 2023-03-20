@@ -4,8 +4,8 @@ import { Row, Col, Stack, Container, Card } from "react-bootstrap"
 import '../styles/BarberList.css'
 
 
+{/*Barbers Page Function*/}
 function BarberList() {
-
 
   return (
     <UserContext.Consumer>
@@ -27,9 +27,9 @@ function BarberList() {
                           </div>
 
                           <div className="pstartsearch" >
-                            {/* <p>Making your dream tream come true</p> */}
                             <p>Start searching!</p>
                           </div>
+
                         </div>
                       </div>
                     </div>
@@ -37,7 +37,7 @@ function BarberList() {
 
                   <div className='title'><h1>Come to the professionals</h1></div>
 
-                  {/*List of Barbers*/}
+                  {/*List of Barbers, Click on card to go to Barber Profile Page*/}
                   <Row>
                     {barberList.map((u) => {
                       return (
@@ -53,21 +53,17 @@ function BarberList() {
                                 </div>
 
                                 <div className="overlay">
-                                <div class="text">LET'S GO!</div>
-                              </div>
+                                  <div class="text">LET'S GO!</div>
+                                </div>
                               </a>
-
-
                             </div>
                           </Card>
                         </Col>
-
                       )
                     })}
                   </Row>
                 </Container>
               </Stack>
-
             </div>
           </>
         }
