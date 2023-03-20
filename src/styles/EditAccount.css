@@ -1,8 +1,8 @@
 /* Top Section Background ---------------------------------- */
 
 
-#edit-header {
-    align-self: center;
+#editProfile {
+  align-self: center;
   align-content: center;
   text-align: center;
   align-content: center;
@@ -10,74 +10,60 @@
   display: 'flex';
   justify-content: center;
   flex-direction: row;
-  font-size: 4em;
+  font-size: 3em;
   font-family: 'Abel', sans-serif;
   color: white;
-  }
-  
-  
-  
-  
-  
-  .login {
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: 
-      url(/public/Images/login.jpg);
-      height: 200px;;
-    background-size:contain;
-    color:#cdebef;
-  
-  }
-  
-  
-  #background{
-    border: 1px solid black; max-width: 700px;
+}
+
+/* .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(/public/Images/login.jpg);
+  height: 200px;
+  background-size: contain;
+  color: #cdebef;
+} */
+
+.EditAccount {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: row, column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color:#cdebef;
+  background-color: #cdebef;
+  padding-top: 1em;
+  font-family: 'Abel', sans-serif;
+  /* background: 
+    url(/public/Images/signUp.jpg);
+  background-size: cover; */
+  background-color: #1b3d49;
+}
+
+#formWidth {
+  padding: 1 rem;
+  margin: 1rem;
+}
+
+#background {
+  border: 1px solid black;
+  max-width: 700px;
   width: 100%;
   margin: auto;
   margin-top: -10em;
   height: 50vh;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   background-color: #cdebef;
   padding-top: 1em;
-    
-  }
-  
-  #formButton {
-    margin-left: -2.5em;
-  border-radius: 50px;
-  border: 0pt;
-  background-color: #9cd9e1;
-  padding: 5px 10px;
-  color: #1b3d49;
-  font-weight: bolder;
-  }
-  
-  #formButton:hover {
-    margin-left: -2.5em;
-    border-radius: 50px;
-    border-width: 0%;
-    border: 0pt;
-    background-color: #dc5726;
-    padding: 5px 10px;
-    color: white;
-    font-weight: bolder;
-  }
-  
-  #bored {
-    font-family: 'Abel', sans-serif;
-    color:#cdebef;
-    font-size: medium;
-  }
-  
-  
-  #submitButton {
-    margin-left: 17em;
+}
+
+#formButton {
+  margin-left: -2.5em;
   border-radius: 50px;
   border: 0pt;
   background-color: #9cd9e1;
@@ -86,17 +72,46 @@
   font-weight: bolder;
 }
 
-#submitButton:hover {
-    margin-left: 17em;
-    border-radius: 50px;
-    border-width: 0%;
-    border: 0pt;
-    background-color: #dc5726;
-    padding: 5px 10px;
-    color: white;
-    font-weight: bolder;
+#formButton:hover {
+  margin-left: -2.5em;
+  border-radius: 50px;
+  border-width: 0%;
+  border: 0pt;
+  background-color: #dc5726;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bolder;
 }
-  
-  
-  
-  
+
+#bored {
+  font-family: 'Abel', sans-serif;
+  color: #cdebef;
+  font-size: medium;
+}
+
+#formLabel {
+  margin-bottom: 3rem;
+}
+
+#EditAccountSubmitButton {
+  margin-left: 14.5em;
+  border-radius: 50px;
+  border: 0pt;
+  background-color: #9cd9e1;
+  padding: 5px 10px;
+  color: #1b3d49;
+  font-weight: bolder;
+  font-family: 'Abel', sans-serif;
+}
+
+#EditAccountSubmitButton:hover {
+  margin-left: 14.5em;
+  border-radius: 50px;
+  border-width: 0%;
+  border: 0pt;
+  background-color: #dc5726;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bolder;
+  font-family: 'Abel', sans-serif;
+}
