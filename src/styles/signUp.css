@@ -1,0 +1,62 @@
+.SignUp {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: row, column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  color: #cdebef;
+  background-color: #cdebef;
+  padding-top: 1em;
+  font-family: 'Abel', sans-serif;
+  background:
+    url(/public/Images/signUp.jpg);
+  background-size: cover;
+}
+
+.SignUp form {
+  padding: 2rem;
+  text-shadow: black 2px 2px;
+}
+
+#signUp-header {
+  align-self: center;
+  align-content: center;
+  text-align: center;
+  align-content: center;
+  align-items: center important !;
+  display: 'flex';
+  justify-content: center;
+  flex-direction: row;
+  font-size: 4em;
+  font-family: 'Abel', sans-serif;
+}
+
+#submitButton {
+  margin-left: 15em;
+  border-radius: 50px;
+  border: 0pt;
+  background-color: #9cd9e1;
+  padding: 5px 15px;
+  color: #1b3d49;
+  font-weight: bolder;
+}
+
+#submitButton:hover {
+  border-radius: 50px;
+  border-width: 0%;
+  border: 0pt;
+  background-color: #dc5726;
+  padding: 5px 15px;
+  color: white;
+  font-weight: bolder;
+}
+
+#signupFormSpacing {
+  margin-bottom: 2rem;
+}
+
+.profilePicSpacing {
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,108 @@
+{
+    "users": [
+        {
+            "BarberId": 1,
+            "FirstName": "Bob",
+            "LastName": "Smith",
+            "Address": "123 Sesame Street",
+            "City": "Big Bird",
+            "State": "Ca",
+            "PhoneNumber": 5555555,
+            "LicenseNumber": "abc1234",
+            "img_url": "https://th.bing.com/th/id/R.16999100cfa39504af93e15d708bcc73?rik=3iwhp0c9kUpk5A&pid=ImgRaw&r=0",
+            "Description": "lorem nipsum",
+            "AuthSignInId": 112233
+            
+        },
+
+        {
+            "BarberId": 2,
+            "FirstName": "Bill",
+            "LastName": "Jones",
+            "Address": "456 Sesame Street",
+            "City": "Big Bird",
+            "State": "Ca",
+            "PhoneNumber": 5555555,
+            "LicenseNumber": "abc1234",
+            "img_url": "https://th.bing.com/th/id/R.cfb77e8a9bf334ff1aba79f86f9f016c?rik=xLla9OtNhL11PA&riu=http%3a%2f%2fgetdrawings.com%2fimages%2fbarber-chair-drawing-13.jpg&ehk=gh1%2fLT8N%2fyp%2fJ4WD%2f86LTS6qDwxkAfVy3hBnkeN9hvU%3d&risl=&pid=ImgRaw&r=0",
+            "Description": "lorem nipsum",
+            "AuthSignInId": 112233
+            
+        },
+
+        {
+            "BarberId": 3,
+            "FirstName": "Jane",
+            "LastName": "Doe",
+            "Address": "456 SB Street",
+            "City": "Fresno",
+            "State": "Ca",
+            "PhoneNumber": 5555555,
+            "LicenseNumber": "abc1234",
+            "img_url": "https://img00.deviantart.net/0402/i/2015/156/1/7/female_barber_by_heilyaens-d8w3gq8.jpg",
+            "Description": "lorem nipsum",
+            "AuthSignInId": 112233
+            
+        },
+
+        {
+            "BarberId": 4,
+            "FirstName": "Tommy",
+            "LastName": "Zurts",
+            "Address": "4543 cc Street",
+            "City": "Dayton",
+            "State": "Oh",
+            "PhoneNumber": 5555555,
+            "LicenseNumber": "abc1234",
+            "img_url": "https://thumbs.dreamstime.com/b/barber-shop-poster-vector-illustration-hipster-stylist-scissors-design-vintage-pop-art-style-75488134.jpg",
+            "Description": "lorem nipsum",
+            "AuthSignInId": 112233
+            
+        },
+
+        {
+            "BarberId": 5,
+            "FirstName": "Ethan",
+            "LastName": "Hawk",
+            "Address": "789 Bomb Blvd",
+            "City": "Virgina Beach",
+            "State": "Va",
+            "PhoneNumber": 5555555,
+            "LicenseNumber": "abc1234",
+            "img_url": "https://th.bing.com/th/id/R.8b081dec1615632dea205cf92289fc15?rik=e0tfwr0dsde35g&riu=http%3a%2f%2fwww.freepngclipart.com%2fdownload%2flogo%2f75568-shop-skillz-business-beauty-parlour-strickly-barber.png&ehk=m4ZYMcm%2fuCYmqMLKTW8wZTy2hPp0NrpQ6awzsNgAWs8%3d&risl=&pid=ImgRaw&r=0",
+            "Description": "lorem nipsum",
+            "AuthSignInId": 112233
+            
+        },
+
+        {
+            "BarberId": 6,
+            "FirstName": "Zachary",
+            "LastName": "Jetson",
+            "Address": "333 Future Ave.",
+            "City": "Seattle",
+            "State": "Wa",
+            "PhoneNumber": 5555555,
+            "LicenseNumber": "abc1234",
+            "img_url": "https://webstockreview.net/images/barber-clipart-african-american-2.jpg",
+            "Description": "lorem nipsum",
+            "AuthSignInId": 112233
+            
+        },
+
+        {
+            "BarberId": 7,
+            "FirstName": "Jazmine",
+            "LastName": "Derrecks",
+            "Address": "3456 Dream Lane.",
+            "City": "Dallas",
+            "State": "Tx",
+            "PhoneNumber": 5555555,
+            "LicenseNumber": "abc1234",
+            "img_url": "https://i.etsystatic.com/7011699/r/il/f5b5a1/460568796/il_794xN.460568796_tmd2.jpg",
+            "Description": "lorem nipsum",
+            "AuthSignInId": 112233
+            
+        }
+    ]
+}

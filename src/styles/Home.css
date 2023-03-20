@@ -1,0 +1,293 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap'); */
+
+#navbarTop {
+  background-color: #1b3d49;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  text-align: center;
+  align-content: center;
+  align-items: center important !;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+
+.h1head {
+  align-self: center;
+  align-content: center;
+  text-align: center;
+  align-content: center;
+  align-items: center important !;
+  display: 'flex';
+  justify-content: center;
+  flex-direction: row;
+}
+
+#searchBar {
+  background-color: #cdebef; 
+  display: 'flex';
+  padding: 9px 25px;
+  position: sticky;
+  top: 180px;
+  align-items: flex-start;
+  z-index: 1;
+}
+
+#searchInput {
+  max-width: 300px;
+  font-family: 'Abel', sans-serif;
+  color: #9cd9e1;
+  border-color: white;
+  border-radius: 0px;
+  margin-right: 10px;
+}
+
+#searchInput:hover {
+  max-width: 300px;
+  border-color:#9cd9e1;
+  color:#1b3d49;
+}
+
+#searchButton {
+  border-color: transparent;
+  color:#1b3d49;
+  font-family: 'Abel', sans-serif;
+  padding: 0px
+}
+
+#searchButton:hover {
+background-color:#9cd9e1;
+padding: 3px;
+border-radius: 100px;
+padding-left: 8px;
+padding-right: 8px; 
+}
+
+.titlemenu {
+  text-align: center;
+  align-items: center;
+  align-content: space-between;
+}
+
+.navbar-brand {
+  align-self: flex-end;
+}
+
+.user {
+  margin-top: 2px;
+  margin-left: 35px;
+  font-family: 'Abel', sans-serif;
+  font-weight: bolder;
+}
+
+.userButton {
+  margin-left: 4px;
+  border-radius: 50px;
+  border: 0pt;
+  background-color: #9cd9e1;
+  padding: 5px 10px;
+  color: #1b3d49;
+  font-weight: bolder;
+}
+
+.userButton:hover {
+  margin-left: 4px;
+  border-radius: 50px;
+  border-width: 0%;
+  border: 0pt;
+  background-color: #dc5726;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bolder;
+}
+
+/* Drop Down Menu ------------------------------------------------- */
+
+.dropLogo {
+  padding-bottom: 5rem;
+}
+
+.animated-icon1 {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  margin: 0px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+}
+
+.animated-icon1 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+  outline: none;
+  box-shadow: none;
+}
+
+.animated-icon1 span {
+  background: #1b3d49;
+  outline: none;
+  box-shadow: none;
+}
+
+.animated-icon1 span:nth-child(1) {
+  top: 0px;
+  outline: none;
+  box-shadow: none;
+}
+
+.animated-icon1 span:nth-child(2) {
+  top: 10px;
+
+}
+
+.animated-icon1 span:nth-child(3) {
+  top: 20px;
+}
+
+.animated-icon1.open span:nth-child(1) {
+  top: 11px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  outline: none;
+  box-shadow: none;
+  font-size: 30px;
+}
+
+.firstbutton {
+  outline: none;
+  box-shadow: none;
+}
+
+.animated-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+  font-size: 30px;
+}
+
+.animated-icon1.open span:nth-child(3) {
+  top: 11px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  outline: none;
+  box-shadow: none;
+  font-size: 30px;
+}
+
+#dropdown {
+  align-content: center;
+  background-color: transparent;
+  background-color:#9cd9e1;
+  position: fixed;
+  font-family: 'Abel', sans-serif;
+  font-size: x-large;
+  text-align: center;
+  z-index: 1;
+}
+
+.dropdownbg {
+  background-color: #1b3d49;
+  padding-top: 70px;
+  padding-bottom: 150px;
+  align-items: center;
+  color: #9cd9e1;
+  align-items: center;
+  padding-left: 7.5rem;
+  padding-right: 7.5rem;
+  font-size: 30px;
+}
+
+#home:hover {
+  color: #dc5726;
+  font-size: 30px;
+}
+
+#barbers:hover {
+  color: #dc5726;
+  font-size: 30px;
+}
+
+#gallery:hover {
+  color: #dc5726;
+  font-size: 30px;
+}
+
+
+/* Buttons inside Drop Down Menu ------------------------------------------------- */
+
+#signUpButtonDrop {
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  font-weight: bolder;
+  border-radius: 0em;
+  border-width: 2.5px;
+  border-color: #dc5726;
+  background-color: #dc5726;
+  padding: 4px 21px;
+  margin-top: -10px;
+}
+
+#signUpButtonDrop:hover {
+  font-family: 'Abel', sans-serif;
+  font-size: 15px;
+  color: #dc5726;
+  font-weight: bolder;
+  border-radius: 0em;
+  border-width: 2.5px;
+  border-color: #cdebef;
+  background-color: #cdebef;
+  padding: 4px 21px;
+}
+
+#signInButtonDrop {
+  margin-top: -10rem;
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  color: white;
+  font-weight: bolder;
+  border-radius: 0em;
+  border-width: 5px;
+  border-color: #cdebef;
+  padding: 3px 22px;
+  background-color: transparent;
+}
+
+#signInButtonDrop:hover {
+  margin-top: -30px;
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  color: #cdebef;
+  font-weight: bolder;
+  border-radius: 0em;
+  border-width: 5px;
+  border-color: #dc5726;
+  padding: 3px 22px;
+  background-color: transparent;
+  margin-bottom: -50px;
+}

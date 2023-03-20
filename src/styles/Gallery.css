@@ -1,0 +1,154 @@
+/* Top Section Background ---------------------------------- */
+.bgCoverGallery {
+    display: flex;
+    flex-direction: column;
+    align-items: 50% 50%;
+    justify-content: center;
+    background:
+        url("/public/Images/gallery-cover.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/* Top Creative Section ---------------------------------- */
+.galleryTitle h1 {
+    text-align: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 50px;
+    color: #1b3d49;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+    align-content: center;
+}
+
+.galleryTitle h5 {
+    text-align: center;
+    font-family: 'Abel', sans-serif;
+    font-weight: bolder;
+    color: #dc5726;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    align-items: center;
+    align-content: center;
+}
+
+.galleryImg {
+    padding: 1rem;
+    align-items: center;
+    align-content: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 350px;
+    height: 350px;
+}
+
+.flip-card-inner {
+    position: relative;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    background-color: #1b3d49;
+    color: #cdebef;
+    transform: rotateY(180deg);
+    width: 350px;
+    height: 350px;
+    font-family: 'Abel', sans-serif;
+}
+
+.flip-card-back h1 {
+    padding-top: 8rem;
+}
+
+/* Reveal Mustache Section ---------------------------------- */
+.mustacheTitle h1 {
+    text-align: center;
+    font-family: 'Abel', sans-serif;
+    color:#1b3d49;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    align-items: center;
+    align-content: center;
+}
+
+.mustacheTitle h5 {
+    text-align: center;
+    font-family: 'Abel', sans-serif;
+    font-weight: bolder;
+    color: #dc5726;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    align-content: center;
+}
+
+.mustacheSection {
+margin-top: 2rem;
+}
+
+.revealCard {
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
+    margin: 1rem;
+}
+
+.revealCard-inner {
+    background-color: #cdebef;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.revealCard:hover .revealCard-inner {
+    transform: rotateY(180deg);
+}
+
+.revealCard-front, .revealCard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.revealCard-back {
+    background-color: #1b3d49;
+    color: #cdebef;
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    background-color: #1b3d49;
+    color: #cdebef;
+    font-family: 'Abel', sans-serif;
+}
+
+.revealCard-front {
+    padding: 2rem 1rem;
+    background-color:#1b3d49;
+    color:#cdebef;
+    font-family: 'Abel', sans-serif;
+}
