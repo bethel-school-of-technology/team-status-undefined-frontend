@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import Bored from '../ThirdParty/Bored';
@@ -81,6 +81,7 @@ function SignIn() {
     </Col>
   </Form.Group>
 </Row>
+  <Link id="signUp" to="/SignUp" className="nav-link m-4">Not a member? Click here to sign up!!!</Link>
 </Form>
 </div>
 
