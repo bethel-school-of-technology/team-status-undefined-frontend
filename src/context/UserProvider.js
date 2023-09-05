@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export const UserProvider = (props) => {
     const [ barberList, setBarberList ] = useState([]);
-    const baseUrl = "http://localhost:5003/Barber/";
+    const baseUrl = "http://upperlipapi.azurewebsites.net/Barber/";
 
 useEffect(() => {
     async function getAllBarbers() {

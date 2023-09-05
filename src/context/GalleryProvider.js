@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export const GalleryProvider = (props) => {
     const [ imageList, setImageList ] = useState([]);
-    const baseUrl = "http://localhost:5003/Image/";
+    const baseUrl = "http://upperlipapi.azurewebsites.net/Image/";
 
 useEffect(() => {
     async function getAllImages() {
