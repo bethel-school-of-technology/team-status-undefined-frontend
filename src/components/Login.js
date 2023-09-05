@@ -50,7 +50,7 @@ function SignIn() {
           <Row className=" justify-content-center">
 
             <h1 className="text-center justify-content-center align-self-center">SIGN IN</h1>
-            <p id="linkSignIn">Already a member? <Link id="linkColor" to="/SignUp">Sign Up</Link></p>
+            <p id="linkSignIn">Not a member? <Link id="linkColor" to="/SignUp">Sign Up</Link></p>
 
             <Form.Group className="mb-3">
               <Form.Label >Email</Form.Label>
